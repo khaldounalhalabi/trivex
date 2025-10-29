@@ -6,7 +6,6 @@ import { createInertiaApp } from "@inertiajs/react";
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "../css/cubeta-starter.css";
-import "./bootstrap";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -25,19 +24,22 @@ Promise.resolve()
     .then(() =>
         createInertiaApp({
             title: () => `${appName} Dashboard`,
-            resolve: (name: string) => {
+            resolve: async (name: any) => {
                 const pages = import.meta.glob<{
                     default: PageWithLayout;
                 }>("./Pages/**/*.tsx", { eager: true });
-
                 let page = pages[`./Pages/${name}.tsx`];
+
                 if (!page) {
                     throw new Error(`Page "${name}" not found`);
                 }
 
-                page.default.layout = !authPages.includes(name)
-                    ? (page) => <Layout>{page}</Layout>
-                    : (page) => <AuthLayout>{page}</AuthLayout>;
+                page.default.layout =
+                    !authPages.includes(name) && name.includes("dashboard")
+                        ? (page) => <Layout>{page}</Layout>
+                        : authPages.includes(name)
+                          ? (page) => <AuthLayout>{page}</AuthLayout>
+                          : (page) => <Layout>{page}</Layout>;
 
                 return page;
             },
@@ -54,6 +56,11 @@ Promise.resolve()
             },
             progress: {
                 color: "#4B5563",
+            },
+            defaults: {
+                visitOptions: () => {
+                    return { viewTransition: true };
+                },
             },
         }),
     )
