@@ -56,6 +56,7 @@
     --color-sidebar-ring: var(--sidebar-ring);
     --color-success: var(--success);
     --color-success-foreground: var(--success-foreground);
+    --color-landing-background: #f9f2e0;
 }
 
 :root {
@@ -141,6 +142,10 @@
     }
 }
 
+* {
+    font-family: "Segoe UI", ui-rounded;
+}
+
 ::-webkit-scrollbar {
     width: 8px; /* Width of the vertical scrollbar */
     height: 8px; /* Height of the horizontal scrollbar */
@@ -167,4 +172,8 @@
 * {
     scrollbar-width: none; /* Make the scrollbar thin */
     scrollbar-color: var(--foreground) var(--background); /* Thumb and track colors */
+}
+
+.landing-button-background {
+    background: linear-gradient(103.17deg, rgba(211, 179, 96, 0.5) 13.72%, #EFD080 56.38%, #FFD469 94.01%);
 }

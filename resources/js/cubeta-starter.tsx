@@ -6,7 +6,7 @@ import { createInertiaApp } from "@inertiajs/react";
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "../css/cubeta-starter.css";
-import LandingLayout from "@/Components/landing/LandingLayout";
+import LandingLayout from "@/Components/layouts/LandingLayout";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 

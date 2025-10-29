@@ -1,9 +1,11 @@
-import React from "react";
+import AppLogo from "@/Components/icons/AppLogo";
+import { Link } from "@inertiajs/react";
 
 const Index = () => {
     return (
-        <div>
-           <h1>Hello World</h1>
+        <div className={"h-full w-full"}>
+            <div className={"h-screen w-full bg-landing-background"}>
+            </div>
         </div>
     );
 };
