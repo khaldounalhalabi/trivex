@@ -30,11 +30,6 @@ class BaseAuthController extends WebController
         $this->relations = [];
     }
 
-    public function roleHook(string $role)
-    {
-        $this->role = $role;
-    }
-
     public function login(AuthLoginRequest $request)
     {
         $user = $this->userService->login($request->validated(), $this->role, $this->relations);
@@ -65,7 +60,7 @@ class BaseAuthController extends WebController
         $user = $this->userService->userDetails($this->role);
 
         if ($user) {
-            return Inertia::render('user-details', [
+            return Inertia::render('dashboard/user-details', [
                 'user' => UserResource::make($user),
             ]);
         } else {
@@ -79,7 +74,7 @@ class BaseAuthController extends WebController
     {
         $result = $this->userService->passwordResetRequest($request->validated()['email']);
         if ($result) {
-            return Inertia::render('reset-password-code-form');
+            return Inertia::render('dashboard/reset-password-code-form');
         } else {
             session()->flash('error', trans('site.something_went_wrong'));
 

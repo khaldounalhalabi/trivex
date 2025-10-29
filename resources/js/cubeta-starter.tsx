@@ -1,19 +1,20 @@
 import AuthLayout from "@/Components/layouts/AuthLayout";
-import Layout from "@/Components/layouts/Layout";
+import DashboardLayout from "@/Components/layouts/Layout";
 import FatalErrorPage from "@/FatalError";
 import ErrorBoundary from "@/Handlers/ErrorBoundry";
 import { createInertiaApp } from "@inertiajs/react";
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "../css/cubeta-starter.css";
+import LandingLayout from "@/Components/landing/LandingLayout";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
 const authPages = [
-    "login",
-    "forget-password",
-    "reset-password-code-form",
-    "reset-password",
+    "dashboard/login",
+    "dashboard/forget-password",
+    "dashboard/reset-password-code-form",
+    "dashboard/reset-password",
 ];
 
 type PageWithLayout = React.ComponentType & {
@@ -36,10 +37,10 @@ Promise.resolve()
 
                 page.default.layout =
                     !authPages.includes(name) && name.includes("dashboard")
-                        ? (page) => <Layout>{page}</Layout>
+                        ? (page) => <DashboardLayout>{page}</DashboardLayout>
                         : authPages.includes(name)
                           ? (page) => <AuthLayout>{page}</AuthLayout>
-                          : (page) => <Layout>{page}</Layout>;
+                          : (page) => <LandingLayout>{page}</LandingLayout>;
 
                 return page;
             },
