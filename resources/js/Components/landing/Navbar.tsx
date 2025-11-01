@@ -1,16 +1,17 @@
 import AppLogo from "@/Components/icons/AppLogo";
+import LandingButton from "@/Components/landing/LandingButton";
 import { Link } from "@inertiajs/react";
 
 const Navbar = () => {
     return (
-        <div className={"sticky top-0 flex items-center justify-center w-full py-16"}>
-            <div className={"w-[83%] flex items-center justify-between"}>
+        <div className={"flex w-full items-center justify-center py-5"}>
+            <div className={"flex w-[83%] items-center justify-between"}>
                 <div className={"w-[7%]"}>
                     <AppLogo className={"w-full"} />
                 </div>
                 <div
                     className={
-                        "w-[58%] flex items-center justify-between text-xl"
+                        "flex w-[58%] items-center justify-between text-xl"
                     }
                 >
                     <Link>Home</Link>
@@ -19,13 +20,7 @@ const Navbar = () => {
                     <Link>Blog</Link>
                     <Link>Contact</Link>
                     <Link>
-                        <button
-                            className={
-                                "px-4 py-2 landing-button-background font-semibold"
-                            }
-                        >
-                            Get Started
-                        </button>
+                        <LandingButton>Get Started</LandingButton>
                     </Link>
                 </div>
             </div>
