@@ -273,6 +273,7 @@
     --color-landing-dark: #181818;
     --color-landing-gray: #383838;
     --color-landing-gray-secondary: #F1F1F1;
+    --color-landing-gradient-color: linear-gradient(103.17deg, rgba(211, 179, 96, 0.5) 13.72%, #EFD080 56.38%, #FFD469 94.01%);
 }
 
 :root {

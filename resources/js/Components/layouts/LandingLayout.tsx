@@ -1,3 +1,4 @@
+import Footer from "@/Components/landing/Footer";
 import Navbar from "@/Components/landing/Navbar";
 import { ReactNode } from "react";
 
@@ -6,6 +7,7 @@ const LandingLayout = ({ children }: { children: ReactNode }) => {
         <div className={"h-full w-full bg-landing-background"}>
             <Navbar />
             {children}
+            <Footer />
         </div>
     );
 };
