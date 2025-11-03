@@ -28,8 +28,8 @@ function HomeHero() {
                             security solutions trusted by governments,
                             corporations, and private clients.
                         </p>
-                        <button className="relative inline-block cursor-pointer px-5 py-3 text-landing-primary hover:bg-landing-primary hover:text-white">
-                            <span className="font-semibold text-xl">
+                        <button className="relative inline-block cursor-pointer px-5 py-3 text-landing-primary transition-all hover:bg-landing-primary hover:px-8 hover:text-white">
+                            <span className="text-xl font-semibold">
                                 Get in Touch
                             </span>
                             <div className="partial-borders"></div>
