@@ -95,7 +95,7 @@ const CaseStudy = () => {
                 />
             </div>
 
-            <NewsLetterFooter />
+            <NewsLetterFooter withFive={false} />
         </div>
     );
 };

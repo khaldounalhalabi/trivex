@@ -1,7 +1,7 @@
 import LandingButton from "@/Components/landing/LandingButton";
 import { asset } from "@/helper";
 
-function NewsLetterFooter() {
+function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
     return (
         <div className={"h-full w-full bg-landing-background"}>
             <div
@@ -37,10 +37,12 @@ function NewsLetterFooter() {
                     </p>
                 </div>
 
-                <img
-                    src={asset("/images/5.png")}
-                    className={"absolute -top-10 right-5 w-64"}
-                />
+                {withFive && (
+                    <img
+                        src={asset("/images/5.png")}
+                        className={"absolute -top-10 right-5 w-64"}
+                    />
+                )}
             </div>
             <div className={"mt-24 grid h-full w-full grid-cols-2"}>
                 <div className={"flex flex-col items-start gap-10 p-24"}>
