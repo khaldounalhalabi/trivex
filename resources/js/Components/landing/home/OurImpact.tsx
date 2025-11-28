@@ -14,6 +14,11 @@ function OurImpact() {
                 <h1 className={"text-5xl text-wrap text-white"}>
                     Global Impact Across Every Mission
                 </h1>
+                <p className={"text-white"}>
+                    16+ Years of Experience • Global Operations in High-Risk
+                    Regions • Elite Team from Military & Law Enforcement •
+                    Advanced Tech & K9 Units
+                </p>
             </div>
             <div className={"grid w-[42%] grid-cols-2 items-center gap-5"}>
                 <div className={"flex items-center gap-3"}>

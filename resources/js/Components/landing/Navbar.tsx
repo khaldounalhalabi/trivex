@@ -14,13 +14,15 @@ const Navbar = () => {
                         "flex w-[58%] items-center justify-between text-xl"
                     }
                 >
-                    <Link>Home</Link>
-                    <Link>About</Link>
+                    <Link href={route("landing.index")}>Home</Link>
+                    <Link href={route("landing.about")}>About</Link>
                     <Link>Service</Link>
                     <Link>Blog</Link>
                     <Link>Contact</Link>
                     <Link>
-                        <LandingButton>Get Started</LandingButton>
+                        <LandingButton className={"px-8 py-3"}>
+                            Get Started
+                        </LandingButton>
                     </Link>
                 </div>
             </div>

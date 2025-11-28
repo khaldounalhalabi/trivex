@@ -10,3 +10,4 @@ Route::post('/locale', [SetLocaleController::class, 'setLanguage'])
     ->name('set-locale');
 
 Route::inertia('/', 'landing/index')->name('landing.index');
+Route::inertia('/about', 'landing/about')->name('landing.about');
