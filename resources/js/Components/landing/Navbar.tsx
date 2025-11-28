@@ -16,6 +16,7 @@ const Navbar = () => {
                 >
                     <Link href={route("landing.index")}>Home</Link>
                     <Link href={route("landing.about")}>About</Link>
+                    <Link href={route("landing.case-study")}>Case Studies</Link>
                     <Link>Service</Link>
                     <Link>Blog</Link>
                     <Link>Contact</Link>
