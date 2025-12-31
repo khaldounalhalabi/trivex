@@ -13,3 +13,4 @@ Route::inertia('/', 'landing/index')->name('landing.index');
 Route::inertia('/about', 'landing/about')->name('landing.about');
 Route::inertia('/case-study', 'landing/case-study')->name('landing.case-study');
 Route::inertia('/contact', 'landing/contact')->name('landing.contact');
+Route::inertia('/faqs', 'landing/faqs')->name('landing.faqs');

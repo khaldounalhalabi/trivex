@@ -30,22 +30,25 @@ function Footer() {
                         </a>
                     </div>
                     <div className={"flex flex-col items-start gap-5"}>
-                        <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link href={route("landing.index")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             Home
                         </Link>
                         <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             Service
                         </Link>
-                        <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link href={route("landing.contact")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             Contact
                         </Link>
                     </div>
                     <div className={"flex flex-col items-start gap-5"}>
-                        <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link href={route("landing.about")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             About
                         </Link>
                         <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             Blog
+                        </Link>
+                        <Link href={route("landing.faqs")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                            FAQ's
                         </Link>
                     </div>
                 </div>
