@@ -1,3 +1,4 @@
+import AnimatedLabelInput from "@/Components/form/fields/AnimatedLabelInput";
 import AppLogo from "@/Components/icons/AppLogo";
 import { asset } from "@/helper";
 import { Link } from "@inertiajs/react";
@@ -30,24 +31,36 @@ function Footer() {
                         </a>
                     </div>
                     <div className={"flex flex-col items-start gap-5"}>
-                        <Link href={route("landing.index")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link
+                            href={route("landing.index")}
+                            className="cursor-pointer text-lg font-semibold text-white hover:underline"
+                        >
                             Home
                         </Link>
                         <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             Service
                         </Link>
-                        <Link href={route("landing.contact")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link
+                            href={route("landing.contact")}
+                            className="cursor-pointer text-lg font-semibold text-white hover:underline"
+                        >
                             Contact
                         </Link>
                     </div>
                     <div className={"flex flex-col items-start gap-5"}>
-                        <Link href={route("landing.about")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link
+                            href={route("landing.about")}
+                            className="cursor-pointer text-lg font-semibold text-white hover:underline"
+                        >
                             About
                         </Link>
                         <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             Blog
                         </Link>
-                        <Link href={route("landing.faqs")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link
+                            href={route("landing.faqs")}
+                            className="cursor-pointer text-lg font-semibold text-white hover:underline"
+                        >
                             FAQ's
                         </Link>
                     </div>
@@ -106,20 +119,14 @@ function Footer() {
                         >
                             Newsletter
                         </h1>
-                        <div className="relative z-0 w-72">
-                            <input
-                                type="text"
-                                id="floating_standard"
-                                className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-sm text-gray-900 focus:border-white focus:ring-0 focus:outline-none dark:border-gray-600 dark:text-white dark:focus:border-white"
-                                placeholder=" "
-                            />
-                            <label
-                                htmlFor="floating_standard"
-                                className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-white rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400 peer-focus:dark:text-blue-500"
-                            >
-                                Your Email
-                            </label>
-                        </div>
+                        <AnimatedLabelInput
+                            name={"email"}
+                            labelClassName={
+                                "text-gray-500 peer-focus:text-white  dark:text-gray-400"
+                            }
+                            label={"Your Email"}
+                            className={"w-72 scale-100"}
+                        />
                         <button
                             className={
                                 "pt-3 text-3xl font-semibold text-landing-primary"

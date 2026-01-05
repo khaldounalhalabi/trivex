@@ -1,4 +1,5 @@
 import { asset } from "@/helper";
+import { Link } from "@inertiajs/react";
 
 function HomeHero() {
     return (
@@ -28,12 +29,14 @@ function HomeHero() {
                             security solutions trusted by governments,
                             corporations, and private clients.
                         </p>
-                        <button className="relative inline-block cursor-pointer px-5 py-3 text-landing-primary transition-all hover:bg-landing-primary hover:px-8 hover:text-white">
-                            <span className="text-xl font-semibold">
-                                Get in Touch
-                            </span>
-                            <div className="partial-borders"></div>
-                        </button>
+                        <Link href={route("landing.request.quote")}>
+                            <button className="relative inline-block cursor-pointer px-5 py-3 text-landing-primary transition-all hover:bg-landing-primary hover:px-8 hover:text-white">
+                                <span className="text-xl font-semibold">
+                                    Get in Touch
+                                </span>
+                                <div className="partial-borders"></div>
+                            </button>
+                        </Link>
                         <img
                             src={asset("/images/hero-donut.png")}
                             className={
