@@ -18,10 +18,10 @@ return Application::configure(basePath: dirname(__DIR__))
             Route::middleware(['web',
                 'locale',
             ])
-                ->group(base_path('routes\v1\web\public.php'));
+                ->group(base_path('routes/v1/web/public.php'));
 
             Route::middleware(['web', 'locale', 'authenticated:web'])
-                ->group(base_path('routes\v1\web\protected.php'));
+                ->group(base_path('routes/v1/web/protected.php'));
 
         }
     )
