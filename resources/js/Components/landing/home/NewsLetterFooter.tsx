@@ -61,7 +61,7 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
                         evolving threats with confidence.
                     </p>
                     <Link
-                        href={window.location.href + "#newsletter-footer"}
+                        href={"#newsletter-footer"}
                         className={
                             "flex cursor-pointer items-center gap-3 transition-all duration-200 hover:gap-5"
                         }
