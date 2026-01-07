@@ -1,5 +1,6 @@
 import LandingButton from "@/Components/landing/LandingButton";
 import { asset } from "@/helper";
+import { Link } from "@inertiajs/react";
 
 function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
     return (
@@ -59,14 +60,15 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
                         governments, and private clients navigate today’s
                         evolving threats with confidence.
                     </p>
-                    <div
+                    <Link
+                        href={window.location.href + "#newsletter-footer"}
                         className={
                             "flex cursor-pointer items-center gap-3 transition-all duration-200 hover:gap-5"
                         }
                     >
                         <div className={"h-0.5 w-16 bg-black"} />
                         <p className={"text-lg font-semibold"}>Subscribe</p>
-                    </div>
+                    </Link>
                 </div>
                 <div
                     className={
@@ -84,9 +86,11 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
                         defence support to secure your people, assets, and
                         critical operations globally.
                     </p>
-                    <LandingButton className={"px-5 py-3"}>
-                        Contact Us
-                    </LandingButton>
+                    <Link href={route("landing.contact")}>
+                        <LandingButton className={"px-5 py-3"}>
+                            Contact Us
+                        </LandingButton>
+                    </Link>
                 </div>
             </div>
         </div>

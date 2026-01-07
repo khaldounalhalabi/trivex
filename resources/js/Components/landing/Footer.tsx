@@ -116,6 +116,7 @@ function Footer() {
                             className={
                                 "mb-16 text-3xl font-semibold text-white"
                             }
+                            id={"newsletter-footer"}
                         >
                             Newsletter
                         </h1>
