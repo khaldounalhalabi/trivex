@@ -34,7 +34,12 @@ const Navbar = () => {
                         Case Studies
                     </Link>
 
-                    <Link className={`${linkStyles}`}>Services</Link>
+                    <Link
+                        className={`${linkStyles}`}
+                        href={route("landing.services")}
+                    >
+                        Services
+                    </Link>
                     <Link
                         href={route("landing.contact")}
                         className={linkStyles}

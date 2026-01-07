@@ -16,3 +16,5 @@ Route::inertia('/contact', 'landing/contact')->name('landing.contact');
 Route::inertia('/faqs', 'landing/faqs')->name('landing.faqs');
 Route::inertia('/request-quote', 'landing/request-quote')->name('landing.request.quote');
 Route::inertia('/industries-we-serve', 'landing/industries')->name('landing.industries');
+Route::inertia('/services', 'landing/services/index')->name('landing.services');
+Route::inertia('/services/{id}', 'landing/services/show')->name('landing.services.show');
