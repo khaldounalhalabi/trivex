@@ -1,0 +1,163 @@
+{
+  "resources/fonts/play-fair/PlayfairDisplay-Black.ttf": {
+    "file": "assets/PlayfairDisplay-Black-fT6MyzXp.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-Black.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-BlackItalic.ttf": {
+    "file": "assets/PlayfairDisplay-BlackItalic-CDTQWUAv.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-BlackItalic.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-Bold.ttf": {
+    "file": "assets/PlayfairDisplay-Bold-Dsgb2Oov.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-Bold.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-BoldItalic.ttf": {
+    "file": "assets/PlayfairDisplay-BoldItalic-Dyxttjke.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-BoldItalic.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-ExtraBold.ttf": {
+    "file": "assets/PlayfairDisplay-ExtraBold-BFM5yRBW.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-ExtraBold.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-ExtraBoldItalic.ttf": {
+    "file": "assets/PlayfairDisplay-ExtraBoldItalic-DCXtv1i2.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-ExtraBoldItalic.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-Italic.ttf": {
+    "file": "assets/PlayfairDisplay-Italic-k7ygr7eI.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-Italic.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-Medium.ttf": {
+    "file": "assets/PlayfairDisplay-Medium-BTlPw0MP.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-Medium.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-MediumItalic.ttf": {
+    "file": "assets/PlayfairDisplay-MediumItalic-Cr7xHRHu.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-MediumItalic.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-Regular.ttf": {
+    "file": "assets/PlayfairDisplay-Regular-cAkczocX.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-Regular.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-SemiBold.ttf": {
+    "file": "assets/PlayfairDisplay-SemiBold-lpftM5a9.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-SemiBold.ttf"
+  },
+  "resources/fonts/play-fair/PlayfairDisplay-SemiBoldItalic.ttf": {
+    "file": "assets/PlayfairDisplay-SemiBoldItalic-Cx5FUL8x.ttf",
+    "src": "resources/fonts/play-fair/PlayfairDisplay-SemiBoldItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-Black.ttf": {
+    "file": "assets/Raleway-Black-Bhbh-GP7.ttf",
+    "src": "resources/fonts/raleway/Raleway-Black.ttf"
+  },
+  "resources/fonts/raleway/Raleway-BlackItalic.ttf": {
+    "file": "assets/Raleway-BlackItalic-TAPlXex5.ttf",
+    "src": "resources/fonts/raleway/Raleway-BlackItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-Bold.ttf": {
+    "file": "assets/Raleway-Bold-Di4HIyEX.ttf",
+    "src": "resources/fonts/raleway/Raleway-Bold.ttf"
+  },
+  "resources/fonts/raleway/Raleway-BoldItalic.ttf": {
+    "file": "assets/Raleway-BoldItalic-CnyiZDR7.ttf",
+    "src": "resources/fonts/raleway/Raleway-BoldItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-ExtraBold.ttf": {
+    "file": "assets/Raleway-ExtraBold-C5VxzOoK.ttf",
+    "src": "resources/fonts/raleway/Raleway-ExtraBold.ttf"
+  },
+  "resources/fonts/raleway/Raleway-ExtraBoldItalic.ttf": {
+    "file": "assets/Raleway-ExtraBoldItalic-C3T21nTs.ttf",
+    "src": "resources/fonts/raleway/Raleway-ExtraBoldItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-ExtraLight.ttf": {
+    "file": "assets/Raleway-ExtraLight-fuz8oI2D.ttf",
+    "src": "resources/fonts/raleway/Raleway-ExtraLight.ttf"
+  },
+  "resources/fonts/raleway/Raleway-ExtraLightItalic.ttf": {
+    "file": "assets/Raleway-ExtraLightItalic-B0VoPTAm.ttf",
+    "src": "resources/fonts/raleway/Raleway-ExtraLightItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-Italic.ttf": {
+    "file": "assets/Raleway-Italic-Bg1hAAir.ttf",
+    "src": "resources/fonts/raleway/Raleway-Italic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-Light.ttf": {
+    "file": "assets/Raleway-Light-CzNEsIOm.ttf",
+    "src": "resources/fonts/raleway/Raleway-Light.ttf"
+  },
+  "resources/fonts/raleway/Raleway-LightItalic.ttf": {
+    "file": "assets/Raleway-LightItalic-C8-34sjn.ttf",
+    "src": "resources/fonts/raleway/Raleway-LightItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-Medium.ttf": {
+    "file": "assets/Raleway-Medium-DjHH8n3v.ttf",
+    "src": "resources/fonts/raleway/Raleway-Medium.ttf"
+  },
+  "resources/fonts/raleway/Raleway-MediumItalic.ttf": {
+    "file": "assets/Raleway-MediumItalic-z7Cunupp.ttf",
+    "src": "resources/fonts/raleway/Raleway-MediumItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-Regular.ttf": {
+    "file": "assets/Raleway-Regular-BViwVpSC.ttf",
+    "src": "resources/fonts/raleway/Raleway-Regular.ttf"
+  },
+  "resources/fonts/raleway/Raleway-SemiBold.ttf": {
+    "file": "assets/Raleway-SemiBold-5I43jA9G.ttf",
+    "src": "resources/fonts/raleway/Raleway-SemiBold.ttf"
+  },
+  "resources/fonts/raleway/Raleway-SemiBoldItalic.ttf": {
+    "file": "assets/Raleway-SemiBoldItalic-YznkqAjT.ttf",
+    "src": "resources/fonts/raleway/Raleway-SemiBoldItalic.ttf"
+  },
+  "resources/fonts/raleway/Raleway-Thin.ttf": {
+    "file": "assets/Raleway-Thin-OGp2WqvY.ttf",
+    "src": "resources/fonts/raleway/Raleway-Thin.ttf"
+  },
+  "resources/fonts/raleway/Raleway-ThinItalic.ttf": {
+    "file": "assets/Raleway-ThinItalic-CnmvDygT.ttf",
+    "src": "resources/fonts/raleway/Raleway-ThinItalic.ttf"
+  },
+  "resources/js/cubeta-starter.tsx": {
+    "file": "assets/cubeta-starter-DxJ1hyt3.js",
+    "name": "cubeta-starter",
+    "src": "resources/js/cubeta-starter.tsx",
+    "isEntry": true,
+    "css": [
+      "assets/cubeta-starter--H-mWof9.css"
+    ],
+    "assets": [
+      "assets/PlayfairDisplay-Regular-cAkczocX.ttf",
+      "assets/PlayfairDisplay-Italic-k7ygr7eI.ttf",
+      "assets/PlayfairDisplay-Medium-BTlPw0MP.ttf",
+      "assets/PlayfairDisplay-MediumItalic-Cr7xHRHu.ttf",
+      "assets/PlayfairDisplay-SemiBold-lpftM5a9.ttf",
+      "assets/PlayfairDisplay-SemiBoldItalic-Cx5FUL8x.ttf",
+      "assets/PlayfairDisplay-Bold-Dsgb2Oov.ttf",
+      "assets/PlayfairDisplay-BoldItalic-Dyxttjke.ttf",
+      "assets/PlayfairDisplay-ExtraBold-BFM5yRBW.ttf",
+      "assets/PlayfairDisplay-ExtraBoldItalic-DCXtv1i2.ttf",
+      "assets/PlayfairDisplay-Black-fT6MyzXp.ttf",
+      "assets/PlayfairDisplay-BlackItalic-CDTQWUAv.ttf",
+      "assets/Raleway-Thin-OGp2WqvY.ttf",
+      "assets/Raleway-ThinItalic-CnmvDygT.ttf",
+      "assets/Raleway-ExtraLight-fuz8oI2D.ttf",
+      "assets/Raleway-ExtraLightItalic-B0VoPTAm.ttf",
+      "assets/Raleway-Light-CzNEsIOm.ttf",
+      "assets/Raleway-LightItalic-C8-34sjn.ttf",
+      "assets/Raleway-Regular-BViwVpSC.ttf",
+      "assets/Raleway-Italic-Bg1hAAir.ttf",
+      "assets/Raleway-Medium-DjHH8n3v.ttf",
+      "assets/Raleway-MediumItalic-z7Cunupp.ttf",
+      "assets/Raleway-SemiBold-5I43jA9G.ttf",
+      "assets/Raleway-SemiBoldItalic-YznkqAjT.ttf",
+      "assets/Raleway-Bold-Di4HIyEX.ttf",
+      "assets/Raleway-BoldItalic-CnyiZDR7.ttf",
+      "assets/Raleway-ExtraBold-C5VxzOoK.ttf",
+      "assets/Raleway-ExtraBoldItalic-C3T21nTs.ttf",
+      "assets/Raleway-Black-Bhbh-GP7.ttf",
+      "assets/Raleway-BlackItalic-TAPlXex5.ttf"
+    ]
+  }
+}
