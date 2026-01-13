@@ -4,6 +4,7 @@ namespace App\Http\Controllers\LANDING\v1;
 
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Models\NewsletterEmail;
 use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\WebController;
 use App\Services\v1\NewsletterEmail\NewsletterEmailService;
@@ -20,8 +21,16 @@ class NewsletterEmailController extends WebController
     public function subscribe(Request $request)
     {
         $data = $request->validate([
-            'email' => 'required|email|string|unique:newsletter_emails,email',
+            'email' => 'required|email|string',
         ]);
+
+        $existingEmail = NewsletterEmail::where('email', $data['email'])->first();
+
+        if ($existingEmail) {
+            $existingEmail->update(['is_subscribed' => true]);
+        } else {
+            $this->service->store($data);
+        }
 
         $this->service->store($data);
 
