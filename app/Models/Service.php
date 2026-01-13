@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @property int                                                             $id
@@ -21,6 +22,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property array{url:string,size:string,extension:string,mime_type:string} $image
  * @property Carbon                                                          $created_at
  * @property Carbon                                                          $updated_at
+ * @property ServiceOverview|null                                            $serviceOverview
  *
  * @mixin Builder<Service>
  *
@@ -86,5 +88,13 @@ class Service extends Model
     public function serviceFeatures(): HasMany
     {
         return $this->hasMany(ServiceFeature::class);
+    }
+
+    /**
+     * @return HasOne<ServiceOverview, static>
+     */
+    public function serviceOverview(): HasOne
+    {
+        return $this->hasOne(ServiceOverview::class);
     }
 }

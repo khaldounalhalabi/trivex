@@ -148,7 +148,7 @@ class MediaCast implements CastsAttributes
         foreach ($value as $item) {
             if (SerializedMedia::isMediaArray($item) || $item instanceof UploadedFile) {
                 $file = new SerializedMedia($item, $model->getTable(), $this->private);
-                if (! $file->exists()) {
+                if ($file->exists()) {
                     $stored[] = $file->toArray();
                 }
             } elseif ($item instanceof SerializedMedia) {

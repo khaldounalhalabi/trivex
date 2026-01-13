@@ -88,6 +88,12 @@
                 ]
             },
             "version": "v1"
+        },
+        {
+            "model_name": "ServiceOverview",
+            "table_name": "service_overviews",
+            "attributes": [],
+            "version": "v1"
         }
     ]
 }

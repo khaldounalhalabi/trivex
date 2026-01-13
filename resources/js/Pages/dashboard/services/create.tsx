@@ -13,6 +13,10 @@ const Create = () => {
         description: string;
         cover?: File | undefined;
         image?: File | undefined;
+        service_overview: {
+            description: string;
+            images: File[];
+        };
     }>();
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -48,6 +52,17 @@ const Create = () => {
                         type={"file"}
                         required
                     />
+                    <Input
+                        name="service_overview.images"
+                        label={"Overview Images (Multiple Images Allowed)"}
+                        onChange={(e) => {
+                            const files = Array.from(e.target.files ?? []);
+                            setData("service_overview.images", files);
+                        }}
+                        type={"file"}
+                        required
+                        multiple={true}
+                    />
                     <div className="md:col-span-2">
                         <Textarea
                             name="small_description"
@@ -66,6 +81,19 @@ const Create = () => {
                                 setData("description", e.target.value)
                             }
                             required
+                        />
+                    </div>
+                    <div className="md:col-span-2">
+                        <Textarea
+                            name={"service_overview.description"}
+                            label={"Overview Description"}
+                            required
+                            onChange={(e) => {
+                                setData(
+                                    "service_overview.description",
+                                    e.target.value,
+                                );
+                            }}
                         />
                     </div>
                 </div>

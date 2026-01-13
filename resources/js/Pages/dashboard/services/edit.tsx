@@ -15,6 +15,10 @@ const Edit = ({ service }: { service: Service }) => {
         description: string;
         cover?: File | undefined | Media;
         image?: File | undefined | Media;
+        service_overview: {
+            description: string | undefined;
+            images: File[] | Media[] | undefined;
+        };
     }>({
         _method: "PUT",
         name: service?.name,
@@ -22,6 +26,10 @@ const Edit = ({ service }: { service: Service }) => {
         description: service?.description,
         cover: service.cover,
         image: service.image,
+        service_overview: {
+            description: service.service_overview?.description,
+            images: service.service_overview?.images,
+        },
     });
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -56,6 +64,16 @@ const Edit = ({ service }: { service: Service }) => {
                         onChange={(e) => setData("image", e.target.files?.[0])}
                         type={"file"}
                     />
+                    <Input
+                        name="service_overview.images"
+                        label={"Overview Images (Multiple Images Allowed)"}
+                        onChange={(e) => {
+                            const files = Array.from(e.target.files ?? []);
+                            setData("service_overview.images", files);
+                        }}
+                        type={"file"}
+                        multiple={true}
+                    />
                     <div className="md:col-span-2">
                         <Textarea
                             name="small_description"
@@ -76,6 +94,20 @@ const Edit = ({ service }: { service: Service }) => {
                             }
                             defaultValue={service.description}
                             required
+                        />
+                    </div>
+                    <div className="md:col-span-2">
+                        <Textarea
+                            name={"service_overview.description"}
+                            label={"Overview Description"}
+                            defaultValue={service.service_overview?.description}
+                            required
+                            onChange={(e) => {
+                                setData(
+                                    "service_overview.description",
+                                    e.target.value,
+                                );
+                            }}
                         />
                     </div>
                 </div>

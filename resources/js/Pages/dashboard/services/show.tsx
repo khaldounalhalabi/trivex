@@ -36,11 +36,23 @@ const Show = ({ service }: { service: Service }) => {
                     value={service.description}
                     className={"md:col-span-2"}
                 />
+                <LongTextField
+                    label="Overview Description"
+                    value={service.service_overview?.description}
+                    className={"md:col-span-2"}
+                />
                 <Label label={"Cover"} col className={"md:col-span-2"}>
                     <Gallery sources={[service?.cover?.url]} />
                 </Label>
                 <Label label={"Image"} col className={"md:col-span-2"}>
                     <Gallery sources={[service?.image?.url]} />
+                </Label>
+                <Label label={"Overview Image"} col className={"md:col-span-2"}>
+                    <Gallery
+                        sources={service?.service_overview?.images.map(
+                            (i) => i.url,
+                        )}
+                    />
                 </Label>
             </div>
         </PageCard>

@@ -18,7 +18,7 @@ class ServiceController extends WebController
     {
         $this->serviceService = ServiceService::make();
         // place the relations you want to return them within the response
-        $this->relations = ['serviceFeatures'];
+        $this->relations = ['serviceFeatures', 'serviceOverview'];
     }
 
     public function data()
