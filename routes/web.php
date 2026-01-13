@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\LANDING\v1\FAQController;
-use App\Http\Controllers\LANDING\v1\QuoteRequestController;
 use App\Http\Controllers\LANDING\v1\NewsletterEmailController;
+use App\Http\Controllers\LANDING\v1\QuoteRequestController;
 use App\Http\Controllers\LANDING\v1\ServiceController;
 use App\Http\Controllers\LANDING\v1\SiteController;
 use App\Http\Controllers\SetLocaleController;
@@ -29,3 +29,4 @@ Route::get('/services', [ServiceController::class, 'index'])->name('landing.serv
 Route::get('/services/{id}', [ServiceController::class, 'show'])->name('landing.services.show');
 
 Route::post('newsletter/subscribe', [NewsletterEmailController::class, 'subscribe'])->name('landing.newsletter.subscribe');
+Route::get('newsletter/unsubscribe', [NewsletterEmailController::class, 'unsubscribe'])->name('landing.newsletter.unsubscribe');

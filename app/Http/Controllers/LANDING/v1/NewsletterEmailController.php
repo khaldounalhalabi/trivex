@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\LANDING\v1;
 
+use Inertia\Inertia;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\WebController;
 use App\Services\v1\NewsletterEmail\NewsletterEmailService;
-use Illuminate\Http\Request;
 
 class NewsletterEmailController extends WebController
 {
@@ -24,5 +26,14 @@ class NewsletterEmailController extends WebController
         $this->service->store($data);
 
         return redirect()->back();
+    }
+
+    public function unsubscribe(Request $request)
+    {
+        $token = $request->string('token');
+        $email = Crypt::decryptString("$token");
+        $this->service->unsubscribe($email);
+
+        return Inertia::render('landing/newsletter-unsubscribed', ['appUrl' => config('app.url')]);
     }
 }

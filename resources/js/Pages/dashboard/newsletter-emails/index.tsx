@@ -2,8 +2,11 @@ import ActionsButtons from "@/components/datatable/ActionsButtons";
 import DataTable from "@/components/datatable/DataTable";
 import Select from "@/components/form/fields/selects/Select";
 import { Badge } from "@/components/ui/shadcn/badge";
+import { Button } from "@/components/ui/shadcn/button";
 import NewsletterEmail from "@/Models/NewsletterEmail";
 import Http from "@/Modules/Http/Http";
+import { Link } from "@inertiajs/react";
+import { Mail } from "lucide-react";
 
 const Index = ({ exportables }: { exportables: string[] }) => {
     return (
@@ -13,6 +16,15 @@ const Index = ({ exportables }: { exportables: string[] }) => {
             getDataArray={(res) => res.data}
             getTotalPages={(res) => res?.paginate?.total_pages ?? 0}
             getTotalRecords={(res) => res.paginate?.total ?? 0}
+            extraButtons={() => (
+                <Link
+                    href={route("v1.web.protected.newsletter.emails.send.page")}
+                >
+                    <Button size={"icon"}>
+                        <Mail />
+                    </Button>
+                </Link>
+            )}
             filter={(params, setParams) => {
                 return (
                     <Select

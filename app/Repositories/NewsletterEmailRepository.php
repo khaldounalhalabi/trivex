@@ -11,4 +11,11 @@ use App\Repositories\Contracts\BaseRepository;
 class NewsletterEmailRepository extends BaseRepository
 {
     protected string $modelClass = NewsletterEmail::class;
+
+    public function getByEmail(string $email): ?NewsletterEmail
+    {
+        return $this->globalQuery()
+            ->where('email', $email)
+            ->first();
+    }
 }

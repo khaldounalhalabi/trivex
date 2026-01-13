@@ -2,15 +2,16 @@
 
 namespace App\Http\Middleware;
 
+use Inertia\Middleware;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Concurrency;
+use Psr\Container\NotFoundExceptionInterface;
+use Psr\Container\ContainerExceptionInterface;
+use Illuminate\Http\Resources\Json\JsonResource;
 use App\Modules\Settings\App\Enums\SettingKeyEnum;
 use App\Modules\Settings\App\Services\SettingService;
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
-use Inertia\Middleware;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -18,7 +19,6 @@ class HandleInertiaRequests extends Middleware
      * The root template that's loaded on the first page visit.
      *
      * @see https://inertiajs.com/server-side-setup#root-template
-     *
      * @var string
      */
     protected $rootView = 'app';
@@ -37,9 +37,7 @@ class HandleInertiaRequests extends Middleware
      * Define the props that are shared by default.
      *
      * @see https://inertiajs.com/shared-data
-     *
      * @return array<string, mixed>
-     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
@@ -47,24 +45,26 @@ class HandleInertiaRequests extends Middleware
     {
         JsonResource::withoutWrapping();
 
-        $email = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_EMAIL->value);
-        $address = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_ADDRESS->value);
-        $phone = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value);
+        [$email, $address, $phone] = Concurrency::run([
+            fn() => SettingService::make()->valueOf(SettingKeyEnum::CONTACT_EMAIL->value),
+            fn() => SettingService::make()->valueOf(SettingKeyEnum::CONTACT_ADDRESS->value),
+            fn() => SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value),
+        ]);
 
         return array_merge(parent::share($request), [
             'availableLocales' => config('cubeta-starter.available_locales'),
-            'currentLocale'    => Session::get('locale') ?? 'en',
-            'authUser'         => auth()->user(),
-            'currentRoute'     => Str::replace(config('app.url'), '', $request->fullUrl()),
-            'asset'            => asset('/'),
-            'baseUrl'          => (config('cubeta-starter.project_url') ?? config('app.url')) ?? '/',
-            'message'          => session()->get('message') ?? null,
-            'error'            => session()->get('error') ?? null,
-            'success'          => session()->get('success') ?? null,
-            'contact'          => [
-                'email'   => $email,
+            'currentLocale' => Session::get('locale') ?? 'en',
+            'authUser' => auth()->user(),
+            'currentRoute' => Str::replace(config('app.url'), '', $request->fullUrl()),
+            'asset' => asset('/'),
+            'baseUrl' => (config('cubeta-starter.project_url') ?? config('app.url')) ?? '/',
+            'message' => session()->get('message') ?? null,
+            'error' => session()->get('error') ?? null,
+            'success' => session()->get('success') ?? null,
+            'contact' => [
+                'email' => $email,
                 'address' => $address,
-                'phone'   => $phone,
+                'phone' => $phone,
             ],
         ]);
     }

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\WEB\v1;
 
-use App\Http\Controllers\WebController;
-use App\Models\NewsletterEmail;
-use App\Services\v1\NewsletterEmail\NewsletterEmailService;
 use Exception;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
+use App\Models\NewsletterEmail;
+use App\Http\Controllers\WebController;
+use App\Services\v1\NewsletterEmail\NewsletterEmailService;
+use App\Http\Requests\v1\NewsletterEmail\SendNewsletterEmailRequest;
 
 class NewsletterEmailController extends WebController
 {
@@ -47,8 +48,8 @@ class NewsletterEmailController extends WebController
         return rest()
             ->when(
                 $result,
-                fn ($rest) => $rest->ok()->deleteSuccess(),
-                fn ($rest) => $rest->noData(),
+                fn($rest) => $rest->ok()->deleteSuccess(),
+                fn($rest) => $rest->noData(),
             )->send();
     }
 
@@ -66,5 +67,14 @@ class NewsletterEmailController extends WebController
                 ->back()
                 ->with('error', trans('site.something_went_wrong'));
         }
+    }
+
+    public function sendNewsletter(SendNewsletterEmailRequest $request)
+    {
+        $this->newsletterEmailService->sendNewsletter($request->validated());
+
+        return redirect()
+            ->route('v1.web.protected.newsletter.emails.index')
+            ->with('success', trans('site.success'));
     }
 }
