@@ -6,7 +6,6 @@ use App\Modules\Settings\App\Enums\SettingKeyEnum;
 use App\Modules\Settings\App\Services\SettingService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Concurrency;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Inertia\Middleware;

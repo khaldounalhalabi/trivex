@@ -30,11 +30,9 @@ class NewsletterEmailService extends BaseService
 
     public function sendNewsletter(array $data): void
     {
-        [$contactEmail, $contactAddress, $contactPhone] = Concurrency::run([
-            fn () => SettingService::make()->valueOf(SettingKeyEnum::CONTACT_EMAIL->value),
-            fn () => SettingService::make()->valueOf(SettingKeyEnum::CONTACT_ADDRESS->value),
-            fn () => SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value),
-        ]);
+        $contactEmail = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_EMAIL->value);
+        $contactAddress = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_ADDRESS->value);
+        $contactPhone = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value);
 
         Concurrency::defer([
             function () use ($contactPhone, $contactAddress, $contactEmail, $data) {
