@@ -15,22 +15,30 @@ use Stringable;
 
 class SerializedMedia implements Arrayable, Jsonable, JsonSerializable, Stringable
 {
-    private UploadedFile $file;
     public readonly string $url;
+
     public readonly string $extension;
+
     public readonly string $mimeType;
+
     public readonly int $size;
+
     public readonly string $dir;
+
     public readonly bool $private;
+
     public readonly string $path;
+
+    private UploadedFile $file;
 
     /**
      * @param UploadedFile|array{url:string,extension:string,mime_type:string,size:int, path:string} $file
+     *
      * @throws Exception
      */
     public function __construct(UploadedFile|array $file, ?string $dir = null, bool $private = false)
     {
-        $this->dir = $dir ?? "";
+        $this->dir = $dir ?? '';
         $this->private = $private;
 
         if (self::isMediaArray($file)) {
@@ -38,8 +46,8 @@ class SerializedMedia implements Arrayable, Jsonable, JsonSerializable, Stringab
             $this->extension = $file['extension'];
             $this->mimeType = $file['mime_type'];
             $this->size = intval($file['size']);
-            $access = $this->private ? "private" : "public";
-            $this->path = $file['path'] ?? str_replace(asset("/storage"), storage_path("/app/$access"), $this->url);
+            $access = $this->private ? 'private' : 'public';
+            $this->path = $file['path'] ?? str_replace(asset('/storage'), storage_path("/app/$access"), $this->url);
         } else {
             $this->file = $file;
             $path = $this->storeFile();
@@ -52,36 +60,9 @@ class SerializedMedia implements Arrayable, Jsonable, JsonSerializable, Stringab
         }
     }
 
-    private function storeFile(): string
-    {
-        $access = $this->private ? "private" : "public";
-        $directory = storage_path("app/$access/$this->dir");
-        if (!is_dir($directory)) {
-            File::makeDirectory(storage_path("app/$access/$this->dir"), 0777, true);
-        }
-        return $this->file->store($this->dir, [
-            'disk' => $this->private ? "local" : "public",
-        ]);
-    }
-
-    private function format(string $value): array
-    {
-        $access = $this->private ? "private" : "public";
-        $fullPath = storage_path("app/$access/" . trim($value, '/'));
-        $fileExists = file_exists($fullPath);
-        $extension = File::extension($fullPath);
-        return [
-            'url' => asset("storage/$value"),
-            'size' => $fileExists ? round(filesize($fullPath) / 1024) : 0,
-            'extension' => $extension,
-            'mime_type' => $fileExists ? MimeType::fromExtension($extension) : "unknown",
-            'full_path' => $fullPath,
-        ];
-    }
-
     public static function isMediaArray(mixed $value): bool
     {
-        if (!is_array($value)) {
+        if (! is_array($value)) {
             return false;
         }
 
@@ -91,71 +72,52 @@ class SerializedMedia implements Arrayable, Jsonable, JsonSerializable, Stringab
             && isset($value['size']);
     }
 
-    public function delete(): bool
+    private function storeFile(): string
     {
-        if (file_exists($this->path)) {
-            return unlink($this->path);
+        $access = $this->private ? 'private' : 'public';
+        $directory = storage_path("app/$access/$this->dir");
+        if (! is_dir($directory)) {
+            File::makeDirectory(storage_path("app/$access/$this->dir"), 0777, true);
         }
 
-        return false;
+        return $this->file->store($this->dir, [
+            'disk' => $this->private ? 'local' : 'public',
+        ]);
     }
 
-    public function toArray(): array
+    private function format(string $value): array
     {
+        $access = $this->private ? 'private' : 'public';
+        $fullPath = storage_path("app/$access/".trim($value, '/'));
+        $fileExists = file_exists($fullPath);
+        $extension = File::extension($fullPath);
+
         return [
-            'url' => $this->url,
-            'size' => $this->size,
-            'extension' => $this->extension,
-            'mime_type' => $this->mimeType,
-            'path' => $this->path,
+            'url'       => asset("storage/$value"),
+            'size'      => $fileExists ? round(filesize($fullPath) / 1024) : 0,
+            'extension' => $extension,
+            'mime_type' => $fileExists ? MimeType::fromExtension($extension) : 'unknown',
+            'full_path' => $fullPath,
         ];
-    }
-
-    public function __toString(): string
-    {
-        return $this->toJson();
-    }
-
-    public function toJson($options = 0): string
-    {
-        return json_encode($this->toArray(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'url' => $this->url,
-            'size' => $this->size,
-            'extension' => $this->extension,
-            'mime_type' => $this->mimeType,
-        ];
-    }
-
-    public function exists(): bool
-    {
-        return file_exists($this->path);
-    }
-
-    public function name(): string
-    {
-        return pathinfo($this->path, PATHINFO_FILENAME);
     }
 
     /**
      * Note: default rules are for images
-     * @param string[]|Closure[] $fileRules
+     *
+     * @param  string[]|Closure[] $fileRules
      * @return Closure
      */
-    public static function validator(array $fileRules = ['image', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp']): Closure
-    {
+    public static function validator(array $fileRules = ['image', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp'],
+    ): Closure {
         return function ($attribute, $value, $fail) use ($fileRules) {
-            if (!SerializedMedia::isMediaArray($value)) {
+            if (! SerializedMedia::isMediaArray($value)) {
                 $fail('Invalid media array');
             }
 
             $file = new self($value);
-            if (!$file->exists()) {
+            if (! $file->exists()) {
                 $fail('Invalid media file');
+
                 return;
             }
 
@@ -170,5 +132,55 @@ class SerializedMedia implements Arrayable, Jsonable, JsonSerializable, Stringab
                 $fail($validator->errors()->first());
             }
         };
+    }
+
+    public function exists(): bool
+    {
+        return file_exists($this->path);
+    }
+
+    public function name(): string
+    {
+        return pathinfo($this->path, PATHINFO_FILENAME);
+    }
+
+    public function delete(): bool
+    {
+        if (file_exists($this->path)) {
+            return unlink($this->path);
+        }
+
+        return false;
+    }
+
+    public function __toString(): string
+    {
+        return $this->toJson();
+    }
+
+    public function toJson($options = 0): string
+    {
+        return json_encode($this->toArray(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'url'       => $this->url,
+            'size'      => $this->size,
+            'extension' => $this->extension,
+            'mime_type' => $this->mimeType,
+            'path'      => $this->path,
+        ];
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'url'       => $this->url,
+            'size'      => $this->size,
+            'extension' => $this->extension,
+            'mime_type' => $this->mimeType,
+        ];
     }
 }

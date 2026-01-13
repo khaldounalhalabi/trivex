@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,9 +15,13 @@ class DatabaseSeeder extends Seeder
         User::factory()
             ->create([
                 'first_name' => 'Ali',
-                'last_name' => 'Alrweishdy',
-                'email' => 'ali@trivex.com',
-                'password' => '123456789',
+                'last_name'  => 'Taleb',
+                'email'      => 'ali@trivex.com',
+                'password'   => '123456789',
             ]);
+
+        $this->call([
+            ServiceSeeder::class,
+        ]);
     }
 }

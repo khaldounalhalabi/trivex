@@ -12,7 +12,7 @@ import {
 import { MiddlewareProps } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
 import { type Icon } from "@tabler/icons-react";
-import { BadgePlus } from "lucide-react";
+import { BadgePlus, GitCommitVerticalIcon } from "lucide-react";
 import React from "react";
 
 export function Sidebar({
@@ -27,7 +27,13 @@ export function Sidebar({
             href?: string;
             icon?: Icon;
         }[];
-    }[] = [];
+    }[] = [
+        {
+            title: "Services",
+            href: route("v1.web.protected.services.index"),
+            icon: () => <GitCommitVerticalIcon />,
+        },
+    ];
 
     const { authUser } = usePage<MiddlewareProps>().props;
     return (
@@ -37,12 +43,12 @@ export function Sidebar({
                     <SidebarMenuItem>
                         <SidebarMenuButton
                             asChild
-                            className="data-[slot=sidebar-menu-button]:!p-1.5"
+                            className="data-[slot=sidebar-menu-button]:p-1.5!"
                         >
                             <Link href={route("v1.web.protected.index")}>
-                                <BadgePlus className="!size-5" />
+                                <BadgePlus className="size-5!" />
                                 <span className="text-base font-semibold">
-                                    LMS Dashboard
+                                    Trivex
                                 </span>
                             </Link>
                         </SidebarMenuButton>

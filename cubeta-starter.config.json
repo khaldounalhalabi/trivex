@@ -2,5 +2,52 @@
     "installed_web": true,
     "frontend_type": "React & Typescript",
     "installed_web_packages": true,
-    "installed_web_auth": true
+    "installed_web_auth": true,
+    "tables": [
+        {
+            "model_name": "Service",
+            "table_name": "services",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "nullable": false,
+                    "unique": false
+                },
+                {
+                    "name": "small_description",
+                    "type": "text",
+                    "nullable": false,
+                    "unique": false
+                },
+                {
+                    "name": "description",
+                    "type": "text",
+                    "nullable": false,
+                    "unique": false
+                },
+                {
+                    "name": "cover",
+                    "type": "file",
+                    "nullable": false,
+                    "unique": false
+                },
+                {
+                    "name": "image",
+                    "type": "file",
+                    "nullable": false,
+                    "unique": false
+                }
+            ],
+            "relations": {
+                "hasMany": [
+                    {
+                        "type": "hasMany",
+                        "model_name": "ServiceFeature"
+                    }
+                ]
+            },
+            "version": "v1"
+        }
+    ]
 }

@@ -5,6 +5,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/Components/ui/shadcn/card";
+import { cn } from "@/lib/utils";
 
 const LongTextField = ({
     label,
@@ -18,7 +19,7 @@ const LongTextField = ({
     code?: boolean;
 }) => {
     return (
-        <Card className={className ?? "my-2"}>
+        <Card className={cn("my-2", className)}>
             <CardHeader>
                 <CardTitle>{label}</CardTitle>
             </CardHeader>
