@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\LANDING\v1;
 
-use Inertia\Inertia;
 use App\Http\Controllers\WebController;
-use App\Services\v1\Service\ServiceService;
 use App\Modules\Settings\App\Enums\SettingKeyEnum;
 use App\Modules\Settings\App\Services\SettingService;
+use App\Services\v1\Service\ServiceService;
+use Inertia\Inertia;
 
 class SiteController extends WebController
 {
@@ -26,9 +26,9 @@ class SiteController extends WebController
         $phone = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value);
 
         return Inertia::render('landing/contact', [
-            'email' => $email,
+            'email'   => $email,
             'address' => $address,
-            'phone' => $phone,
+            'phone'   => $phone,
         ]);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Modules\Settings\App\Enums\SettingKeyEnum;
+use App\Modules\Settings\App\Services\SettingService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Session;
@@ -45,16 +47,25 @@ class HandleInertiaRequests extends Middleware
     {
         JsonResource::withoutWrapping();
 
+        $email = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_EMAIL->value);
+        $address = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_ADDRESS->value);
+        $phone = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value);
+
         return array_merge(parent::share($request), [
             'availableLocales' => config('cubeta-starter.available_locales'),
-            'currentLocale' => Session::get('locale') ?? 'en',
-            'authUser' => auth()->user(),
-            'currentRoute' => Str::replace(config('app.url'), '', $request->fullUrl()),
-            'asset' => asset('/'),
-            'baseUrl' => (config('cubeta-starter.project_url') ?? config('app.url')) ?? '/',
-            'message' => session()->get('message') ?? null,
-            'error' => session()->get('error') ?? null,
-            'success' => session()->get('success') ?? null,
+            'currentLocale'    => Session::get('locale') ?? 'en',
+            'authUser'         => auth()->user(),
+            'currentRoute'     => Str::replace(config('app.url'), '', $request->fullUrl()),
+            'asset'            => asset('/'),
+            'baseUrl'          => (config('cubeta-starter.project_url') ?? config('app.url')) ?? '/',
+            'message'          => session()->get('message') ?? null,
+            'error'            => session()->get('error') ?? null,
+            'success'          => session()->get('success') ?? null,
+            'contact'          => [
+                'email'   => $email,
+                'address' => $address,
+                'phone'   => $phone,
+            ],
         ]);
     }
 }

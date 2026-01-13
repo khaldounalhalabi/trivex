@@ -1,4 +1,5 @@
 import AuthLayout from "@/components/layouts/AuthLayout";
+import LandingLayout from "@/components/layouts/LandingLayout";
 import DashboardLayout from "@/components/layouts/Layout";
 import FatalErrorPage from "@/FatalError";
 import ErrorBoundary from "@/Handlers/ErrorBoundry";
@@ -6,7 +7,6 @@ import { createInertiaApp } from "@inertiajs/react";
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "../css/cubeta-starter.css";
-import LandingLayout from "@/components/layouts/LandingLayout";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -24,7 +24,7 @@ type PageWithLayout = React.ComponentType & {
 Promise.resolve()
     .then(() =>
         createInertiaApp({
-            title: () => `${appName} Dashboard`,
+            title: () => `${appName}`,
             resolve: async (name: any) => {
                 const pages = import.meta.glob<{
                     default: PageWithLayout;

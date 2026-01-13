@@ -1,14 +1,14 @@
 import AnimatedLabelInput from "@/components/form/fields/AnimatedLabelInput";
 import AppLogo from "@/components/icons/AppLogo";
 import { asset } from "@/helper";
-import { Link, useForm } from "@inertiajs/react";
+import { Link, useForm, usePage } from "@inertiajs/react";
 import { FormEvent } from "react";
 
 function Footer() {
+    const { contact } = usePage().props;
     const { setData, post, processing } = useForm<{ email: string }>();
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         post(route("landing.newsletter.subscribe"));
     };
 
@@ -18,24 +18,32 @@ function Footer() {
                 <AppLogo />
                 <div className={"flex w-full items-start justify-between"}>
                     <div className={"flex flex-col items-start gap-5"}>
-                        <p className={"text-lg font-semibold text-white"}>
-                            Preston Rd. Inglewood, Maine
-                        </p>
                         <a
-                            href={"tel:(808) 555-0111"}
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact?.address ?? "")}`}
                             className={
                                 "cursor-pointer text-lg font-semibold text-white hover:underline"
                             }
+                            target={"_blank"}
                         >
-                            (808) 555-0111
+                            {contact?.address}
                         </a>
                         <a
-                            href={"mailto:support@trivex.com"}
+                            href={`tel:${contact?.phone}`}
                             className={
                                 "cursor-pointer text-lg font-semibold text-white hover:underline"
                             }
+                            target={"_blank"}
                         >
-                            support@trivex.com
+                            {contact?.phone}
+                        </a>
+                        <a
+                            href={`mailto:${contact?.email}`}
+                            className={
+                                "cursor-pointer text-lg font-semibold text-white hover:underline"
+                            }
+                            target={"_blank"}
+                        >
+                            {contact?.email}
                         </a>
                     </div>
                     <div className={"flex flex-col items-start gap-5"}>
@@ -45,7 +53,10 @@ function Footer() {
                         >
                             Home
                         </Link>
-                        <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link
+                            href={route("landing.services")}
+                            className="cursor-pointer text-lg font-semibold text-white hover:underline"
+                        >
                             Service
                         </Link>
                         <Link
@@ -80,44 +91,44 @@ function Footer() {
                 }
             >
                 <div className={"flex h-full items-end gap-18 py-28 ps-24"}>
-                    <div className={"grid grid-cols-2 items-center gap-5"}>
-                        <Link href="/">
-                            <img
-                                className={"w-6"}
-                                src={asset("/images/linkedin.png")}
-                            />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                className={"w-6"}
-                                src={asset("/images/instagram.png")}
-                            />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                className={"w-6"}
-                                src={asset("/images/facebook.png")}
-                            />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                className={"w-6"}
-                                src={asset("/images/twitter.png")}
-                            />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                className={"w-6"}
-                                src={asset("/images/youtube.png")}
-                            />
-                        </Link>
-                        <Link href="/">
-                            <img
-                                className={"w-6"}
-                                src={asset("/images/vim.png")}
-                            />
-                        </Link>
-                    </div>
+                    {/*<div className={"grid grid-cols-2 items-center gap-5"}>*/}
+                    {/*    <Link href="/">*/}
+                    {/*        <img*/}
+                    {/*            className={"w-6"}*/}
+                    {/*            src={asset("/images/linkedin.png")}*/}
+                    {/*        />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link href="/">*/}
+                    {/*        <img*/}
+                    {/*            className={"w-6"}*/}
+                    {/*            src={asset("/images/instagram.png")}*/}
+                    {/*        />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link href="/">*/}
+                    {/*        <img*/}
+                    {/*            className={"w-6"}*/}
+                    {/*            src={asset("/images/facebook.png")}*/}
+                    {/*        />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link href="/">*/}
+                    {/*        <img*/}
+                    {/*            className={"w-6"}*/}
+                    {/*            src={asset("/images/twitter.png")}*/}
+                    {/*        />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link href="/">*/}
+                    {/*        <img*/}
+                    {/*            className={"w-6"}*/}
+                    {/*            src={asset("/images/youtube.png")}*/}
+                    {/*        />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link href="/">*/}
+                    {/*        <img*/}
+                    {/*            className={"w-6"}*/}
+                    {/*            src={asset("/images/vim.png")}*/}
+                    {/*        />*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
 
                     <form onSubmit={onSubmit}>
                         <div className={"flex flex-col items-start"}>
@@ -142,7 +153,7 @@ function Footer() {
                             />
                             <button
                                 className={
-                                    "pt-3 text-3xl font-semibold text-landing-primary cursor-pointer"
+                                    "cursor-pointer pt-3 text-3xl font-semibold text-landing-primary"
                                 }
                                 type={"submit"}
                             >
