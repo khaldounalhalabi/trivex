@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\LANDING\v1;
 
+use App\Mail\NewQuoteRequest;
 use App\Http\Controllers\WebController;
 use App\Http\Requests\v1\QuoteRequest\StoreQuoteRequestRequest;
 use App\Services\v1\QuoteRequest\QuoteRequestService;
+use Illuminate\Support\Facades\Mail;
 
 class QuoteRequestController extends WebController
 {
@@ -17,7 +19,10 @@ class QuoteRequestController extends WebController
 
     public function store(StoreQuoteRequestRequest $request)
     {
-        $this->service->store($request->validated());
+        $quote = $this->service->store($request->validated());
+
+        Mail::to('info@tri-vex.com')
+            ->send(new NewQuoteRequest($quote));
 
         return redirect()
             ->back()
