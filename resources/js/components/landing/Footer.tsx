@@ -1,6 +1,5 @@
 import AnimatedLabelInput from "@/components/form/fields/AnimatedLabelInput";
 import AppLogo from "@/components/icons/AppLogo";
-import { asset } from "@/helper";
 import { Link, useForm, usePage } from "@inertiajs/react";
 import { FormEvent } from "react";
 
