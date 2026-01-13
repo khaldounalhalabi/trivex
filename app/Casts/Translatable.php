@@ -10,21 +10,33 @@ class Translatable implements CastsAttributes
 {
     /**
      * Cast the given value.
+     *
      * @param array<string, mixed> $attributes
+     *
      * @throws Exception
      */
     public function get($model, string $key, mixed $value, array $attributes): mixed
     {
+        if (empty($value)) {
+            return null;
+        }
+
         return new SerializersTranslatable($value);
     }
 
     /**
      * Prepare the given value for storage.
+     *
      * @param array<string, mixed> $attributes
+     *
      * @throws Exception
      */
     public function set($model, string $key, mixed $value, array $attributes): mixed
     {
+        if (empty($value)) {
+            return null;
+        }
+
         if ($value instanceof SerializersTranslatable) {
             return $value->toJson();
         }

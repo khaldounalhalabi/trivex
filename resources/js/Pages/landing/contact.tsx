@@ -1,8 +1,15 @@
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import { asset } from "@/helper";
-import { Link } from "@inertiajs/react";
 
-const Contact = () => {
+const Contact = ({
+    email,
+    address,
+    phone,
+}: {
+    email: string;
+    address: string;
+    phone: string;
+}) => {
     return (
         <div className={"h-full w-full"}>
             <div className={"flex w-full items-center justify-center py-24"}>
@@ -19,14 +26,15 @@ const Contact = () => {
                         <h1 className={"text-center text-3xl font-semibold"}>
                             Mail Here
                         </h1>
-                        <Link
-                            href={"mailto:info@tri-vex.com"}
+                        <a
+                            href={`mailto:${email}`}
                             className={
                                 "text-center font-semibold hover:underline"
                             }
+                            target="_blank"
                         >
-                            info@tri-vex.com
-                        </Link>
+                            {email}
+                        </a>
                     </div>
 
                     <div
@@ -41,9 +49,15 @@ const Contact = () => {
                         <h1 className={"text-center text-3xl font-semibold"}>
                             Visit Here
                         </h1>
-                        <p className={"text-center font-semibold"}>
-                            4517 Washington Ave. Manchester, Kentucky 39495
-                        </p>
+                        <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
+                            className={
+                                "text-center font-semibold hover:underline"
+                            }
+                            target="_blank"
+                        >
+                            {address}
+                        </a>
                     </div>
 
                     <div
@@ -58,14 +72,15 @@ const Contact = () => {
                         <h1 className={"text-center text-3xl font-semibold"}>
                             Call Here
                         </h1>
-                        <Link
-                            href={"tel:(704) 555-0127"}
+                        <a
+                            href={`tel:${phone}`}
                             className={
                                 "text-center font-semibold hover:underline"
                             }
+                            target="_blank"
                         >
-                            (704) 555-0127
-                        </Link>
+                            {phone}
+                        </a>
                     </div>
                 </div>
             </div>

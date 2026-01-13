@@ -23,3 +23,7 @@ Route::resource('/v1/newsletter-emails', v1\NewsletterEmailController::class)
 
 Route::get('/v1/f-a-qs/data', [v1\FAQController::class, 'data'])->name('v1.web.protected.f.a.qs.data');
 Route::resource('/v1/f-a-qs', v1\FAQController::class)->names('v1.web.protected.f.a.qs');
+
+Route::get('/settings', [v1\SettingController::class, 'index'])->name('v1.web.protected.settings.index');
+Route::get('/settings/{settingId}/edit', [v1\SettingController::class, 'edit'])->name('v1.web.protected.settings.edit');
+Route::put('/settings/{settingId}', [v1\SettingController::class, 'update'])->name('v1.web.protected.settings.update');

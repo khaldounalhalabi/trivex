@@ -17,6 +17,7 @@ import {
     BadgeQuestionMarkIcon,
     ContactIcon,
     GitCommitVerticalIcon,
+    SettingsIcon,
 } from "lucide-react";
 import React from "react";
 
@@ -52,6 +53,11 @@ export function Sidebar({
             title: "FAQ",
             href: route("v1.web.protected.f.a.qs.index"),
             icon: () => <BadgeQuestionMarkIcon />,
+        },
+        {
+            title: "Site Settings",
+            href: route("v1.web.protected.settings.index"),
+            icon: () => <SettingsIcon />,
         },
     ];
 

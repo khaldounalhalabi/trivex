@@ -16,7 +16,7 @@ Route::post('/locale', [SetLocaleController::class, 'setLanguage'])
 Route::get('/', [SiteController::class, 'index'])->name('landing.index');
 Route::inertia('/about', 'landing/about')->name('landing.about');
 Route::inertia('/case-study', 'landing/case-study')->name('landing.case-study');
-Route::inertia('/contact', 'landing/contact')->name('landing.contact');
+Route::get('/contact', [SiteController::class, 'contact'])->name('landing.contact');
 Route::get('/faqs', [FAQController::class, 'index'])->name('landing.faqs');
 Route::inertia('/request-quote', 'landing/request-quote')->name('landing.request.quote');
 Route::inertia('/industries-we-serve', 'landing/industries')->name('landing.industries');
