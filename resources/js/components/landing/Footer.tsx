@@ -1,9 +1,17 @@
 import AnimatedLabelInput from "@/components/form/fields/AnimatedLabelInput";
 import AppLogo from "@/components/icons/AppLogo";
 import { asset } from "@/helper";
-import { Link } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
+import { FormEvent } from "react";
 
 function Footer() {
+    const { setData, post, processing } = useForm<{ email: string }>();
+    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        post(route("landing.newsletter.subscribe"));
+    };
+
     return (
         <div className={"grid h-full w-full grid-cols-2 gap-8 bg-landing-dark"}>
             <div className={"flex flex-col items-start gap-10 py-20 ps-24"}>
@@ -111,31 +119,37 @@ function Footer() {
                         </Link>
                     </div>
 
-                    <div className={"flex flex-col items-start"}>
-                        <h1
-                            className={
-                                "mb-16 text-3xl font-semibold text-white"
-                            }
-                            id={"newsletter-footer"}
-                        >
-                            Newsletter
-                        </h1>
-                        <AnimatedLabelInput
-                            name={"email"}
-                            labelClassName={
-                                "text-gray-500 peer-focus:text-white  dark:text-gray-400"
-                            }
-                            label={"Your Email"}
-                            className={"w-72 scale-100"}
-                        />
-                        <button
-                            className={
-                                "pt-3 text-3xl font-semibold text-landing-primary"
-                            }
-                        >
-                            Subscribe
-                        </button>
-                    </div>
+                    <form onSubmit={onSubmit}>
+                        <div className={"flex flex-col items-start"}>
+                            <h1
+                                className={
+                                    "mb-16 text-3xl font-semibold text-white"
+                                }
+                                id={"newsletter-footer"}
+                            >
+                                Newsletter
+                            </h1>
+                            <AnimatedLabelInput
+                                name={"email"}
+                                labelClassName={
+                                    "text-gray-500 peer-focus:text-white  dark:text-gray-400"
+                                }
+                                label={"Your Email"}
+                                className={"w-72 scale-100"}
+                                onChange={(e) =>
+                                    setData("email", e.target.value)
+                                }
+                            />
+                            <button
+                                className={
+                                    "pt-3 text-3xl font-semibold text-landing-primary cursor-pointer"
+                                }
+                                type={"submit"}
+                            >
+                                Subscribe {processing && "..."}
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

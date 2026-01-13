@@ -14,3 +14,9 @@ Route::resource('/v1/services', v1\ServiceController::class)->names('v1.web.prot
 
 Route::get('/v1/service-features/data', [v1\ServiceFeatureController::class, 'data'])->name('v1.web.protected.service.features.data');
 Route::resource('/v1/service-features', v1\ServiceFeatureController::class)->names('v1.web.protected.service.features');
+
+Route::post('/v1/newsletter-emails/export', [v1\NewsletterEmailController::class, 'export'])->name('v1.web.protected.newsletter.emails.export');
+Route::get('/v1/newsletter-emails/data', [v1\NewsletterEmailController::class, 'data'])->name('v1.web.protected.newsletter.emails.data');
+Route::resource('/v1/newsletter-emails', v1\NewsletterEmailController::class)
+    ->only(['index', 'destroy'])
+    ->names('v1.web.protected.newsletter.emails');

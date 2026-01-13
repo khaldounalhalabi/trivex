@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LANDING\v1\NewsletterEmailController;
 use App\Http\Controllers\LANDING\v1\ServiceController;
 use App\Http\Controllers\SetLocaleController;
 use App\Http\Middleware\AcceptedLanguagesMiddleware;
@@ -20,3 +21,5 @@ Route::inertia('/industries-we-serve', 'landing/industries')->name('landing.indu
 
 Route::get('/services', [ServiceController::class, 'index'])->name('landing.services');
 Route::get('/services/{id}', [ServiceController::class, 'show'])->name('landing.services.show');
+
+Route::post('newsletter/subscribe', [NewsletterEmailController::class, 'subscribe'])->name('landing.newsletter.subscribe');

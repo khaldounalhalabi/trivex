@@ -80,7 +80,7 @@ abstract class BaseRepository
     }
 
     /**
-     * @return Builder|MODEL
+     * @return Builder<MODEL>|MODEL
      */
     public function globalQuery(array $relations = []): Builder
     {
@@ -128,9 +128,9 @@ abstract class BaseRepository
     }
 
     /**
-     * this function implement already defined filters in the model
+     * this function implements already defined filters in the model
      *
-     * @return Builder|MODEL
+     * @return Builder<MODEL>
      */
     private function filterFields(Builder $query): Builder
     {
@@ -147,7 +147,15 @@ abstract class BaseRepository
                 $value = array_values($value);
             }
 
-            if (! $value) {
+            if ($value == 'false') {
+                $value = false;
+            }
+
+            if ($value == 'true') {
+                $value = true;
+            }
+
+            if (empty($value) && $value !== false) {
                 continue;
             }
 
@@ -248,7 +256,7 @@ abstract class BaseRepository
     }
 
     /**
-     * @param  string|int|Model|MODEL  $id
+     * @param  string|int|Model|MODEL $id
      * @return MODEL|null|Model
      */
     public function update(array $data, string|int|Model $id, array $relationships = []): ?Model
@@ -269,7 +277,7 @@ abstract class BaseRepository
     }
 
     /**
-     * @param  mixed  $value
+     * @param  mixed         $value
      * @return Builder|MODEL
      */
     private function handleRangeQuery(array $value, Builder $query, string $table, string $column): Builder
@@ -317,7 +325,7 @@ abstract class BaseRepository
     {
         return Excel::download(
             new BaseExporter(collect(), $this->model, null, true),
-            $this->model->getTable().'-example.xlsx'
+            $this->model->getTable().'-example.xlsx',
         );
     }
 

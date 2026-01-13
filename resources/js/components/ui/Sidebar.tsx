@@ -12,7 +12,7 @@ import {
 import { MiddlewareProps } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
 import { type Icon } from "@tabler/icons-react";
-import { BadgePlus, GitCommitVerticalIcon } from "lucide-react";
+import { BadgePlus, ContactIcon, GitCommitVerticalIcon } from "lucide-react";
 import React from "react";
 
 export function Sidebar({
@@ -37,6 +37,11 @@ export function Sidebar({
             title: "Services Features",
             href: route("v1.web.protected.service.features.index"),
             icon: () => <BadgePlus />,
+        },
+        {
+            title: "Newsletter Contacts",
+            href: route("v1.web.protected.newsletter.emails.index"),
+            icon: () => <ContactIcon />,
         },
     ];
 
