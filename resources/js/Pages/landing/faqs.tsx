@@ -1,5 +1,5 @@
-import QuestionCard from "@/Components/landing/faqs/QuestionCard";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
+import QuestionCard from "@/components/landing/faqs/QuestionCard";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import { asset } from "@/helper";
 
 const Faqs = () => {

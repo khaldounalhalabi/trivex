@@ -1,5 +1,5 @@
-import PartnersSection from "@/Components/landing/home/HomePartners";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
+import PartnersSection from "@/components/landing/home/HomePartners";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import { asset } from "@/helper";
 import { CheckIcon } from "lucide-react";
 

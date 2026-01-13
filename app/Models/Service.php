@@ -7,8 +7,10 @@ use App\Traits\HasMedia;
 use Carbon\Carbon;
 use Database\Factories\ServiceFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int                                                             $id
@@ -23,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin Builder<Service>
  *
  * @use  HasFactory<ServiceFactory>
+ *
+ * @property EloquentCollection<ServiceFeature>|null $serviceFeatures
  */
 class Service extends Model
 {
@@ -69,7 +73,18 @@ class Service extends Model
     public static function relationsSearchableArray(): array
     {
         return [
-
+            'serviceFeatures' => [
+                'title',
+                'description',
+            ],
         ];
+    }
+
+    /**
+     * @return HasMany<ServiceFeature, static>
+     */
+    public function serviceFeatures(): HasMany
+    {
+        return $this->hasMany(ServiceFeature::class);
     }
 }

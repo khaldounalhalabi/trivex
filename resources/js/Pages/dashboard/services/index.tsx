@@ -1,6 +1,6 @@
-import ActionsButtons from "@/Components/datatable/ActionsButtons";
-import DataTable from "@/Components/datatable/DataTable";
-import ImagePreview from "@/Components/show/ImagePreview";
+import ActionsButtons from "@/components/datatable/ActionsButtons";
+import DataTable from "@/components/datatable/DataTable";
+import ImagePreview from "@/components/show/ImagePreview";
 import Service from "@/Models/Service";
 import Http from "@/Modules/Http/Http";
 

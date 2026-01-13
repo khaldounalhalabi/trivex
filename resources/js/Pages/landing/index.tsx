@@ -1,10 +1,10 @@
-import AboutUsSection from "@/Components/landing/home/AboutUsSection";
-import HeroSection from "@/Components/landing/home/HomeHero";
-import PartnersSection from "@/Components/landing/home/HomePartners";
-import InsightsAndNews from "@/Components/landing/home/InsightsAndNews";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
-import OurImpact from "@/Components/landing/home/OurImpact";
-import OurTeam from "@/Components/landing/home/OurTeam";
+import AboutUsSection from "@/components/landing/home/AboutUsSection";
+import HeroSection from "@/components/landing/home/HomeHero";
+import PartnersSection from "@/components/landing/home/HomePartners";
+import InsightsAndNews from "@/components/landing/home/InsightsAndNews";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
+import OurImpact from "@/components/landing/home/OurImpact";
+import OurTeam from "@/components/landing/home/OurTeam";
 
 const Index = () => {
     return (

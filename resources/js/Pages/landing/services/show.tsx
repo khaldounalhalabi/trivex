@@ -1,6 +1,6 @@
-import HomePartners from "@/Components/landing/home/HomePartners";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
-import WhyChooseUs from "@/Components/landing/WhyChooseUs";
+import HomePartners from "@/components/landing/home/HomePartners";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
+import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import { asset } from "@/helper";
 
 interface Service {

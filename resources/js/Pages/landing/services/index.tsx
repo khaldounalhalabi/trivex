@@ -1,7 +1,7 @@
-import PartnersSection from "@/Components/landing/home/HomePartners";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
-import LandingButton from "@/Components/landing/LandingButton";
-import WhyChooseUs from "@/Components/landing/WhyChooseUs";
+import PartnersSection from "@/components/landing/home/HomePartners";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
+import LandingButton from "@/components/landing/LandingButton";
+import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import { asset } from "@/helper";
 
 const Index = () => {

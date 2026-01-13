@@ -1,6 +1,6 @@
 import { asset } from "@/helper";
 import { Link } from "@inertiajs/react";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 
 const Contact = () => {
     return (

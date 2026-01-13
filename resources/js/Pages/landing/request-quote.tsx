@@ -1,6 +1,6 @@
-import AnimatedLabelInput from "@/Components/form/fields/AnimatedLabelInput";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
-import LandingButton from "@/Components/landing/LandingButton";
+import AnimatedLabelInput from "@/components/form/fields/AnimatedLabelInput";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
+import LandingButton from "@/components/landing/LandingButton";
 import { asset } from "@/helper";
 
 const RequestQuote = () => {

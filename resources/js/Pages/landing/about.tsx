@@ -1,8 +1,8 @@
-﻿import AboutHeroSection from "@/Components/landing/about/AboutHeroSection";
-import AboutMissionSection from "@/Components/landing/about/AboutMissionSection";
-import AboutTeamSection from "@/Components/landing/about/AboutTeamSection";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
-import OurImpact from "@/Components/landing/home/OurImpact";
+﻿import AboutHeroSection from "@/components/landing/about/AboutHeroSection";
+import AboutMissionSection from "@/components/landing/about/AboutMissionSection";
+import AboutTeamSection from "@/components/landing/about/AboutTeamSection";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
+import OurImpact from "@/components/landing/home/OurImpact";
 
 const About = () => {
     return (

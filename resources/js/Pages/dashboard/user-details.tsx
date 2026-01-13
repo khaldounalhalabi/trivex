@@ -1,7 +1,7 @@
-import Input from "@/Components/form/fields/Input";
-import Form from "@/Components/form/Form";
-import PageCard from "@/Components/ui/PageCard";
-import Tabs from "@/Components/ui/Tabs";
+import Input from "@/components/form/fields/Input";
+import Form from "@/components/form/Form";
+import PageCard from "@/components/ui/PageCard";
+import Tabs from "@/components/ui/Tabs";
 import User from "@/Models/User";
 import { useForm } from "@inertiajs/react";
 import { FormEvent } from "react";

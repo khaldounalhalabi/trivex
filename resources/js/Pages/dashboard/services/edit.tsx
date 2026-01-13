@@ -1,7 +1,7 @@
-import Input from "@/Components/form/fields/Input";
-import Textarea from "@/Components/form/fields/Textarea";
-import Form from "@/Components/form/Form";
-import PageCard from "@/Components/ui/PageCard";
+import Input from "@/components/form/fields/Input";
+import Textarea from "@/components/form/fields/Textarea";
+import Form from "@/components/form/Form";
+import PageCard from "@/components/ui/PageCard";
 import Media from "@/Models/Media";
 import Service from "@/Models/Service";
 import { useForm } from "@inertiajs/react";

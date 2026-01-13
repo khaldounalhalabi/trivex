@@ -1,12 +1,12 @@
-import Form from "@/Components/form/Form";
-import Input from "@/Components/form/fields/Input";
+import Form from "@/components/form/Form";
+import Input from "@/components/form/fields/Input";
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from "@/Components/ui/shadcn/card";
+} from "@/components/ui/shadcn/card";
 import { useForm } from "@inertiajs/react";
 import { FormEvent } from "react";
 

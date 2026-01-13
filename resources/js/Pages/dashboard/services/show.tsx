@@ -1,9 +1,9 @@
-import Gallery from "@/Components/show/Gallery";
-import LongTextField from "@/Components/show/LongTextField";
-import SmallTextField from "@/Components/show/SmallTextField";
-import { Label } from "@/Components/ui/labels-and-values/Label";
-import PageCard from "@/Components/ui/PageCard";
-import { Button } from "@/Components/ui/shadcn/button";
+import Gallery from "@/components/show/Gallery";
+import LongTextField from "@/components/show/LongTextField";
+import SmallTextField from "@/components/show/SmallTextField";
+import { Label } from "@/components/ui/labels-and-values/Label";
+import PageCard from "@/components/ui/PageCard";
+import { Button } from "@/components/ui/shadcn/button";
 import Service from "@/Models/Service";
 import { Link } from "@inertiajs/react";
 

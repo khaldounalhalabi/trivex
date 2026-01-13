@@ -1,12 +1,12 @@
-import AuthLayout from "@/Components/layouts/AuthLayout";
-import DashboardLayout from "@/Components/layouts/Layout";
+import AuthLayout from "@/components/layouts/AuthLayout";
+import DashboardLayout from "@/components/layouts/Layout";
 import FatalErrorPage from "@/FatalError";
 import ErrorBoundary from "@/Handlers/ErrorBoundry";
 import { createInertiaApp } from "@inertiajs/react";
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "../css/cubeta-starter.css";
-import LandingLayout from "@/Components/layouts/LandingLayout";
+import LandingLayout from "@/components/layouts/LandingLayout";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 

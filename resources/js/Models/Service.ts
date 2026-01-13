@@ -1,4 +1,5 @@
 import Media from "@/Models/Media";
+import ServiceFeature from "@/Models/ServiceFeature";
 interface Service {
     id: number;
     name: string;
@@ -6,6 +7,7 @@ interface Service {
     description: string;
     cover?: Media | undefined;
     image?: Media | undefined;
+    service_features?: ServiceFeature[];
 }
 
 export default Service;

@@ -11,3 +11,6 @@ Route::inertia('/v1/dashboard/', 'dashboard/index')->name('v1.web.protected.inde
 
 Route::get('/v1/services/data', [v1\ServiceController::class, 'data'])->name('v1.web.protected.services.data');
 Route::resource('/v1/services', v1\ServiceController::class)->names('v1.web.protected.services');
+
+Route::get('/v1/service-features/data', [v1\ServiceFeatureController::class, 'data'])->name('v1.web.protected.service.features.data');
+Route::resource('/v1/service-features', v1\ServiceFeatureController::class)->names('v1.web.protected.service.features');

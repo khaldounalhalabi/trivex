@@ -1,5 +1,5 @@
 import { asset } from "@/helper";
-import NewsLetterFooter from "@/Components/landing/home/NewsLetterFooter";
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 
 const CaseStudy = () => {
     return (
