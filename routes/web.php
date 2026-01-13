@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LANDING\v1\FAQController;
+use App\Http\Controllers\LANDING\v1\QuoteRequestController;
 use App\Http\Controllers\LANDING\v1\NewsletterEmailController;
 use App\Http\Controllers\LANDING\v1\ServiceController;
 use App\Http\Controllers\LANDING\v1\SiteController;
@@ -18,7 +19,10 @@ Route::inertia('/about', 'landing/about')->name('landing.about');
 Route::inertia('/case-study', 'landing/case-study')->name('landing.case-study');
 Route::get('/contact', [SiteController::class, 'contact'])->name('landing.contact');
 Route::get('/faqs', [FAQController::class, 'index'])->name('landing.faqs');
+
 Route::inertia('/request-quote', 'landing/request-quote')->name('landing.request.quote');
+Route::post('/request-quote', [QuoteRequestController::class, 'store'])->name('landing.request.quote.store');
+
 Route::inertia('/industries-we-serve', 'landing/industries')->name('landing.industries');
 
 Route::get('/services', [ServiceController::class, 'index'])->name('landing.services');

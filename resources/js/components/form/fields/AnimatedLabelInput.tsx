@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { usePage } from "@inertiajs/react";
 import React, { ChangeEvent, FC } from "react";
+
 interface InputProps
     extends Omit<React.ComponentProps<"input">, "placeholder"> {
     name: string;
@@ -43,7 +44,13 @@ const AnimatedLabelInput: FC<InputProps> = ({
             {label && (
                 <label
                     className={cn(
-                        "absolute top-1/2 -z-10 origin-left -translate-y-1/2 scale-75 transform text-sm duration-300 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 start-1 peer-focus:-translate-y-[200%] peer-focus:scale-75 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4",
+                        "absolute start-1 top-1/2 -z-10 origin-left -translate-y-1/2 scale-75 transform text-sm duration-300 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100",
+
+                        "peer-focus:-translate-y-[200%] peer-focus:scale-75 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4",
+
+                        // NEW: Maintain float when input has a value (placeholder is NOT shown)
+                        "peer-[:not(:placeholder-shown)]:start-1 peer-[:not(:placeholder-shown)]:-translate-y-[200%] peer-[:not(:placeholder-shown)]:scale-100",
+
                         labelClassName,
                     )}
                     htmlFor={`${name}_id`}
@@ -58,5 +65,4 @@ const AnimatedLabelInput: FC<InputProps> = ({
         </div>
     );
 };
-
 export default AnimatedLabelInput;

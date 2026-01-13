@@ -1,6 +1,10 @@
 {
     "preset": "laravel",
     "rules": {
+        "method_chaining_indentation": true,
+        "method_argument_space": {
+            "on_multiline": "ensure_fully_multiline"
+        },
         "no_unused_imports": false,
         "no_superfluous_phpdoc_tags": false,
         "phpdoc_align": {

@@ -1,9 +1,19 @@
 import AnimatedLabelInput from "@/components/form/fields/AnimatedLabelInput";
+import LoadingSpinner from "@/components/icons/LoadingSpinner";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import LandingButton from "@/components/landing/LandingButton";
 import { asset } from "@/helper";
+import QuoteRequest from "@/Models/QuoteRequest";
+import { useForm } from "@inertiajs/react";
+import { FormEvent } from "react";
 
 const RequestQuote = () => {
+    const { post, setData, processing } = useForm<QuoteRequest>();
+    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        post(route("landing.request.quote.store"));
+    };
+
     return (
         <div className={"h-full w-full"}>
             <div
@@ -35,7 +45,7 @@ const RequestQuote = () => {
                 <div
                     className={"w-[76vw] rounded-4xl bg-[#E5E5E5] px-18 py-16"}
                 >
-                    <form className={"w-full"}>
+                    <form className={"w-full"} onSubmit={onSubmit}>
                         <div
                             className={
                                 "flex w-full flex-col items-center gap-5"
@@ -43,31 +53,86 @@ const RequestQuote = () => {
                         >
                             <div className={"w-full bg-white"}>
                                 <AnimatedLabelInput
-                                    name={"site_type_and_location"}
+                                    name={"name"}
+                                    label={"Full Name"}
+                                    className={"p-5"}
+                                    labelClassName={
+                                        "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
+                                    }
+                                    onChange={(e) =>
+                                        setData("name", e.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className={"w-full bg-white"}>
+                                <AnimatedLabelInput
+                                    name={"email"}
+                                    label={"Your Email"}
+                                    className={"p-5"}
+                                    labelClassName={
+                                        "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
+                                    }
+                                    onChange={(e) =>
+                                        setData("email", e.target.value)
+                                    }
+                                    type={"email"}
+                                />
+                            </div>
+
+                            <div className={"w-full bg-white"}>
+                                <AnimatedLabelInput
+                                    name={"phone"}
+                                    label={"Your Phone Number"}
+                                    className={"p-5"}
+                                    labelClassName={
+                                        "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
+                                    }
+                                    onChange={(e) =>
+                                        setData("phone", e.target.value)
+                                    }
+                                    type={"tel"}
+                                />
+                            </div>
+
+                            <div className={"w-full bg-white"}>
+                                <AnimatedLabelInput
+                                    name={"location"}
                                     label={"Site Type & Location"}
                                     className={"p-5"}
                                     labelClassName={
                                         "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
                                     }
-                                />
-                            </div>
-                            <div className={"w-full bg-white"}>
-                                <AnimatedLabelInput
-                                    name={"operating_hours_and_start_date"}
-                                    label={"Operating Hours & Start Date:"}
-                                    className={"p-5"}
-                                    labelClassName={
-                                        "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
+                                    onChange={(e) =>
+                                        setData("location", e.target.value)
                                     }
                                 />
                             </div>
                             <div className={"w-full bg-white"}>
                                 <AnimatedLabelInput
-                                    name={"estimated_headcount"}
+                                    name={"operating_hours"}
+                                    label={"Operating Hours & Start Date:"}
+                                    className={"p-5"}
+                                    labelClassName={
+                                        "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
+                                    }
+                                    onChange={(e) =>
+                                        setData(
+                                            "operating_hours",
+                                            e.target.value,
+                                        )
+                                    }
+                                />
+                            </div>
+                            <div className={"w-full bg-white"}>
+                                <AnimatedLabelInput
+                                    name={"headcount"}
                                     label={"Estimated Headcount:"}
                                     className={"p-5"}
                                     labelClassName={
                                         "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
+                                    }
+                                    onChange={(e) =>
+                                        setData("headcount", e.target.value)
                                     }
                                 />
                             </div>
@@ -79,6 +144,12 @@ const RequestQuote = () => {
                                     labelClassName={
                                         "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
                                     }
+                                    onChange={(e) =>
+                                        setData(
+                                            "service_interest",
+                                            e.target.value,
+                                        )
+                                    }
                                 />
                             </div>
                             <div className={"w-full bg-white"}>
@@ -89,13 +160,30 @@ const RequestQuote = () => {
                                     labelClassName={
                                         "!text-black font-semibold peer-focus:scale-100 scale-100 start-10 peer-focus:start-1"
                                     }
+                                    onChange={(e) =>
+                                        setData(
+                                            "special_requirements",
+                                            e.target.value,
+                                        )
+                                    }
                                 />
                             </div>
                             <LandingButton
                                 type={"submit"}
                                 className={"w-full py-5"}
                             >
-                                Submit & Get My Quote
+                                <div
+                                    className={
+                                        "inline-flex w-full items-center gap-3 justify-center"
+                                    }
+                                >
+                                    <span>Submit & Get My Quote</span>
+                                    {processing && (
+                                        <LoadingSpinner
+                                            className={"text-black"}
+                                        />
+                                    )}
+                                </div>
                             </LandingButton>
                         </div>
                     </form>
