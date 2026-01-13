@@ -8,7 +8,6 @@ use App\Modules\Settings\App\Services\SettingService;
 use App\Repositories\NewsletterEmailRepository;
 use App\Services\Contracts\BaseService;
 use App\Traits\Makable;
-use Illuminate\Support\Facades\Concurrency;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Mail;
 
@@ -34,32 +33,28 @@ class NewsletterEmailService extends BaseService
         $contactAddress = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_ADDRESS->value);
         $contactPhone = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value);
 
-        Concurrency::defer([
-            function () use ($contactPhone, $contactAddress, $contactEmail, $data) {
-                $emails = $this->repository
-                    ->globalQuery()
-                    ->select('email')
-                    ->where('is_subscribed', true)
-                    ->get()
-                    ->pluck('email');
+        $emails = $this->repository
+            ->globalQuery()
+            ->select('email')
+            ->where('is_subscribed', true)
+            ->get()
+            ->pluck('email');
 
-                $emails->each(
-                    fn ($email) => Mail::to($email)
-                        ->send(
-                            new NewsletterEmail(
-                                $data['title'],
-                                $data['subtitle'],
-                                $data['message'],
-                                Crypt::encryptString($email),
-                                $contactEmail,
-                                $contactAddress,
-                                $contactPhone,
-                                $data['tip'] ?? null,
-                            ),
-                        ),
-                );
-            },
-        ]);
+        $emails->each(
+            fn ($email) => Mail::to($email)
+                ->send(
+                    new NewsletterEmail(
+                        $data['title'],
+                        $data['subtitle'],
+                        $data['message'],
+                        Crypt::encryptString($email),
+                        $contactEmail,
+                        $contactAddress,
+                        $contactPhone,
+                        $data['tip'] ?? null,
+                    ),
+                ),
+        );
     }
 
     public function unsubscribe(string $email): void
