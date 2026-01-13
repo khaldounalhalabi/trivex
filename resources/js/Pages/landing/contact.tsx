@@ -1,6 +1,6 @@
+import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import { asset } from "@/helper";
 import { Link } from "@inertiajs/react";
-import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 
 const Contact = () => {
     return (
@@ -20,20 +20,12 @@ const Contact = () => {
                             Mail Here
                         </h1>
                         <Link
-                            href={"mailto:admin@cybercloops.com"}
+                            href={"mailto:info@tri-vex.com"}
                             className={
                                 "text-center font-semibold hover:underline"
                             }
                         >
-                            admin@cybercloops.com
-                        </Link>
-                        <Link
-                            href={"mailto:info@cybercloops.com"}
-                            className={
-                                "text-center font-semibold hover:underline"
-                            }
-                        >
-                            info@cybercloops.com
+                            info@tri-vex.com
                         </Link>
                     </div>
 
@@ -50,10 +42,7 @@ const Contact = () => {
                             Visit Here
                         </h1>
                         <p className={"text-center font-semibold"}>
-                            4517 Washington Ave.
-                        </p>
-                        <p className={"text-center font-semibold"}>
-                            Manchester, Kentucky 39495
+                            4517 Washington Ave. Manchester, Kentucky 39495
                         </p>
                     </div>
 
@@ -69,14 +58,6 @@ const Contact = () => {
                         <h1 className={"text-center text-3xl font-semibold"}>
                             Call Here
                         </h1>
-                        <Link
-                            href={"tel:(406) 555-0120"}
-                            className={
-                                "text-center font-semibold hover:underline"
-                            }
-                        >
-                            (406) 555-0120
-                        </Link>
                         <Link
                             href={"tel:(704) 555-0127"}
                             className={
