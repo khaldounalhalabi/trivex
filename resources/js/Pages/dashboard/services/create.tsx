@@ -73,6 +73,7 @@ const Create = () => {
                         ]}
                         onChange={(e) => setData("is_featured", e == "true")}
                         checked={"false"}
+                        label={"Is Featured ?"}
                     />
                     <div className="md:col-span-2">
                         <Textarea

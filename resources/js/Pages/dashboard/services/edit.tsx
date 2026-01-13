@@ -85,6 +85,7 @@ const Edit = ({ service }: { service: Service }) => {
                         ]}
                         onChange={(e) => setData("is_featured", e == "true")}
                         checked={service.is_featured ? "true" : "false"}
+                        label={"Is Featured ?"}
                     />
                     <div className="md:col-span-2">
                         <Textarea
