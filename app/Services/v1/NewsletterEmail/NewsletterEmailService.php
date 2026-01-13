@@ -23,6 +23,11 @@ class NewsletterEmailService extends BaseService
 
     protected string $repositoryClass = NewsletterEmailRepository::class;
 
+    public function getByEmail(string $email): ?\App\Models\NewsletterEmail
+    {
+        return $this->repository->getByEmail($email);
+    }
+
     public function sendNewsletter(array $data): void
     {
         [$contactEmail, $contactAddress, $contactPhone] = Concurrency::run([

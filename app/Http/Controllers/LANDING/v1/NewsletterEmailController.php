@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\LANDING\v1;
 
-use Inertia\Inertia;
-use Illuminate\Http\Request;
-use App\Models\NewsletterEmail;
-use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\WebController;
 use App\Services\v1\NewsletterEmail\NewsletterEmailService;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Inertia\Inertia;
 
 class NewsletterEmailController extends WebController
 {
@@ -24,25 +23,32 @@ class NewsletterEmailController extends WebController
             'email' => 'required|email|string',
         ]);
 
-        $existingEmail = NewsletterEmail::where('email', $data['email'])->first();
+        $data['email'] = strtolower($data['email']);
+
+        $existingEmail = $this->service->getByEmail($data['email']);
 
         if ($existingEmail) {
-            $existingEmail->update(['is_subscribed' => true]);
+            $this->service->update(['is_subscribed' => true], $existingEmail->id);
         } else {
             $this->service->store($data);
         }
 
-        $this->service->store($data);
-
-        return redirect()->back();
+        return redirect()->back()->with('success', trans('site.success'));
     }
 
     public function unsubscribe(Request $request)
     {
-        $token = $request->string('token');
-        $email = Crypt::decryptString("$token");
-        $this->service->unsubscribe($email);
+        try {
+            $token = $request->string('token');
+            if (empty($token)) {
+                return abort(404);
+            }
+            $email = Crypt::decryptString("$token");
+            $this->service->unsubscribe(strtolower($email));
 
-        return Inertia::render('landing/newsletter-unsubscribed', ['appUrl' => config('app.url')]);
+            return Inertia::render('landing/newsletter-unsubscribed', ['appUrl' => config('app.url')]);
+        } catch (\Exception|\Throwable|\Error $e) {
+            abort(404);
+        }
     }
 }
