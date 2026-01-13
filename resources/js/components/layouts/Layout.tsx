@@ -3,7 +3,6 @@ import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/shadcn/sidebar";
 import { Toaster } from "@/components/ui/shadcn/sonner";
 import { Sidebar } from "@/components/ui/Sidebar";
-import { MiddlewareProps } from "@/types";
 import { usePage } from "@inertiajs/react";
 import { registerPlugin } from "filepond";
 import FilePondPluginFilePoster from "filepond-plugin-file-poster";
@@ -14,19 +13,19 @@ import React from "react";
 import { toast } from "sonner";
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
-    if (usePage<MiddlewareProps>().props.message) {
-        toast.info(usePage<MiddlewareProps>().props.message);
-        usePage<MiddlewareProps>().props.message = undefined;
+    if (usePage().props.message) {
+        toast.info(usePage().props.message);
+        usePage().props.message = undefined;
     }
 
-    if (usePage<MiddlewareProps>().props.success) {
-        toast.success(usePage<MiddlewareProps>().props.success);
-        usePage<MiddlewareProps>().props.success = undefined;
+    if (usePage().props.success) {
+        toast.success(usePage().props.success);
+        usePage().props.success = undefined;
     }
 
-    if (usePage<MiddlewareProps>().props.error) {
-        toast.error(usePage<MiddlewareProps>().props.error);
-        usePage<MiddlewareProps>().props.success = undefined;
+    if (usePage().props.error) {
+        toast.error(usePage().props.error);
+        usePage().props.success = undefined;
     }
 
     registerPlugin(

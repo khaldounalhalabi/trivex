@@ -4,10 +4,9 @@ import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
-    DropdownMenuTrigger,
+    DropdownMenuTrigger
 } from "@/components/ui/shadcn/dropdown-menu";
 import { Label } from "@/components/ui/shadcn/label";
-import { MiddlewareProps } from "@/types";
 import { usePage } from "@inertiajs/react";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -31,7 +30,7 @@ const MultiSelect = ({
     translated = false,
     name,
 }: ISelectProps) => {
-    const errors = usePage<MiddlewareProps>().props?.errors;
+    const errors = usePage().props?.errors;
     const [selectedItems, setSelectedItems] = useState<string[]>(
         defaultValues ?? [],
     );
@@ -64,35 +63,29 @@ const MultiSelect = ({
                 <DropdownMenuTrigger asChild className="w-full">
                     <Button
                         variant="outline"
-                        className="w-full flex items-center justify-between"
+                        className="flex w-full items-center justify-between"
                         ref={triggerRef}
                     >
                         {selectedItems?.length <= 0 && (
-                            <div>
-                                {placeholder ?? "Select items"}
-                            </div>
+                            <div>{placeholder ?? "Select items"}</div>
                         )}
 
                         {selectedItems?.length > 0 && (
                             <div
-                                className={"flex items-center flex-wrap gap-1"}
+                                className={"flex flex-wrap items-center gap-1"}
                             >
                                 {selectedItems?.length > 3 ? (
                                     <>
                                         {selectedItems
                                             ?.slice(0, 3)
                                             .map((v, index) => (
-                                                <Badge key={index}>
-                                                    {v}
-                                                </Badge>
+                                                <Badge key={index}>{v}</Badge>
                                             ))}
                                         {`And ${selectedItems.length - 3} others`}
                                     </>
                                 ) : (
                                     selectedItems?.map((v, index) => (
-                                        <Badge key={index}>
-                                            {v}
-                                        </Badge>
+                                        <Badge key={index}>{v}</Badge>
                                     ))
                                 )}
                             </div>

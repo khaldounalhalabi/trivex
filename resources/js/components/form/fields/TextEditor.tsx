@@ -1,6 +1,5 @@
 import TiptapEditor from "@/components/form/fields/tiptap/TiptapEditor";
 import { Label } from "@/components/ui/shadcn/label";
-import { MiddlewareProps } from "@/types";
 import { usePage } from "@inertiajs/react";
 import { Editor } from "@tiptap/react";
 import React from "react";
@@ -22,7 +21,7 @@ const TextEditor: React.FC<TextEditorProps> = ({
     defaultValue,
     extraButtons,
 }) => {
-    const { errors, can_use_ai: withAi } = usePage<MiddlewareProps>().props;
+    const { errors, can_use_ai: withAi } = usePage().props;
     const error = name && errors[name] ? errors[name] : undefined;
 
     return (

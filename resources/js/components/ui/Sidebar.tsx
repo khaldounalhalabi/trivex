@@ -9,7 +9,6 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/shadcn/sidebar";
-import { MiddlewareProps } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
 import { type Icon } from "@tabler/icons-react";
 import {
@@ -61,7 +60,7 @@ export function Sidebar({
         },
     ];
 
-    const { authUser } = usePage<MiddlewareProps>().props;
+    const { authUser } = usePage().props;
     return (
         <ShadcnSidebar collapsible="icon" {...props}>
             <SidebarHeader>

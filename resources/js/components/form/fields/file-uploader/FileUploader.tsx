@@ -1,6 +1,5 @@
 import { Label } from "@/components/ui/labels-and-values/Label";
 import Media, { getFileNameFromUrl } from "@/Models/Media";
-import { MiddlewareProps } from "@/types";
 import { usePage } from "@inertiajs/react";
 import {
     ActualFileObject,
@@ -103,7 +102,7 @@ function FileUploader({
         FilePondInitialFile[] | ActualFileObject[]
     >(initialFiles);
 
-    const errors = usePage<MiddlewareProps>().props?.errors;
+    const errors = usePage().props?.errors;
 
     return (
         <Label label={label} col>
