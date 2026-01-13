@@ -120,12 +120,12 @@
     "src": "resources/fonts/raleway/Raleway-ThinItalic.ttf"
   },
   "resources/js/cubeta-starter.tsx": {
-    "file": "assets/cubeta-starter-C6Z_FH7z.js",
+    "file": "assets/cubeta-starter-Ca_Sm5RS.js",
     "name": "cubeta-starter",
     "src": "resources/js/cubeta-starter.tsx",
     "isEntry": true,
     "css": [
-      "assets/cubeta-starter-D3CarigF.css"
+      "assets/cubeta-starter-CA5efgN4.css"
     ],
     "assets": [
       "assets/PlayfairDisplay-Regular-cAkczocX.ttf",
