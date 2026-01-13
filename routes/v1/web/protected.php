@@ -27,3 +27,11 @@ Route::resource('/v1/f-a-qs', v1\FAQController::class)->names('v1.web.protected.
 Route::get('/settings', [v1\SettingController::class, 'index'])->name('v1.web.protected.settings.index');
 Route::get('/settings/{settingId}/edit', [v1\SettingController::class, 'edit'])->name('v1.web.protected.settings.edit');
 Route::put('/settings/{settingId}', [v1\SettingController::class, 'update'])->name('v1.web.protected.settings.update');
+
+Route::get('/v1/quote-requests/data', [v1\QuoteRequestController::class, 'data'])->name('v1.web.protected.quote.requests.data');
+Route::resource('/v1/quote-requests', v1\QuoteRequestController::class)
+    ->only([
+        'index',
+        'show',
+        'destroy',
+    ])->names('v1.web.protected.quote.requests');

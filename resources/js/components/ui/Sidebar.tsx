@@ -16,6 +16,7 @@ import {
     BadgeQuestionMarkIcon,
     ContactIcon,
     GitCommitVerticalIcon,
+    QuoteIcon,
     SettingsIcon,
 } from "lucide-react";
 import React from "react";
@@ -57,6 +58,11 @@ export function Sidebar({
             title: "Site Settings",
             href: route("v1.web.protected.settings.index"),
             icon: () => <SettingsIcon />,
+        },
+        {
+            title: "Quote Requests",
+            href: route("v1.web.protected.quote.requests.index"),
+            icon: () => <QuoteIcon />,
         },
     ];
 
