@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\v1\Service;
 
+use App\Repositories\ServiceRepository;
 use App\Serializers\SerializedMedia;
+use Closure;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Validation\Rule;
@@ -58,6 +60,29 @@ class StoreUpdateServiceRequest extends FormRequest
                     ]),
                 ];
             }),
+            'is_featured' => [
+                'nullable',
+                'boolean',
+                function (string $attribute, bool $value, Closure $fail) {
+                    if ($this->isPost()) {
+                        $count = ServiceRepository::make()
+                            ->globalQuery()
+                            ->where('is_featured', true)
+                            ->count();
+                        if ($count >= 3 && $value) {
+                            $fail('You can only have 3 featured services.');
+                        }
+                    } else {
+                        $count = ServiceRepository::make()
+                            ->globalQuery()
+                            ->where('is_featured', true)
+                            ->where('id', '!=', $this->route('service'))
+                            ->count();
+                        if ($count >= 3 && $value) {
+                            $fail('You can only have 3 featured services.');
+                        }
+                    }
+                }],
         ];
     }
 }

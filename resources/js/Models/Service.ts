@@ -11,6 +11,7 @@ interface Service {
     image?: Media | undefined;
     service_features?: ServiceFeature[];
     service_overview?: ServiceOverview;
+    is_featured: boolean;
 }
 
 export default Service;

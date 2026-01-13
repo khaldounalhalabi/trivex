@@ -1,4 +1,5 @@
 import Input from "@/components/form/fields/Input";
+import Radio from "@/components/form/fields/Radio";
 import Textarea from "@/components/form/fields/Textarea";
 import Form from "@/components/form/Form";
 import PageCard from "@/components/ui/PageCard";
@@ -17,6 +18,7 @@ const Create = () => {
             description: string;
             images: File[];
         };
+        is_featured?: boolean;
     }>();
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -62,6 +64,15 @@ const Create = () => {
                         type={"file"}
                         required
                         multiple={true}
+                    />
+                    <Radio
+                        name={"is_featured"}
+                        items={[
+                            { label: "Yes", value: "true" },
+                            { label: "No", value: "false" },
+                        ]}
+                        onChange={(e) => setData("is_featured", e == "true")}
+                        checked={"false"}
                     />
                     <div className="md:col-span-2">
                         <Textarea

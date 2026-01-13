@@ -8,32 +8,19 @@ const Faqs = ({ faqs }: { faqs: FAQ[] }) => {
         <div className={"h-full w-full"}>
             <div className={"relative flex flex-col items-center gap-5 py-16"}>
                 <div className={"h-1 w-16 rounded-sm bg-landing-primary"} />
-                <h4 className={"font-semibold"}>FREQUENTLY ASKED QUESTION</h4>
                 <h1 className={"w-[41vw] text-center text-5xl"}>
-                    Are you have a question ? look here
+                    Frequently Asked Questions
                 </h1>
                 <p className={"w-[61vw] pt-5 text-center text-sm text-wrap"}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Tempor quam quam adipiscing at est integer tellus. Quis
-                    congue tortor tortor convallis egestas magna massa
-                    consequat. Neque tellus nunc a augue volutpat non elementum
-                    pulvinar.
+                    Straight answers to critical questions about our security
+                    operations, standards, and capabilities.
                 </p>
-                <img
-                    src={asset("/images/full-donut.png")}
-                    className={
-                        "absolute start-16 top-1/2 w-72 -translate-y-1/2"
-                    }
-                />
             </div>
 
             <div className={"w-full py-24"}>
                 <div className={"flex flex-col items-center gap-5 px-16"}>
                     {faqs.map((f, index) => (
-                        <QuestionCard
-                            question={f.question}
-                            answer={f.answer}
-                        />
+                        <QuestionCard question={f.question} answer={f.answer} />
                     ))}
                 </div>
             </div>

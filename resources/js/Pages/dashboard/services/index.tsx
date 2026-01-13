@@ -3,6 +3,7 @@ import DataTable from "@/components/datatable/DataTable";
 import ImagePreview from "@/components/show/ImagePreview";
 import Service from "@/Models/Service";
 import Http from "@/Modules/Http/Http";
+import { Badge } from "@/components/ui/shadcn/badge";
 
 const Index = () => {
     return (
@@ -39,6 +40,17 @@ const Index = () => {
                     sortable: true,
                 },
                 { name: "name", label: "Name", sortable: true },
+                {
+                    name: "is_featured",
+                    label: "Is Featured",
+                    sortable: true,
+                    render: (data) =>
+                        data ? (
+                            <Badge variant={"success"}>Yes</Badge>
+                        ) : (
+                            <Badge variant={"destructive"}>No</Badge>
+                        ),
+                },
                 {
                     name: "cover",
                     label: "Cover",

@@ -23,6 +23,7 @@ class ServiceResource extends BaseResource
             'description'       => $this->description,
             'cover'             => $this->cover,
             'image'             => $this->image,
+            'is_featured'       => $this->is_featured,
             'service_features'  => ServiceFeatureResource::collection($this->whenLoaded('serviceFeatures')),
             'service_overview'  => ServiceOverviewResource::make($this->whenLoaded('serviceOverview')),
         ];

@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property Carbon                                                          $created_at
  * @property Carbon                                                          $updated_at
  * @property ServiceOverview|null                                            $serviceOverview
+ * @property bool                                                            $is_featured
  *
  * @mixin Builder<Service>
  *
@@ -41,6 +42,7 @@ class Service extends Model
         'description',
         'cover',
         'image',
+        'is_featured',
     ];
 
     protected function casts(): array

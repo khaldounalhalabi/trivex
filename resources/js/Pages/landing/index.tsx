@@ -5,13 +5,14 @@ import InsightsAndNews from "@/components/landing/home/InsightsAndNews";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import OurImpact from "@/components/landing/home/OurImpact";
 import OurTeam from "@/components/landing/home/OurTeam";
+import Service from "@/Models/Service";
 
-const Index = () => {
+const Index = ({services}:{services:Service[]}) => {
     return (
         <div className={"h-full w-full"}>
             <HeroSection />
             <PartnersSection />
-            <AboutUsSection />
+            <AboutUsSection services={services} />
             <OurImpact />
             <OurTeam />
             <InsightsAndNews />

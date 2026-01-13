@@ -52,4 +52,21 @@ class ServiceService extends BaseService
 
         return $service->load($relationships);
     }
+
+    public function featured(array $relations = [])
+    {
+        $services = $this->repository->featured($relations);
+        if ($services->count() < 3) {
+            $services = $services
+                ->merge(
+                    $this->repository
+                        ->globalQuery($relations)
+                        ->limit(3 - $services->count())
+                        ->where('is_featured', false)
+                        ->get(),
+                );
+        }
+
+        return $services;
+    }
 }

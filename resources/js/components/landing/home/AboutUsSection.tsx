@@ -1,8 +1,9 @@
 import LongRightArrow from "@/components/icons/LongRightArrow";
 import LandingButton from "@/components/landing/LandingButton";
 import { asset } from "@/helper";
-
-function AboutUsSection() {
+import Service from "@/Models/Service";
+import { Link } from "@inertiajs/react";
+function AboutUsSection({ services = [] }: { services: Service[] }) {
     return (
         <div className={"h-full w-full bg-landing-background py-20"}>
             <div className={"flex h-full items-start justify-between"}>
@@ -54,72 +55,29 @@ function AboutUsSection() {
                 </div>
             </div>
             <div className={"grid h-full grid-cols-3 gap-30 px-30 py-10"}>
-                <div
-                    className={
-                        "flex h-full flex-col items-start justify-between gap-5"
-                    }
-                >
-                    <h2 className={"text-3xl font-semibold"}>
-                        Manned Security Services
-                    </h2>
-                    <p>
-                        Static guarding for offices, residential, retail &
-                        industrial sites, mobile patrols, reception security,
-                        construction security.
-                    </p>
-                    <button
+                {services.map((service, index) => (
+                    <div
+                        key={index}
                         className={
-                            "flex cursor-pointer items-center gap-3 transition-all hover:gap-5"
+                            "flex h-full flex-col items-start justify-between gap-5"
                         }
                     >
-                        <LongRightArrow />
-                        <p>View More</p>
-                    </button>
-                </div>
-
-                <div
-                    className={
-                        "flex h-full flex-col items-start justify-between gap-5"
-                    }
-                >
-                    <h2 className={"text-3xl font-semibold"}>
-                        Specialist Protection
-                    </h2>
-                    <p>
-                        Close protection for VIPs, escorts & convoys, high-risk
-                        zone operations, international security assignments.
-                    </p>
-                    <button
-                        className={
-                            "flex cursor-pointer items-center gap-3 transition-all hover:gap-5"
-                        }
-                    >
-                        <LongRightArrow />
-                        <p>View More</p>
-                    </button>
-                </div>
-
-                <div
-                    className={
-                        "flex h-full flex-col items-start justify-between gap-5"
-                    }
-                >
-                    <h2 className={"text-3xl font-semibold"}>
-                        Aviation & Transport Security
-                    </h2>
-                    <p>
-                        Airport screening, maritime port security, airline &
-                        cargo security, rail & public transport protection.
-                    </p>
-                    <button
-                        className={
-                            "flex cursor-pointer items-center gap-3 transition-all hover:gap-5"
-                        }
-                    >
-                        <LongRightArrow />
-                        <p>View More</p>
-                    </button>
-                </div>
+                        <h2 className={"text-3xl font-semibold"}>
+                            {service.name}
+                        </h2>
+                        <p>{service.small_description}</p>
+                        <Link href={route("landing.services.show", service.id)}>
+                            <button
+                                className={
+                                    "flex cursor-pointer items-center gap-3 transition-all hover:gap-5"
+                                }
+                            >
+                                <LongRightArrow />
+                                <p>View More</p>
+                            </button>
+                        </Link>
+                    </div>
+                ))}
             </div>
         </div>
     );

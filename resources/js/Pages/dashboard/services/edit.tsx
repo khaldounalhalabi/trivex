@@ -1,4 +1,5 @@
 import Input from "@/components/form/fields/Input";
+import Radio from "@/components/form/fields/Radio";
 import Textarea from "@/components/form/fields/Textarea";
 import Form from "@/components/form/Form";
 import PageCard from "@/components/ui/PageCard";
@@ -19,6 +20,7 @@ const Edit = ({ service }: { service: Service }) => {
             description: string | undefined;
             images: File[] | Media[] | undefined;
         };
+        is_featured?: boolean;
     }>({
         _method: "PUT",
         name: service?.name,
@@ -30,6 +32,7 @@ const Edit = ({ service }: { service: Service }) => {
             description: service.service_overview?.description,
             images: service.service_overview?.images,
         },
+        is_featured: service.is_featured,
     });
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -73,6 +76,15 @@ const Edit = ({ service }: { service: Service }) => {
                         }}
                         type={"file"}
                         multiple={true}
+                    />
+                    <Radio
+                        name={"is_featured"}
+                        items={[
+                            { label: "Yes", value: "true" },
+                            { label: "No", value: "false" },
+                        ]}
+                        onChange={(e) => setData("is_featured", e == "true")}
+                        checked={service.is_featured ? "true" : "false"}
                     />
                     <div className="md:col-span-2">
                         <Textarea

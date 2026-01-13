@@ -23,6 +23,7 @@ class ServiceSeeder extends Seeder
                 'description'       => 'Our Manned Security Services ensure a visible, reliable, and professional security presence at your premises. Trivex officers are trained to maintain order, prevent incidents, and ensure safety through vigilance, discipline, and communication. Each officer operates under clear post orders, supported by supervisors and reporting systems to guarantee accountability and performance excellence.',
                 'cover'             => new UploadedFile(storage_path('app/private/required/services/manned-security/cover.png'), 'cover.png'),
                 'image'             => new UploadedFile(storage_path('app/private/required/services/manned-security/image.png'), 'cover.png'),
+                'is_featured'       => true,
             ],
             'overview' => [
                 'description' => 'At Trivex Security International, we offer a comprehensive range of elite security solutions tailored to meet the unique needs of businesses, governments, and high-profile clients. Our services include manned security, specialist protection, aviation and transport security, government and defence contracts, cash and valuables in transit, canine units, advanced security technology, risk management, and expert training. We are committed to providing safety, reliability, and peace of mind.',
@@ -63,6 +64,7 @@ class ServiceSeeder extends Seeder
                 'description'       => 'Trivex Security International’s Specialist Protection services are designed for individuals and organizations requiring discreet, high-level protection in any environment. Our elite teams are trained in surveillance awareness, route planning, and emergency response—ensuring safety without disrupting daily activities.',
                 'cover'             => new UploadedFile(storage_path('app/private/required/services/specialist-protection/cover.png'), 'cover.png'),
                 'image'             => new UploadedFile(storage_path('app/private/required/services/specialist-protection/image.png'), 'cover.png'),
+                'is_featured'       => true,
             ],
             'overview' => [
                 'description' => 'At Trivex Security International, we offer a comprehensive range of elite security solutions tailored to meet the unique needs of businesses, governments, and high-profile clients. Our services include manned security, specialist protection, aviation and transport security, government and defence contracts, cash and valuables in transit, canine units, advanced security technology, risk management, and expert training. We are committed to providing safety, reliability, and peace of mind.',
@@ -103,6 +105,7 @@ class ServiceSeeder extends Seeder
                 'description'       => 'Trivex delivers comprehensive Aviation and Transport Security solutions for airports, airlines, ports, and logistics networks. We integrate trained personnel, advanced systems, and regulatory compliance to maintain safety across all transit points.',
                 'cover'             => new UploadedFile(storage_path('app/private/required/services/aviation/cover.png'), 'cover.png'),
                 'image'             => new UploadedFile(storage_path('app/private/required/services/aviation/image.png'), 'cover.png'),
+                'is_featured'       => true,
             ],
             'overview' => [
                 'description' => 'At Trivex Security International, we offer a comprehensive range of elite security solutions tailored to meet the unique needs of businesses, governments, and high-profile clients. Our services include manned security, specialist protection, aviation and transport security, government and defence contracts, cash and valuables in transit, canine units, advanced security technology, risk management, and expert training. We are committed to providing safety, reliability, and peace of mind.',
@@ -374,9 +377,10 @@ class ServiceSeeder extends Seeder
 
     /**
      * @param array{service: array{name:string, small_description:string,description:string,cover:UploadedFile,
-     *                                            image:UploadedFile}, overview:array{description:string,
-     *                                            images:UploadedFile[]}, features:array{array{title:string,
-     *                                             description:string, image:UploadedFile}}} $data
+     *                                            image:UploadedFile,is_featured?:bool},
+     *                                            overview:array{description:string, images:UploadedFile[]},
+     *                                            features:array{array{title:string, description:string,
+     *                                            image:UploadedFile}}} $data
      * @return void
      */
     private function createService(array $data = []): void
