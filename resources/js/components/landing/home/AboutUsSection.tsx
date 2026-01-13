@@ -21,9 +21,11 @@ function AboutUsSection({ services = [] }: { services: Service[] }) {
                         defence, cash transit, and advanced tech solutions —
                         Trivex covers every security dimension.
                     </p>
-                    <LandingButton className={"px-10 py-3"}>
-                        See Our Services
-                    </LandingButton>
+                    <Link href={route("landing.services")}>
+                        <LandingButton className={"px-10 py-3"}>
+                            See Our Services
+                        </LandingButton>
+                    </Link>
                 </div>
                 <img
                     src={asset("/images/01.png")}
