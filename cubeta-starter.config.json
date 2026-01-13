@@ -114,6 +114,26 @@
             ],
             "relations": [],
             "version": "v1"
+        },
+        {
+            "model_name": "FAQ",
+            "table_name": "f_a_qs",
+            "attributes": [
+                {
+                    "name": "question",
+                    "type": "text",
+                    "nullable": false,
+                    "unique": false
+                },
+                {
+                    "name": "answer",
+                    "type": "text",
+                    "nullable": false,
+                    "unique": false
+                }
+            ],
+            "relations": [],
+            "version": "v1"
         }
     ]
 }

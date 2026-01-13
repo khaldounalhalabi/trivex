@@ -36,7 +36,9 @@ const QuestionCard = ({
                 }`}
             >
                 <div className="overflow-hidden">
-                    <p className="leading-relaxed">{answer}</p>
+                    <p className="leading-relaxed">
+                        <span dangerouslySetInnerHTML={{ __html: answer }} />
+                    </p>
                 </div>
             </div>
         </div>

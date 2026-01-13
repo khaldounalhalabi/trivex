@@ -20,3 +20,6 @@ Route::get('/v1/newsletter-emails/data', [v1\NewsletterEmailController::class, '
 Route::resource('/v1/newsletter-emails', v1\NewsletterEmailController::class)
     ->only(['index', 'destroy'])
     ->names('v1.web.protected.newsletter.emails');
+
+Route::get('/v1/f-a-qs/data', [v1\FAQController::class, 'data'])->name('v1.web.protected.f.a.qs.data');
+Route::resource('/v1/f-a-qs', v1\FAQController::class)->names('v1.web.protected.f.a.qs');

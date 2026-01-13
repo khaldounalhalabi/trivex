@@ -84,7 +84,7 @@ const TiptapEditor: React.FC<IProps> = ({
             setIsDirty(false);
             setIsSaving(false);
         }
-    }, [onChange]);
+    }, [onChange, editorRef, WrapContent]);
 
     useEffect(() => {
         if (isDirty) {
@@ -112,10 +112,10 @@ const TiptapEditor: React.FC<IProps> = ({
 
     return (
         <div
-            className={className ?? "p-4 border rounded-lg shadow-lg w-full"}
+            className={className ?? "w-full rounded-lg border p-4 shadow-lg"}
             {...props}
         >
-            <div className="flex justify-end items-center mb-2 gap-2">
+            <div className="mb-2 flex items-center justify-end gap-2">
                 <Button
                     onClick={saveContent}
                     disabled={isSaved || isSaving}
@@ -174,7 +174,7 @@ const EditorToolbar = ({
         );
     }
     return (
-        <div className="flex flex-wrap w-full max-w-full items-center gap-2 mb-4">
+        <div className="mb-4 flex w-full max-w-full flex-wrap items-center gap-2">
             <BoldButton editor={editor} />
             <ItalicButton editor={editor} />
             <ColorButton editor={editor} />

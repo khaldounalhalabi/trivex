@@ -1,8 +1,9 @@
 import QuestionCard from "@/components/landing/faqs/QuestionCard";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import { asset } from "@/helper";
+import FAQ from "@/Models/FAQ";
 
-const Faqs = () => {
+const Faqs = ({ faqs }: { faqs: FAQ[] }) => {
     return (
         <div className={"h-full w-full"}>
             <div className={"relative flex flex-col items-center gap-5 py-16"}>
@@ -28,33 +29,12 @@ const Faqs = () => {
 
             <div className={"w-full py-24"}>
                 <div className={"flex flex-col items-center gap-5 px-16"}>
-                    <QuestionCard
-                        question={"What services do you provide?"}
-                        answer={
-                            "We don’t offer cybersecurity services. Our expertise is private security and physical security technology—manned guarding, close protection, K9, CCTV, alarms, access control, and monitoring. We’ll collaborate with your internal IT/cyber teams or trusted vendors to align policies, harden interfaces, and avoid conflicts, but we don’t deliver cyber monitoring, SOC operations, incident response, or penetration testing. Partner referrals available on request. "
-                        }
-                    />
-
-                    <QuestionCard
-                        question={"Do you provide cybersecurity?"}
-                        answer={
-                            "We don’t offer cybersecurity services. Our expertise is private security and physical security technology—manned guarding, close protection, K9, CCTV, alarms, access control, and monitoring. We’ll collaborate with your internal IT/cyber teams or trusted vendors to align policies, harden interfaces, and avoid conflicts, but we don’t deliver cyber monitoring, SOC operations, incident response, or penetration testing. Partner referrals available on request. "
-                        }
-                    />
-
-                    <QuestionCard
-                        question={"Do you operate internationally?"}
-                        answer={
-                            "Yes. We routinely integrate with existing access control and CCTV ecosystems, including badge/biometric readers, VMS/NVR platforms, alarm panels, and remote monitoring centers. Our engineers map device inventories, assess firmware/compatibility, and design API/onvif integrations, permissions, and escalation paths. /cyber teams or trusted vendors to align policies, harden interfaces, and avoid conflicts, but we don’t deliver cyber monitoring, SOC operations, incident response, or penetration testing. Partner referrals available on request. "
-                        }
-                    />
-
-                    <QuestionCard
-                        question={"How fast can you deploy?"}
-                        answer={
-                            "We don’t offer cybersecurity services. Our expertise is private security and physical security technology—manned guarding, close protection, K9, CCTV, alarms, access control, and monitoring. We’ll collaborate with your internal IT/cyber teams or trusted vendors to align policies, harden interfaces, and avoid conflicts, but we don’t deliver cyber monitoring, SOC operations, incident response, or penetration testing. Partner referrals available on request. "
-                        }
-                    />
+                    {faqs.map((f, index) => (
+                        <QuestionCard
+                            question={f.question}
+                            answer={f.answer}
+                        />
+                    ))}
                 </div>
             </div>
 

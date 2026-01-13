@@ -1,11 +1,4 @@
 const selectors = `.tiptap-content-viewer {
-blockquote {
-        border-left: 3px solid var(--primary);
-        margin: 1.5rem 0;
-        padding-left: 1rem;
-    }
-
-
     /* Code and preformatted text styles */
 
     code {
@@ -19,13 +12,13 @@ blockquote {
     /* Link styles */
 
     a {
-        color: var(--color-blue-300);
+        color: var(--landing-primary);
         cursor: pointer;
-        text-underline: var(--color-blue-300);
+        text-underline: var(--landing-primary);
         text-underline-mode: auto;
 
         &:hover {
-            color: var(--color-blue-500);
+            color: var(--landing-primary/150);
         }
     }
 
@@ -38,7 +31,7 @@ blockquote {
         max-width: 100%;
 
         &.ProseMirror-selectednode {
-            outline: 3px solid var(--primary);
+            outline: 3px solid var(--landing-primary);
         }
     }
 
@@ -75,6 +68,7 @@ blockquote {
         line-height: 1.1;
         margin-top: 2.5rem;
         text-wrap: pretty;
+        font-weight: bold;
     }
 
     h1,
@@ -84,21 +78,21 @@ blockquote {
     }
 
     h1 {
-        font-size: 1.4rem;
+        font-size: var(--text-5xl);
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: var(--text-2xl);
     }
 
     h3 {
-        font-size: 1.1rem;
+        font-size: var(--text-xl);
     }
 
     h4,
     h5,
     h6 {
-        font-size: 1rem;
+        font-size: var(--text-lg);
     }
 
     /** Horizontal rule */
@@ -177,6 +171,7 @@ blockquote {
     }
 
     /* Youtube embed */
+
     div[data-youtube-video] {
         cursor: move;
         padding-right: 1.5rem;
