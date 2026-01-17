@@ -22,10 +22,6 @@ const AboutMissionSection = () => {
                 src={asset("/images/security-shield-inhand.png")}
                 className={"w-1/2"}
             />
-            <img
-                src={asset("/images/donut-rotate.png")}
-                className={"absolute start-16 -bottom-36 w-52"}
-            />
         </div>
     );
 };

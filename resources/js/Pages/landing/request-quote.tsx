@@ -2,7 +2,6 @@ import AnimatedLabelInput from "@/components/form/fields/AnimatedLabelInput";
 import LoadingSpinner from "@/components/icons/LoadingSpinner";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import LandingButton from "@/components/landing/LandingButton";
-import { asset } from "@/helper";
 import QuoteRequest from "@/Models/QuoteRequest";
 import { useForm } from "@inertiajs/react";
 import { FormEvent } from "react";
@@ -32,16 +31,7 @@ const RequestQuote = () => {
                 </p>
             </div>
 
-            <div className={"relative flex w-full items-center justify-center"}>
-                <img
-                    src={asset("/images/full-donut.png")}
-                    className={"absolute -end-20 -top-32 w-64"}
-                />
-                <img
-                    src={asset("/images/donut-rotate.png")}
-                    className={"absolute -start-24 -top-32 w-64"}
-                />
-
+            <div className={"flex w-full items-center justify-center"}>
                 <div
                     className={"w-[76vw] rounded-4xl bg-[#E5E5E5] px-18 py-16"}
                 >
@@ -174,7 +164,7 @@ const RequestQuote = () => {
                             >
                                 <div
                                     className={
-                                        "inline-flex w-full items-center gap-3 justify-center"
+                                        "inline-flex w-full items-center justify-center gap-3"
                                     }
                                 >
                                     <span>Submit & Get My Quote</span>

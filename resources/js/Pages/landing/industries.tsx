@@ -7,7 +7,6 @@ const Industries = () => {
     return (
         <div className={"h-full w-full"}>
             <div className={"relative flex items-center justify-between py-16"}>
-                <img src={asset("/images/full-donut.png")} className={"absolute -top-16 -left-28 w-64"} />
                 <div className={"w-[50%] space-y-5 ps-36"}>
                     <h1 className={"text-5xl font-semibold"}>
                         Industries We Serve
