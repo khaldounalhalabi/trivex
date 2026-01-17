@@ -1,4 +1,62 @@
 {
+  "_admin-pages-BggjRS3Q.js": {
+    "file": "assets/admin-pages-BggjRS3Q.js",
+    "name": "admin-pages",
+    "imports": [
+      "_vendor-core-Khs3qsRJ.js",
+      "_vendor-icons-2Xpm8LWC.js",
+      "_vendor-ui-CQq91plX.js"
+    ],
+    "css": [
+      "assets/admin-pages-D9Kd-DeC.css"
+    ]
+  },
+  "_admin-pages-D9Kd-DeC.css": {
+    "file": "assets/admin-pages-D9Kd-DeC.css",
+    "src": "_admin-pages-D9Kd-DeC.css"
+  },
+  "_client-pages-CelGYUFs.js": {
+    "file": "assets/client-pages-CelGYUFs.js",
+    "name": "client-pages",
+    "imports": [
+      "_vendor-core-Khs3qsRJ.js",
+      "_admin-pages-BggjRS3Q.js",
+      "_vendor-icons-2Xpm8LWC.js",
+      "_vendor-swiper-Cc_I6R0H.js"
+    ]
+  },
+  "_vendor-core-Khs3qsRJ.js": {
+    "file": "assets/vendor-core-Khs3qsRJ.js",
+    "name": "vendor-core"
+  },
+  "_vendor-icons-2Xpm8LWC.js": {
+    "file": "assets/vendor-icons-2Xpm8LWC.js",
+    "name": "vendor-icons",
+    "imports": [
+      "_vendor-core-Khs3qsRJ.js"
+    ]
+  },
+  "_vendor-swiper-Cc_I6R0H.js": {
+    "file": "assets/vendor-swiper-Cc_I6R0H.js",
+    "name": "vendor-swiper",
+    "imports": [
+      "_vendor-core-Khs3qsRJ.js"
+    ],
+    "css": [
+      "assets/vendor-swiper-Cvr-PdhS.css"
+    ]
+  },
+  "_vendor-swiper-Cvr-PdhS.css": {
+    "file": "assets/vendor-swiper-Cvr-PdhS.css",
+    "src": "_vendor-swiper-Cvr-PdhS.css"
+  },
+  "_vendor-ui-CQq91plX.js": {
+    "file": "assets/vendor-ui-CQq91plX.js",
+    "name": "vendor-ui",
+    "imports": [
+      "_vendor-core-Khs3qsRJ.js"
+    ]
+  },
   "resources/fonts/play-fair/PlayfairDisplay-Black.ttf": {
     "file": "assets/PlayfairDisplay-Black-fT6MyzXp.ttf",
     "src": "resources/fonts/play-fair/PlayfairDisplay-Black.ttf"
@@ -120,12 +178,20 @@
     "src": "resources/fonts/raleway/Raleway-ThinItalic.ttf"
   },
   "resources/js/cubeta-starter.tsx": {
-    "file": "assets/cubeta-starter-u6kzEMvW.js",
+    "file": "assets/cubeta-starter-D3-wdYcZ.js",
     "name": "cubeta-starter",
     "src": "resources/js/cubeta-starter.tsx",
     "isEntry": true,
+    "imports": [
+      "_admin-pages-BggjRS3Q.js",
+      "_client-pages-CelGYUFs.js",
+      "_vendor-core-Khs3qsRJ.js",
+      "_vendor-icons-2Xpm8LWC.js",
+      "_vendor-ui-CQq91plX.js",
+      "_vendor-swiper-Cc_I6R0H.js"
+    ],
     "css": [
-      "assets/cubeta-starter-jR70VUfC.css"
+      "assets/cubeta-starter-CmLcKbm-.css"
     ],
     "assets": [
       "assets/PlayfairDisplay-Regular-cAkczocX.ttf",
