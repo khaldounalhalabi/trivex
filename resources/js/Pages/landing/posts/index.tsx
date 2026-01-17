@@ -19,14 +19,14 @@ function Index({
     const { data, links } = posts;
 
     return (
-        <div className="min-h-screen bg-[#FDF6E3] px-10 py-24 lg:px-20">
+        <div className="min-h-screen bg-[#FDF6E3] px-5 md:px-10 py-24 lg:px-20">
             {/* Header Area */}
-            <div className="mb-20 flex flex-col items-end justify-between gap-10 lg:flex-row">
+            <div className="mb-20 flex flex-col md:items-end justify-between gap-10 lg:flex-row">
                 <div className="max-w-2xl">
                     <p className="mb-4 text-sm font-bold tracking-[0.4em] text-black uppercase">
                         Insights & Intelligence
                     </p>
-                    <h1 className="text-6xl leading-tight font-semibold text-black">
+                    <h1 className="text-3xl md:text-6xl leading-tight font-semibold text-black">
                         Trivex <span className="opacity-40">Briefings.</span>
                     </h1>
                 </div>

@@ -12,8 +12,12 @@ const Contact = ({
 }) => {
     return (
         <div className={"h-full w-full"}>
-            <div className={"flex w-full items-center justify-center py-24"}>
-                <div className={"grid w-[83%] grid-cols-3 gap-10"}>
+            <div
+                className={
+                    "flex w-full items-center justify-center px-5 py-24 md:px-0"
+                }
+            >
+                <div className={"grid gap-10 md:w-[83%] md:grid-cols-3"}>
                     <div
                         className={
                             "flex flex-col items-center gap-5 border border-[#BCBCBC] p-10"

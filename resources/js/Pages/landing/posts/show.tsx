@@ -5,10 +5,10 @@ function Show({ post, prev, next }: { post: Post; prev?: Post; next?: Post }) {
     return (
         <div className="min-h-screen bg-[#FDF6E3] pb-32">
             {/* Header / Hero Section */}
-            <div className="relative h-[60vh] w-full overflow-hidden bg-black/25">
+            <div className="relative max-h-[50vh] w-full overflow-hidden bg-black/25 md:h-[60vh] md:max-h-none">
                 <img
                     src={post.image?.url}
-                    className="h-full w-full object-cover opacity-60"
+                    className="h-full w-full opacity-60"
                     alt={post.title}
                 />
                 <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black/80 to-transparent px-10 pb-20 lg:px-20">
@@ -16,7 +16,7 @@ function Show({ post, prev, next }: { post: Post; prev?: Post; next?: Post }) {
                         <span className="bg-[#FFD566] px-4 py-1 text-xs font-bold tracking-widest text-black uppercase">
                             {post.category}
                         </span>
-                        <h1 className="text-5xl leading-tight font-semibold text-white lg:text-7xl">
+                        <h1 className="text-2xl leading-tight font-semibold text-white md:text-5xl lg:text-7xl">
                             {post.title}
                         </h1>
                     </div>
@@ -74,7 +74,7 @@ function Show({ post, prev, next }: { post: Post; prev?: Post; next?: Post }) {
 
                     {/* Article Body */}
                     <article className="order-1 lg:order-2 lg:w-3/4">
-                        <div className="prose-black prose prose-lg max-w-none border border-black/5 bg-white p-12 shadow-sm lg:p-20 prose-headings:font-bold prose-blockquote:border-[#FFD566] prose-blockquote:bg-[#FDF6E3] prose-blockquote:px-6 prose-blockquote:py-1">
+                        <div className="prose-black prose prose-lg max-w-none border border-black/5 bg-white p-6 shadow-sm md:p-12 lg:p-20 prose-headings:font-bold prose-blockquote:border-[#FFD566] prose-blockquote:bg-[#FDF6E3] prose-blockquote:px-6 prose-blockquote:py-1">
                             <div
                                 dangerouslySetInnerHTML={{
                                     __html: post.content,

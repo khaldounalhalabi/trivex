@@ -5,14 +5,22 @@ import Service from "@/Models/Service";
 
 const Show = ({ service }: { service: Service }) => {
     return (
-        <div className={"h-full w-full px-5 md:px-0"}>
-            <div className={"flex w-full items-center justify-center md:pt-10"}>
+        <div className={"h-full w-full"}>
+            <div
+                className={
+                    "flex w-full items-center justify-center px-5 md:px-0 md:pt-10"
+                }
+            >
                 <img
                     src={service.cover?.url}
                     className={"md:max-h-[75vh] md:w-[84vw]"}
                 />
             </div>
-            <div className={"flex w-full items-center justify-center"}>
+            <div
+                className={
+                    "flex w-full items-center justify-center px-5 md:px-0"
+                }
+            >
                 <div className={"space-y-5 py-10 md:w-[84vw]"}>
                     <h1 className={"text-2xl font-semibold md:text-5xl"}>
                         {service.name}
@@ -20,7 +28,7 @@ const Show = ({ service }: { service: Service }) => {
                     <p>{service.description}</p>
                 </div>
             </div>
-            <div className={"space-y-5 py-5 md:space-y-0"}>
+            <div className={"space-y-5 px-5 py-5 md:space-y-0 md:px-0"}>
                 {service.service_features?.map((feature, index) => {
                     if (index % 2 == 0) {
                         return (
@@ -81,13 +89,17 @@ const Show = ({ service }: { service: Service }) => {
                 })}
             </div>
 
-            <div className={"flex items-center justify-center py-10"}>
-                <div className={"flex md:w-[84vw] flex-col gap-5"}>
-                    <h1 className={"text-2xl md:text-5xl font-semibold"}>
+            <div
+                className={
+                    "flex items-center justify-center px-5 py-10 md:px-0"
+                }
+            >
+                <div className={"flex flex-col gap-5 md:w-[84vw]"}>
+                    <h1 className={"text-2xl font-semibold md:text-5xl"}>
                         Overview Service
                     </h1>
                     <p>{service.service_overview?.description}</p>
-                    <div className={"grid md:grid-cols-3 gap-5"}>
+                    <div className={"grid gap-5 md:grid-cols-3"}>
                         {service.service_overview?.images?.map((image) => (
                             <img src={image.url} />
                         ))}

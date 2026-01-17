@@ -16,7 +16,7 @@ const QuestionCard = ({
                 className={`flex w-full items-center justify-between ${open ? "border-b border-b-black pb-3" : ""}`}
             >
                 <h1
-                    className={`text-lg font-semibold ${open ? "text-landing-primary" : ""}`}
+                    className={`md:text-lg font-semibold ${open ? "text-landing-primary" : ""}`}
                 >
                     {question}
                 </h1>

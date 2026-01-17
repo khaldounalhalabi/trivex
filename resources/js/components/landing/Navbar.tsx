@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <nav className="sticky top-0 z-50 flex w-full justify-center border-b border-gray-100 bg-landing-background">
-            <div className="flex w-[90%] items-center justify-between py-4">
+            <div className="flex w-[90%] items-center justify-between">
                 {/* Logo Section */}
                 <div className="w-[70px] md:w-[7%]">
                     <AppLogo className="w-full" />
@@ -47,7 +47,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="p-2 text-landing-primary lg:hidden"
+                    className="text-landing-primary lg:hidden"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}

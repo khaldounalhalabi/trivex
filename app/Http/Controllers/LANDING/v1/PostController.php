@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\LANDING\v1;
 
 use App\Http\Controllers\WebController;
+use App\Http\Resources\v1\PostResource;
 use App\Services\v1\Post\PostService;
 use Inertia\Inertia;
 
@@ -36,9 +37,9 @@ class PostController extends WebController
         $prevAndNextPosts = $this->service->getPrevAndNextPosts($post->id);
 
         return Inertia::render('landing/posts/show', [
-            'post' => $post,
-            'prev' => $prevAndNextPosts['prev'] ?? null,
-            'next' => $prevAndNextPosts['next'] ?? null,
+            'post' => PostResource::make($post),
+            'prev' => $prevAndNextPosts['prev'] ? PostResource::make($prevAndNextPosts['prev']) : null,
+            'next' => $prevAndNextPosts['next'] ? PostResource::make($prevAndNextPosts['next']) : null,
         ]);
     }
 }

@@ -1,14 +1,18 @@
 import PartnersSection from "@/components/landing/PartnersSection";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import { asset } from "@/helper";
-import { CheckIcon } from "lucide-react";
+import WhyChooseUs from "@/components/landing/WhyChooseUs";
 
 const Industries = () => {
     return (
         <div className={"h-full w-full"}>
-            <div className={"relative flex items-center justify-between py-16"}>
-                <div className={"w-[50%] space-y-5 ps-36"}>
-                    <h1 className={"text-5xl font-semibold"}>
+            <div
+                className={
+                    "flex items-center justify-between px-5 py-16 md:px-0"
+                }
+            >
+                <div className={"space-y-5 md:w-[50%] md:ps-36"}>
+                    <h1 className={"text-2xl font-semibold md:text-5xl"}>
                         Industries We Serve
                     </h1>
                     <p>
@@ -31,54 +35,15 @@ const Industries = () => {
                         </ul>
                     </div>
                 </div>
-                <img className={"w-[50%]"} src={asset("/images/guard.png")} />
+                <img
+                    className={"hidden w-[50%] md:block"}
+                    src={asset("/images/guard.png")}
+                />
             </div>
 
             <PartnersSection />
 
-            <div className={"flex items-center justify-between py-16"}>
-                <div className={"w-[50%] space-y-5 ps-36"}>
-                    <h2
-                        className={
-                            "border-s-2 border-s-landing-primary ps-1 text-lg capitalize"
-                        }
-                    >
-                        Why Choos Us
-                    </h2>
-                    <h1 className={"text-5xl font-semibold"}>
-                        Provide advanced security for advanced threat
-                    </h1>
-                    <p>
-                        We provide advanced security solutions designed to
-                        counter advanced threats, combining innovation,
-                        expertise, and reliability to safeguard your business in
-                        today’s evolving digital landscape.
-                    </p>
-                    <div className={"space-y-3"}>
-                        <div className={"flex items-center gap-2"}>
-                            <CheckIcon className={"text-landing-primary"} />
-                            <p className={"text-lg font-semibold"}>
-                                Content Delivery Network
-                            </p>
-                        </div>
-
-                        <div className={"flex items-center gap-2"}>
-                            <CheckIcon className={"text-landing-primary"} />
-                            <p className={"text-lg font-semibold"}>
-                                Malware Detection Removal
-                            </p>
-                        </div>
-
-                        <div className={"flex items-center gap-2"}>
-                            <CheckIcon className={"text-landing-primary"} />
-                            <p className={"text-lg font-semibold"}>
-                                24/7 Customer Support
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <img className={"w-[50%]"} src={asset("/images/meeting.png")} />
-            </div>
+            <WhyChooseUs />
 
             <NewsLetterFooter withFive={false} />
         </div>

@@ -16,12 +16,16 @@ const RequestQuote = () => {
     return (
         <div className={"h-full w-full"}>
             <div
-                className={"flex flex-col items-center gap-5 py-16 text-center"}
+                className={
+                    "flex flex-col items-center gap-5 px-5 py-16 text-center md:px-0"
+                }
             >
-                <h1 className={"w-[49vw] text-5xl font-semibold"}>
+                <h1
+                    className={"text-2xl font-semibold md:w-[49vw] md:text-5xl"}
+                >
                     Request a Quote
                 </h1>
-                <p className={"w-[53vw] text-sm"}>
+                <p className={"text-sm md:w-[53vw]"}>
                     Get a fast, confidential security proposal tailored to your
                     site, schedule, and risk profile. We assess your needs,
                     recommend the right mix of manpower and technology, and
@@ -31,9 +35,15 @@ const RequestQuote = () => {
                 </p>
             </div>
 
-            <div className={"flex w-full items-center justify-center"}>
+            <div
+                className={
+                    "flex w-full items-center justify-center px-5 md:px-0"
+                }
+            >
                 <div
-                    className={"w-[76vw] rounded-4xl bg-[#E5E5E5] px-18 py-16"}
+                    className={
+                        "w-full rounded-4xl bg-[#E5E5E5] px-6 py-16 md:w-[76vw] md:px-18"
+                    }
                 >
                     <form className={"w-full"} onSubmit={onSubmit}>
                         <div

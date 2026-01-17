@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/react";
 
 const UnsubscribeSuccess = ({ appUrl }: { appUrl: string }) => {
     return (
-        <div className="flex min-h-screen items-center justify-center bg-landing-background p-6 font-raleway">
+        <div className="flex min-h-screen items-center justify-center bg-landing-background md:p-6 font-raleway">
             <div className="relative w-full max-w-md">
                 {/* Decorative Partial Borders from your CSS */}
                 <div className="partial-borders -m-4"></div>
