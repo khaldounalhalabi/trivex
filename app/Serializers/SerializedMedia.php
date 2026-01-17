@@ -107,7 +107,8 @@ class SerializedMedia implements Arrayable, Jsonable, JsonSerializable, Stringab
      * @param  string[]|Closure[] $fileRules
      * @return Closure
      */
-    public static function validator(array $fileRules = ['image', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp'],
+    public static function validator(
+        array $fileRules = ['image', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp'],
     ): Closure {
         return function ($attribute, $value, $fail) use ($fileRules) {
             if (! SerializedMedia::isMediaArray($value)) {

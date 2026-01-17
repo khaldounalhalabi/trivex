@@ -78,14 +78,16 @@ class MediaCast implements CastsAttributes
 
         return array_values(
             array_values(
-                array_map(function (array $item) use ($model) {
-                    $file = new SerializedMedia($item, $model->getTable(), $this->private);
-                    if (! $file->exists()) {
-                        return null;
-                    }
+                array_map(
+                    function (array $item) use ($model) {
+                        $file = new SerializedMedia($item, $model->getTable(), $this->private);
+                        if (! $file->exists()) {
+                            return null;
+                        }
 
-                    return $file;
-                }, $data,
+                        return $file;
+                    },
+                    $data,
                 ),
             ),
         );

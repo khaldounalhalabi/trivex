@@ -14,6 +14,7 @@ import { type Icon } from "@tabler/icons-react";
 import {
     BadgePlus,
     BadgeQuestionMarkIcon,
+    BuildingIcon,
     ContactIcon,
     GitCommitVerticalIcon,
     QuoteIcon,
@@ -63,6 +64,11 @@ export function Sidebar({
             title: "Quote Requests",
             href: route("v1.web.protected.quote.requests.index"),
             icon: () => <QuoteIcon />,
+        },
+        {
+            title: "Partners",
+            href: route("v1.web.protected.partners.index"),
+            icon: () => <BuildingIcon />,
         },
     ];
 

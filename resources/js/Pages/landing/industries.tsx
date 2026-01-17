@@ -1,4 +1,4 @@
-import PartnersSection from "@/components/landing/home/HomePartners";
+import PartnersSection from "@/components/landing/PartnersSection";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import { asset } from "@/helper";
 import { CheckIcon } from "lucide-react";

@@ -2,8 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Resources\v1\PartnerResource;
 use App\Modules\Settings\App\Enums\SettingKeyEnum;
 use App\Modules\Settings\App\Services\SettingService;
+use App\Services\v1\Partner\PartnerService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Session;
@@ -50,6 +52,7 @@ class HandleInertiaRequests extends Middleware
         $email = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_EMAIL->value);
         $address = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_ADDRESS->value);
         $phone = SettingService::make()->valueOf(SettingKeyEnum::CONTACT_PHONE->value);
+        $partners = PartnerService::make()->index();
 
         return array_merge(parent::share($request), [
             'availableLocales' => config('cubeta-starter.available_locales'),
@@ -66,6 +69,7 @@ class HandleInertiaRequests extends Middleware
                 'address' => $address,
                 'phone'   => $phone,
             ],
+            'partners' => PartnerResource::collection($partners),
         ]);
     }
 }

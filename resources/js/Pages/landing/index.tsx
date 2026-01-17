@@ -1,6 +1,6 @@
 import AboutUsSection from "@/components/landing/home/AboutUsSection";
 import HeroSection from "@/components/landing/home/HomeHero";
-import PartnersSection from "@/components/landing/home/HomePartners";
+import PartnersSection from "@/components/landing/PartnersSection";
 import InsightsAndNews from "@/components/landing/home/InsightsAndNews";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import OurImpact from "@/components/landing/home/OurImpact";

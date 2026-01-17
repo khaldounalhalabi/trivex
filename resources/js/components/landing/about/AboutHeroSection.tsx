@@ -1,5 +1,3 @@
-import React from "react";
-import { asset } from "@/helper";
 import LandingButton from "@/components/landing/LandingButton";
 import { Link } from "@inertiajs/react";
 

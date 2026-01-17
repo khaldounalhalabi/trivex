@@ -1,4 +1,4 @@
-import HomePartners from "@/components/landing/home/HomePartners";
+import PartnersSection from "@/components/landing/PartnersSection";
 import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import Service from "@/Models/Service";
@@ -79,7 +79,7 @@ const Show = ({ service }: { service: Service }) => {
                 </div>
             </div>
 
-            <HomePartners />
+            <PartnersSection />
 
             <WhyChooseUs />
 

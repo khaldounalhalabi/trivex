@@ -1,3 +1,4 @@
+import Partner from "@/Models/Partner";
 import { AvailableLocales } from "@/Models/Translatable";
 import User from "@/Models/User";
 import "@inertiajs/core";
@@ -21,6 +22,7 @@ declare module "@inertiajs/core" {
                 address: string;
                 phone: string;
             };
+            partners: Partner[];
         };
         flashDataType: {
             toast?: { type: "success" | "error"; message: string };
