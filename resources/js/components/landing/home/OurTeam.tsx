@@ -2,7 +2,7 @@ import { asset } from "@/helper";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Ensure these are imported in your project
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -22,7 +22,7 @@ function OurTeam() {
         },
         {
             name: "Joao Hobbs",
-            role: "Systems Architect",
+            role: "Web Developer",
             code: "TRX-118",
             exp: "10+ Years",
         },
@@ -35,124 +35,88 @@ function OurTeam() {
     ];
 
     return (
-        <div className="w-full overflow-hidden bg-landing-background px-10 py-32 lg:px-20">
-            {/* Top Section: Split Layout Header */}
-            <div
-                className={
-                    "mb-20 grid grid-cols-1 gap-20 border-b border-black/5 pb-20 lg:grid-cols-2"
-                }
-            >
-                {/* Left Side: Introduction */}
-                <div className={"flex flex-col items-start gap-6"}>
-                    <div className="flex items-center gap-3">
-                        <div className="h-[2px] w-10 bg-landing-primary"></div>
-                        <h2 className="text-sm font-bold tracking-[0.4em] text-landing-primary uppercase">
-                            Personnel Intelligence
+        <div className="flex w-full justify-center overflow-hidden bg-[#FDF6E3] px-16 py-32">
+            <div className="flex w-full flex-col gap-16">
+                {/* Header Section: Matches original screenshot layout */}
+                <div className="relative flex flex-col items-start justify-between gap-10 lg:flex-row">
+                    <div className="flex flex-col items-start gap-8 lg:w-[60%]">
+                        <h2 className="text-lg font-semibold tracking-tight text-black uppercase">
+                            INTRODUCE OUR TEAM
                         </h2>
-                    </div>
-                    <h1 className="text-5xl leading-tight font-semibold text-black">
-                        Led by Experts, <br />
-                        <span className="opacity-40">
+                        <h1 className="text-5xl leading-tight font-semibold text-black">
+                            Led by Experts, <br />
                             Driven by Excellence.
-                        </span>
-                    </h1>
-                    <p className="max-w-md leading-relaxed text-black/60">
-                        Our seasoned experts deliver tailored strategies and
-                        unwavering protection to safeguard your world, utilizing
-                        decades of field experience.
-                    </p>
-                </div>
+                        </h1>
+                        <p className="max-w-lg text-lg leading-relaxed text-black/80">
+                            From counter-terrorism to comprehensive risk
+                            advisory, our seasoned experts deliver tailored
+                            strategies and unwavering protection to safeguard
+                            your world everywhere.
+                        </p>
+                    </div>
 
-                {/* Right Side: Mission Quote */}
-                <div
-                    className={
-                        "flex flex-col items-start justify-center gap-6 lg:items-end lg:text-right"
-                    }
-                >
-                    <div className="landing-button-background group relative max-w-md p-8 shadow-xl">
-                        <img
-                            src={asset("/images/3.png")}
-                            className="pointer-events-none absolute -top-16 -right-16 w-32 opacity-10"
-                            alt=""
-                        />
-                        <h3 className="relative z-10 text-2xl leading-snug font-medium text-white italic">
+                    {/* The Original Yellow Quote Box Style */}
+                    <div className="landing-button-background relative flex flex-col gap-8 p-12 lg:w-[40%]">
+                        {/* Large decorative "03" background text from site */}
+                        <span className="pointer-events-none absolute -top-16 -right-10 text-[12rem] font-bold text-black opacity-[0.1]">
+                            03
+                        </span>
+
+                        <h3 className="text-3xl leading-snug font-semibold text-black">
                             "Together with our clients, we make the world a
                             safer place."
                         </h3>
-                        <p className="mt-4 text-xs font-bold tracking-widest text-landing-primary uppercase">
-                            — Trivex Leadership
-                        </p>
+                        <h4 className="text-2xl font-semibold text-black">
+                            - Trivex
+                        </h4>
                     </div>
                 </div>
-            </div>
 
-            {/* Bottom Section: Carousel */}
-            <div className="w-full cursor-grab active:cursor-grabbing">
-                <Swiper
-                    modules={[Autoplay, Pagination]}
-                    spaceBetween={40}
-                    slidesPerView={1}
-                    autoplay={{ delay: 5000, disableOnInteraction: false }}
-                    pagination={{
-                        clickable: true,
-                        bulletClass:
-                            "swiper-pagination-bullet !bg-landing-primary",
-                    }}
-                    breakpoints={{
-                        640: { slidesPerView: 2 },
-                        1024: { slidesPerView: 3 },
-                    }}
-                    className="!px-4 !pb-20" // Padding ensures shadows aren't clipped
-                >
-                    {specialists.map((member, index) => (
-                        <SwiperSlide key={index} className="py-4">
-                            {" "}
-                            {/* Padding for shadow clearance */}
-                            <div className="group relative overflow-hidden rounded-sm border border-black/5 bg-white p-8 pt-12 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:border-landing-primary/40 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)]">
-                                {/* The "Expert" Watermark */}
-                                <span className="absolute top-8 -left-2 text-6xl font-black text-black opacity-[0.02] transition-opacity select-none group-hover:opacity-[0.04]">
-                                    EXPERT
-                                </span>
+                {/* Team Carousel: High-tech cards in original colors */}
+                <div className="mt-10 w-full">
+                    <Swiper
+                        modules={[Autoplay, Pagination]}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        autoplay={{ delay: 5000 }}
+                        breakpoints={{
+                            768: { slidesPerView: 2 },
+                            1200: { slidesPerView: 3 },
+                        }}
+                        className="pb-20"
+                    >
+                        {specialists.map((member, index) => (
+                            <SwiperSlide key={index}>
+                                <div className="group relative flex flex-col gap-6 overflow-hidden border border-black/5 bg-white p-10 shadow-sm transition-all duration-300 hover:shadow-md">
+                                    {/* Scanline/Security Detail (Creative Element) */}
+                                    <div className="absolute top-0 left-0 h-1 w-full -translate-x-full transform bg-[#FFD566] transition-transform duration-500 group-hover:translate-x-0"></div>
 
-                                <div className="relative z-10">
-                                    <div className="mb-10 flex items-start justify-between">
-                                        <span className="border border-landing-primary/20 bg-landing-primary/[0.03] px-2 py-1 font-mono text-[10px] tracking-widest text-landing-primary">
-                                            ID: {member.code}
-                                        </span>
-                                        <div className="flex items-center gap-1.5">
-                                            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500"></span>
-                                            <span className="font-mono text-[10px] tracking-widest text-black/40 uppercase">
-                                                Active
-                                            </span>
-                                        </div>
+                                    <div className="space-y-1">
+                                        <h3 className="text-2xl font-bold text-black">
+                                            {member.name}
+                                        </h3>
+                                        <p className="text-lg font-medium text-black/60 italic">
+                                            {member.role}
+                                        </p>
                                     </div>
 
-                                    <h3 className="mb-1 text-2xl font-bold text-black transition-colors group-hover:text-landing-primary">
-                                        {member.name}
-                                    </h3>
-                                    <p className="mb-6 text-sm font-medium tracking-widest text-landing-primary uppercase">
-                                        {member.role}
-                                    </p>
-
-                                    <div className="mb-6 h-px w-full bg-black/5 transition-colors group-hover:bg-landing-primary/20"></div>
+                                    <div className="h-px w-full bg-black/5"></div>
 
                                     <div className="flex items-end justify-between">
                                         <div>
-                                            <p className="mb-1 text-[10px] tracking-widest text-black/30 uppercase">
-                                                Experience
+                                            <p className="text-[10px] tracking-tighter text-black/40 uppercase">
+                                                Field Experience
                                             </p>
-                                            <p className="font-semibold text-black">
+                                            <p className="text-xl font-bold text-black">
                                                 {member.exp}
                                             </p>
                                         </div>
-                                        {/* Corner Decorative Accent */}
-                                        <div className="h-6 w-6 border-r-2 border-b-2 border-black/5 transition-all duration-500 group-hover:border-landing-primary"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
             </div>
         </div>
     );
