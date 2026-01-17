@@ -3,7 +3,11 @@ import { Link } from "@inertiajs/react";
 
 const AboutHeroSection = () => {
     return (
-        <div className={"flex items-start gap-16 px-24 py-10"}>
+        <div
+            className={
+                "flex flex-col items-start gap-16 px-5 py-5 md:flex-row md:px-24 md:py-10"
+            }
+        >
             <div className={"flex flex-col items-start gap-10"}>
                 <h3
                     className={
@@ -12,7 +16,7 @@ const AboutHeroSection = () => {
                 >
                     INTRODUCE TRIVEX
                 </h3>
-                <h1 className={"text-5xl font-semibold"}>
+                <h1 className={"text-2xl md:text-5xl font-semibold"}>
                     Perfect data protection for your business
                 </h1>
                 <p>
@@ -23,9 +27,9 @@ const AboutHeroSection = () => {
                 </p>
             </div>
 
-            <div className={"grid grid-cols-2 gap-10"}>
+            <div className={"grid grid-cols-1 md:grid-cols-2 gap-10"}>
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-3xl font-semibold"}>Our Vision</h2>
+                    <h2 className={"text-xl md:text-3xl font-semibold"}>Our Vision</h2>
                     <p>
                         To be the world’s most trusted security partner,
                         empowering safer businesses, communities, and global
@@ -34,7 +38,7 @@ const AboutHeroSection = () => {
                 </div>
 
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-3xl font-semibold"}>Our Mission</h2>
+                    <h2 className={"text-xl md:text-3xl font-semibold"}>Our Mission</h2>
                     <p>
                         To deliver tailored security solutions with excellence,
                         innovation, and trust, ensuring protection across global
@@ -43,7 +47,7 @@ const AboutHeroSection = () => {
                 </div>
 
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-3xl font-semibold"}>Leadership</h2>
+                    <h2 className={"text-xl md:text-3xl font-semibold"}>Leadership</h2>
                     <p>
                         To be the world’s most influential leader, driving
                         innovation, inspiring teams, and shaping future
@@ -52,7 +56,7 @@ const AboutHeroSection = () => {
                 </div>
 
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-3xl font-semibold"}>Credentials</h2>
+                    <h2 className={"text-xl md:text-3xl font-semibold"}>Credentials</h2>
                     <p>
                         To be the world’s most recognized authority, setting the
                         standard for expertise, trustworthiness, and excellence
@@ -60,7 +64,7 @@ const AboutHeroSection = () => {
                     </p>
                 </div>
 
-                <div className={"col-span-2 flex items-center justify-center"}>
+                <div className={"md:col-span-2 flex items-center justify-center"}>
                     <Link href={route("landing.contact")}>
                         <LandingButton className={"w-42 py-3"}>
                             Contact Us

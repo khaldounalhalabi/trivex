@@ -43,4 +43,13 @@ class SiteController extends WebController
             'phone'   => $phone,
         ]);
     }
+
+    public function about()
+    {
+        $team = TeamService::make()->index();
+
+        return Inertia::render('landing/about', [
+            'team' => TeamResource::collection($team),
+        ]);
+    }
 }

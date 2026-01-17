@@ -4,9 +4,13 @@ import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 const CaseStudy = () => {
     return (
         <div className={"h-full w-full"}>
-            <div className={"flex items-center justify-between py-16"}>
-                <div className={"w-[50%] space-y-10 ps-16"}>
-                    <h1 className={"text-5xl font-semibold"}>
+            <div
+                className={
+                    "flex flex-col items-center justify-between px-5 md:py-16 md:flex-row md:px-0"
+                }
+            >
+                <div className={"space-y-10 md:w-[50%] md:ps-16"}>
+                    <h1 className={"text-2xl font-semibold md:text-5xl"}>
                         Securing a Multi-Site Corporate Campus: Zero Critical
                         Incidents
                     </h1>
@@ -31,18 +35,22 @@ const CaseStudy = () => {
                     </p>
                 </div>
                 <img
-                    className={"w-[40%]"}
+                    className={"md:w-[40%]"}
                     src={asset("/images/guard-back.png")}
                 />
             </div>
 
-            <div className={"flex items-center justify-between py-16"}>
+            <div
+                className={
+                    "flex flex-col-reverse items-center justify-between px-5 py-16 md:flex-row md:px-0"
+                }
+            >
                 <img
-                    className={"w-[40%]"}
+                    className={"md:w-[40%]"}
                     src={asset("/images/laptop-guys.png")}
                 />
-                <div className={"w-[50%] space-y-10 pe-16"}>
-                    <h1 className={"text-5xl font-semibold"}>
+                <div className={"md:w-[50%] space-y-10 md:pe-16"}>
+                    <h1 className={"text-2xl md:text-5xl font-semibold"}>
                         Integrated Security Deployment & Governance
                     </h1>
                     <p>
@@ -65,9 +73,9 @@ const CaseStudy = () => {
                 </div>
             </div>
 
-            <div className={"flex items-center justify-between py-16"}>
-                <div className={"w-[50%] space-y-10 ps-16"}>
-                    <h1 className={"text-5xl font-semibold"}>
+            <div className={"flex flex-col md:flex-row items-center justify-between py-16 px-5 md:px-0"}>
+                <div className={"md:w-[50%] space-y-10 md:ps-16"}>
+                    <h1 className={"text-2xl md:text-5xl font-semibold"}>
                         Measured Results and Next Steps
                     </h1>
                     <p>
@@ -90,7 +98,7 @@ const CaseStudy = () => {
                     </p>
                 </div>
                 <img
-                    className={"w-[40%]"}
+                    className={"md:w-[40%] w-full"}
                     src={asset("/images/computer-guys.png")}
                 />
             </div>

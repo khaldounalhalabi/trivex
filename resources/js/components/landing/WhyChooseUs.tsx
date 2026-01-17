@@ -3,8 +3,12 @@ import { CheckIcon } from "lucide-react";
 
 const WhyChooseUs = () => {
     return (
-        <div className={"flex items-center justify-between py-16"}>
-            <div className={"w-[50%] space-y-5 ps-36"}>
+        <div
+            className={
+                "flex flex-col items-center justify-between px-5 py-5 md:py-16 md:flex-row md:px-0 gap-5 md:gap-0"
+            }
+        >
+            <div className={"space-y-5 md:w-[50%] md:ps-36"}>
                 <h2
                     className={
                         "border-s-2 border-s-landing-primary ps-1 text-lg capitalize"
@@ -12,7 +16,7 @@ const WhyChooseUs = () => {
                 >
                     Why Choos Us
                 </h2>
-                <h1 className={"text-5xl font-semibold"}>
+                <h1 className={"text-2xl font-semibold md:text-5xl"}>
                     Provide advanced security for advanced threat
                 </h1>
                 <p>
@@ -44,7 +48,7 @@ const WhyChooseUs = () => {
                     </div>
                 </div>
             </div>
-            <img className={"w-[50%]"} src={asset("/images/meeting.png")} />
+            <img className={"md:w-[50%]"} src={asset("/images/meeting.png")} />
         </div>
     );
 };
