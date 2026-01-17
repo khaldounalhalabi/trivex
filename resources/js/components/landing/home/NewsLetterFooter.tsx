@@ -7,28 +7,30 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
         <div className={"h-full w-full bg-landing-background"}>
             <div
                 className={
-                    "relative mt-24 grid grid-cols-4 items-center justify-between gap-5"
+                    "mt-24 flex items-center justify-between gap-32 px-24"
                 }
             >
-                <img src={asset("/images/thnumbup.png")} className={""} />
                 <div
                     className={
-                        "col-span-2 flex flex-col items-center justify-between gap-8"
+                        "flex flex-col items-start justify-between gap-8"
                     }
                 >
-                    <div className={"h-2 w-10 rounded-md bg-landing-primary"} />
-                    <h2 className={"text-lg font-semibold uppercase"}>
+                    <h2
+                        className={
+                            "border-l-4 border-l-landing-primary pl-1 text-lg font-semibold uppercase"
+                        }
+                    >
                         READY TO SECURE YOUR MISSION
                     </h2>
                     <h1
                         className={
-                            "text-center text-5xl font-semibold text-wrap"
+                            "text-start text-5xl font-semibold text-wrap"
                         }
                     >
                         And now it’s time for you to join us for securing your
                         business
                     </h1>
-                    <p className={"text-center"}>
+                    <p className={"text-start"}>
                         Whether you need manned guarding, VIP protection,
                         aviation and transport security, or advanced technology
                         solutions Trivex Security International is here to
@@ -41,7 +43,7 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
                 {withFive && (
                     <img
                         src={asset("/images/5.png")}
-                        className={"absolute -top-10 right-5 w-64"}
+                        className={"-top-10 right-5 w-64"}
                     />
                 )}
             </div>

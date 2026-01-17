@@ -46,10 +46,6 @@ function OurImpact() {
                     </p>
                 </div>
             </div>
-            <img
-                src={asset("/images/coze.png")}
-                className={"absolute -bottom-24 left-0 z-10 w-42"}
-            />
         </div>
     );
 }
