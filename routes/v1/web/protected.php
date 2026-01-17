@@ -41,3 +41,6 @@ Route::resource('/v1/quote-requests', v1\QuoteRequestController::class)
 Route::get('/v1/partners/data', [v1\PartnerController::class, 'data'])->name('v1.web.protected.partners.data');
 Route::resource('/v1/partners', v1\PartnerController::class)
     ->except(['create', 'store', 'destroy'])->names('v1.web.protected.partners');
+
+Route::get('/v1/teams/data', [v1\TeamController::class, 'data'])->name('v1.web.protected.teams.data');
+Route::resource('/v1/teams', v1\TeamController::class)->names('v1.web.protected.teams');

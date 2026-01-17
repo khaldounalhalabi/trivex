@@ -1,8 +1,3 @@
-import HeroSection from "@/components/landing/home/HomeHero";
-import PartnersSection from "@/components/landing/PartnersSection";
-import AboutUsSection from "@/components/landing/home/AboutUsSection";
-import OurImpact from "@/components/landing/home/OurImpact";
-import OurTeam from "@/components/landing/home/OurTeam";
 import { asset } from "@/helper";
 
 function InsightsAndNews() {

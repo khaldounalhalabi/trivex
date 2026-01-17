@@ -17,6 +17,7 @@ import {
     BuildingIcon,
     ContactIcon,
     GitCommitVerticalIcon,
+    PersonStandingIcon,
     QuoteIcon,
     SettingsIcon,
 } from "lucide-react";
@@ -69,6 +70,11 @@ export function Sidebar({
             title: "Partners",
             href: route("v1.web.protected.partners.index"),
             icon: () => <BuildingIcon />,
+        },
+        {
+            title: "Team Members",
+            href: route("v1.web.protected.teams.index"),
+            icon: () => <PersonStandingIcon />,
         },
     ];
 

@@ -6,15 +6,16 @@ import NewsLetterFooter from "@/components/landing/home/NewsLetterFooter";
 import OurImpact from "@/components/landing/home/OurImpact";
 import OurTeam from "@/components/landing/home/OurTeam";
 import Service from "@/Models/Service";
+import Team from "@/Models/Team";
 
-const Index = ({services}:{services:Service[]}) => {
+const Index = ({services, team}:{services:Service[], team:Team[]}) => {
     return (
         <div className={"h-full w-full"}>
             <HeroSection />
             <PartnersSection />
             <AboutUsSection services={services} />
             <OurImpact />
-            <OurTeam />
+            <OurTeam team={team}/>
             <InsightsAndNews />
             <NewsLetterFooter />
         </div>

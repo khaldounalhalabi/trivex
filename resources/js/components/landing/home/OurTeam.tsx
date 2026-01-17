@@ -1,39 +1,12 @@
-import { asset } from "@/helper";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
+import Team from "@/Models/Team";
 import "swiper/css";
 import "swiper/css/pagination";
 
-function OurTeam() {
-    const specialists = [
-        {
-            name: "Thomas Sereza",
-            role: "Network Security",
-            code: "TRX-091",
-            exp: "12+ Years",
-        },
-        {
-            name: "John Alexander",
-            role: "Cyber Security",
-            code: "TRX-042",
-            exp: "15+ Years",
-        },
-        {
-            name: "Joao Hobbs",
-            role: "Web Developer",
-            code: "TRX-118",
-            exp: "10+ Years",
-        },
-        {
-            name: "Sarah Vance",
-            role: "Risk Advisory",
-            code: "TRX-055",
-            exp: "14+ Years",
-        },
-    ];
-
+function OurTeam({ team }: { team: Team[] }) {
     return (
         <div className="flex w-full justify-center overflow-hidden bg-[#FDF6E3] px-16 py-32">
             <div className="flex w-full flex-col gap-16">
@@ -85,12 +58,19 @@ function OurTeam() {
                         }}
                         className="pb-20"
                     >
-                        {specialists.map((member, index) => (
+                        {team.map((member, index) => (
                             <SwiperSlide key={index}>
                                 <div className="group relative flex flex-col gap-6 overflow-hidden border border-black/5 bg-white p-10 shadow-sm transition-all duration-300 hover:shadow-md">
                                     {/* Scanline/Security Detail (Creative Element) */}
                                     <div className="absolute top-0 left-0 h-1 w-full -translate-x-full transform bg-[#FFD566] transition-transform duration-500 group-hover:translate-x-0"></div>
-
+                                    <div className="flex items-center justify-between">
+                                        <span className="font-mono text-[10px] font-bold tracking-widest text-black/40 uppercase">
+                                            Clearance: Verified
+                                        </span>
+                                        <span className="bg-black px-2 py-1 font-mono text-[10px] text-[#FFD566]">
+                                            {member.id * 507}
+                                        </span>
+                                    </div>
                                     <div className="space-y-1">
                                         <h3 className="text-2xl font-bold text-black">
                                             {member.name}
@@ -104,11 +84,11 @@ function OurTeam() {
 
                                     <div className="flex items-end justify-between">
                                         <div>
-                                            <p className="text-[10px] tracking-tighter text-black/40 uppercase">
+                                            <p className="text-[10px] tracking-tighter text-black/90 uppercase">
                                                 Field Experience
                                             </p>
                                             <p className="text-xl font-bold text-black">
-                                                {member.exp}
+                                                {member.experience} YRS
                                             </p>
                                         </div>
                                     </div>
