@@ -4,7 +4,7 @@ import QuoteRequest from "@/Models/QuoteRequest";
 
 const Show = ({ quoteRequest }: { quoteRequest: QuoteRequest }) => {
     return (
-        <PageCard title="QuoteRequest Details">
+        <PageCard title="Quote Request Details">
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <SmallTextField label="Name" value={quoteRequest.name} />
                 <SmallTextField label="Email" value={quoteRequest.email} />

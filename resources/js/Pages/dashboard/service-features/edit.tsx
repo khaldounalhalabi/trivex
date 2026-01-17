@@ -37,7 +37,7 @@ const Edit = ({ serviceFeature }: { serviceFeature: ServiceFeature }) => {
     };
 
     return (
-        <PageCard title="Edit ServiceFeature">
+        <PageCard title="Edit Service Feature">
             <Form onSubmit={onSubmit} processing={processing}>
                 <div
                     className={`grid grid-cols-1 items-start gap-5 md:grid-cols-2`}

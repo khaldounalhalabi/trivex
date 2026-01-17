@@ -11,7 +11,7 @@ import { Mail } from "lucide-react";
 const Index = ({ exportables }: { exportables: string[] }) => {
     return (
         <DataTable
-            title="NewsletterEmail Table"
+            title="Newsletter Contacts"
             exportables={exportables}
             getDataArray={(res) => res.data}
             getTotalPages={(res) => res?.paginate?.total_pages ?? 0}

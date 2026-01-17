@@ -8,7 +8,7 @@ import { Link } from "@inertiajs/react";
 const Index = () => {
     return (
         <DataTable
-            title="ServiceFeature Table"
+            title="Services Features"
             createUrl={route("v1.web.protected.service.features.create")}
             getDataArray={(res) => res.data}
             getTotalPages={(res) => res?.paginate?.total_pages ?? 0}

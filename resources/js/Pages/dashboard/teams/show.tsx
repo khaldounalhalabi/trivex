@@ -7,7 +7,7 @@ import { Link } from "@inertiajs/react";
 const Show = ({ team }: { team: Team }) => {
     return (
         <PageCard
-            title="Team Details"
+            title="Team Member Details"
             actions={
                 <div className="flex items-center justify-between">
                     <Link href={route("v1.web.protected.teams.edit", team.id)}>

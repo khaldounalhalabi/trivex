@@ -7,7 +7,7 @@ import ImagePreview from "@/components/show/ImagePreview";
 const Index = () => {
     return (
         <DataTable
-            title="Partner Table"
+            title="Partners"
             getDataArray={(res) => res.data}
             getTotalPages={(res) => res?.paginate?.total_pages ?? 0}
             getTotalRecords={(res) => res.paginate?.total ?? 0}

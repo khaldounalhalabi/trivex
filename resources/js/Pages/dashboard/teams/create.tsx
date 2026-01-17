@@ -19,7 +19,7 @@ const Create = () => {
     };
 
     return (
-        <PageCard title="Add New Team">
+        <PageCard title="Add New Team Member">
             <Form onSubmit={onSubmit} processing={processing}>
                 <div
                     className={`grid grid-cols-1 items-start gap-5 md:grid-cols-2`}

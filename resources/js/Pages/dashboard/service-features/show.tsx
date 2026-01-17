@@ -10,7 +10,7 @@ import { Link } from "@inertiajs/react";
 const Show = ({ serviceFeature }: { serviceFeature: ServiceFeature }) => {
     return (
         <PageCard
-            title="ServiceFeature Details"
+            title="Service Feature Details"
             actions={
                 <div className="flex items-center justify-between">
                     <Link

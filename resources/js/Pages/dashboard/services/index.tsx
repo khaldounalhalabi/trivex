@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/shadcn/badge";
 const Index = () => {
     return (
         <DataTable
-            title="Service Table"
+            title="Services"
             createUrl={route("v1.web.protected.services.create")}
             getDataArray={(res) => res.data}
             getTotalPages={(res) => res?.paginate?.total_pages ?? 0}

@@ -53,7 +53,7 @@ export function Sidebar({
             icon: () => <ContactIcon />,
         },
         {
-            title: "FAQ",
+            title: "Frequently Asked Questions",
             href: route("v1.web.protected.f.a.qs.index"),
             icon: () => <BadgeQuestionMarkIcon />,
         },
@@ -78,7 +78,7 @@ export function Sidebar({
             icon: () => <PersonStandingIcon />,
         },
         {
-            title: "Post",
+            title: "Posts",
             href: route("v1.web.protected.posts.index"),
             icon: () => <NewspaperIcon />,
         },

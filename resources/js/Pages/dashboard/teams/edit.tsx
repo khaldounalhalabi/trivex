@@ -25,7 +25,7 @@ const Edit = ({ team }: { team: Team }) => {
     };
 
     return (
-        <PageCard title="Edit Team">
+        <PageCard title="Edit Team Member">
             <Form onSubmit={onSubmit} processing={processing}>
                 <div
                     className={`grid grid-cols-1 items-start gap-5 md:grid-cols-2`}
