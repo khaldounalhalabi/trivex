@@ -7,30 +7,30 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
         <div className={"h-full w-full bg-landing-background"}>
             <div
                 className={
-                    "mt-24 flex items-center justify-between gap-32 px-24"
+                    "mt-24 flex items-center justify-between gap-32 px-5 md:px-24"
                 }
             >
                 <div
                     className={
-                        "flex flex-col items-start justify-between gap-8"
+                        "flex flex-col items-center justify-between gap-8 md:items-start"
                     }
                 >
                     <h2
                         className={
-                            "border-l-4 border-l-landing-primary pl-1 text-lg font-semibold uppercase"
+                            "border-l-4 border-l-landing-primary pl-1 font-semibold uppercase md:text-lg"
                         }
                     >
                         READY TO SECURE YOUR MISSION
                     </h2>
                     <h1
                         className={
-                            "text-start text-5xl font-semibold text-wrap"
+                            "text-center text-4xl font-semibold text-wrap md:text-start md:text-5xl"
                         }
                     >
                         And now it’s time for you to join us for securing your
                         business
                     </h1>
-                    <p className={"text-start"}>
+                    <p className={"text-center md:text-start"}>
                         Whether you need manned guarding, VIP protection,
                         aviation and transport security, or advanced technology
                         solutions Trivex Security International is here to
@@ -43,13 +43,13 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
                 {withFive && (
                     <img
                         src={asset("/images/5.png")}
-                        className={"-top-10 right-5 w-64"}
+                        className={"-top-10 right-5 hidden w-64 md:block"}
                     />
                 )}
             </div>
-            <div className={"mt-24 grid h-full w-full grid-cols-2"}>
-                <div className={"flex flex-col items-start gap-10 p-24"}>
-                    <h1 className={"text-4xl font-semibold text-wrap"}>
+            <div className={"md:mt-24 mt-10 h-full w-full md:grid md:grid-cols-2"}>
+                <div className={"flex flex-col items-start gap-10 p-10 md:p-24"}>
+                    <h1 className={"md:text-4xl text-2xl font-semibold text-wrap"}>
                         Subscribe <br />
                         To Our Newsletter
                     </h1>
@@ -74,10 +74,10 @@ function NewsLetterFooter({ withFive = true }: { withFive?: boolean }) {
                 </div>
                 <div
                     className={
-                        "flex flex-col items-start gap-10 bg-landing-gray-secondary p-24"
+                        "flex flex-col items-start gap-10 bg-landing-gray-secondary md:p-24 p-10"
                     }
                 >
-                    <h1 className={"text-4xl font-semibold text-wrap"}>
+                    <h1 className={"text-2xl md:text-4xl font-semibold text-wrap"}>
                         Let’s <br />
                         Get Started
                     </h1>

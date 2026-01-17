@@ -16,7 +16,7 @@ function InsightsAndNews({ latestPosts }: { latestPosts: Post[] }) {
                     <h2 className="text-lg font-semibold uppercase">
                         Insights & Updates
                     </h2>
-                    <h1 className="max-w-[49vw] text-center text-5xl font-semibold text-wrap">
+                    <h1 className="px-5 text-center text-4xl font-semibold text-wrap md:max-w-[49vw] md:px-0 md:text-5xl">
                         Do not miss with many news and article from us
                     </h1>
                 </div>
@@ -32,7 +32,7 @@ function InsightsAndNews({ latestPosts }: { latestPosts: Post[] }) {
                     2+ Posts: 2 Columns
                 */}
                 <div
-                    className={`grid w-[82vw] gap-5 ${count === 1 ? "grid-cols-1" : "grid-cols-2"}`}
+                    className={`grid w-[82vw] grid-cols-1 gap-5 ${count === 1 ? "md:grid-cols-1" : "md:grid-cols-2"}`}
                 >
                     {/* SLOT 1: Always the Hero (Left) */}
                     {p(0) && (
@@ -44,7 +44,7 @@ function InsightsAndNews({ latestPosts }: { latestPosts: Post[] }) {
                             className="group h-full w-full bg-cover bg-center transition-transform duration-500 hover:scale-105"
                         >
                             <div className="flex flex-col items-start gap-5 bg-transparent p-10">
-                                <h1 className="group-hover:underline text-3xl font-semibold text-wrap text-white">
+                                <h1 className="text-xl font-semibold text-wrap text-white group-hover:underline md:text-3xl">
                                     {p(0).title}
                                 </h1>
                                 <p className="text-wrap text-white">
@@ -75,7 +75,7 @@ function InsightsAndNews({ latestPosts }: { latestPosts: Post[] }) {
                                     className={`group bg-cover ${count > 2 ? "col-span-2 h-full" : "h-full"} transition-transform duration-500 hover:scale-105`}
                                 >
                                     <div className="flex flex-col items-start gap-2 bg-transparent p-6">
-                                        <h1 className="text-2xl font-semibold text-wrap text-white group-hover:underline">
+                                        <h1 className="text-xl font-semibold text-wrap text-white group-hover:underline md:text-2xl">
                                             {p(1).title}
                                         </h1>
                                         <p className="text-wrap text-white">
@@ -95,10 +95,10 @@ function InsightsAndNews({ latestPosts }: { latestPosts: Post[] }) {
                                     style={{
                                         backgroundImage: `url(${p(2).image?.url})`,
                                     }}
-                                    className={`group w-full h-full bg-cover bg-center ${count === 3 ? "col-span-2" : ""} transition-transform duration-500 hover:scale-105`}
+                                    className={`group h-full w-full bg-cover bg-center ${count === 3 ? "col-span-2" : ""} transition-transform duration-500 hover:scale-105`}
                                 >
                                     <div className="flex flex-col items-start gap-2 bg-transparent p-5">
-                                        <h1 className="group-hover:underline text-lg font-semibold text-wrap text-white">
+                                        <h1 className="text-base font-semibold text-wrap text-white group-hover:underline md:text-lg">
                                             {p(2).title}
                                         </h1>
                                         <p className="text-xs text-wrap text-white">
@@ -121,7 +121,7 @@ function InsightsAndNews({ latestPosts }: { latestPosts: Post[] }) {
                                     className="group h-full bg-cover bg-center transition-transform duration-500 hover:scale-105"
                                 >
                                     <div className="flex flex-col items-start gap-2 bg-transparent p-5">
-                                        <h1 className="group-hover:underline text-lg font-semibold text-wrap text-white">
+                                        <h1 className="text-base font-semibold text-wrap text-white group-hover:underline md:text-lg">
                                             {p(3).title}
                                         </h1>
                                         <p className="text-xs text-wrap text-white">

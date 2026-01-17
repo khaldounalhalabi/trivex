@@ -23,7 +23,7 @@ const Navbar = () => {
         <nav className="sticky top-0 z-50 flex w-full justify-center border-b border-gray-100 bg-landing-background">
             <div className="flex w-[90%] items-center justify-between py-4">
                 {/* Logo Section */}
-                <div className="w-[120px] md:w-[7%]">
+                <div className="w-[70px] md:w-[7%]">
                     <AppLogo className="w-full" />
                 </div>
 
@@ -56,8 +56,9 @@ const Navbar = () => {
 
             {/* Mobile Sidebar/Dropdown */}
             <div
-                className={`fixed inset-0 top-[72px] z-40 bg-landing-background transition-transform duration-300 lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"} `}
+                className={`fixed inset-0 top-0 z-40 bg-landing-background transition-transform duration-300 lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"} `}
             >
+
                 <div className="flex flex-col items-center gap-8 pt-10 text-xl">
                     {navLinks.map((link) => (
                         <Link

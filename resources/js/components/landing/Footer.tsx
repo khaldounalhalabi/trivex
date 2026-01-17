@@ -12,10 +12,22 @@ function Footer() {
     };
 
     return (
-        <div className={"grid h-full w-full grid-cols-2 gap-8 bg-landing-dark"}>
-            <div className={"flex flex-col items-start gap-10 py-20 ps-24"}>
+        <div
+            className={
+                "grid h-full w-full gap-8 bg-landing-dark md:grid-cols-2 py-5 md:py-0"
+            }
+        >
+            <div
+                className={
+                    "flex flex-col items-start gap-10 px-5 md:py-20 md:px-0 md:ps-24"
+                }
+            >
                 <AppLogo />
-                <div className={"flex w-full items-start justify-between"}>
+                <div
+                    className={
+                        "flex w-full flex-col items-start justify-between gap-10 md:flex-row md:gap-0"
+                    }
+                >
                     <div className={"flex flex-col items-start gap-5"}>
                         <a
                             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact?.address ?? "")}`}
@@ -72,7 +84,10 @@ function Footer() {
                         >
                             About
                         </Link>
-                        <Link href={route("landing.posts.index")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link
+                            href={route("landing.posts.index")}
+                            className="cursor-pointer text-lg font-semibold text-white hover:underline"
+                        >
                             Blog
                         </Link>
                         <Link
@@ -86,49 +101,10 @@ function Footer() {
             </div>
             <div
                 className={
-                    "h-full w-full bg-[url('/images/map.png')] bg-cover bg-center bg-no-repeat"
+                    "h-full w-full bg-[url('/images/map.png')] bg-cover bg-center bg-no-repeat py-5 md:py-0"
                 }
             >
-                <div className={"flex h-full items-end gap-18 py-28 ps-24"}>
-                    {/*<div className={"grid grid-cols-2 items-center gap-5"}>*/}
-                    {/*    <Link href="/">*/}
-                    {/*        <img*/}
-                    {/*            className={"w-6"}*/}
-                    {/*            src={asset("/images/linkedin.png")}*/}
-                    {/*        />*/}
-                    {/*    </Link>*/}
-                    {/*    <Link href="/">*/}
-                    {/*        <img*/}
-                    {/*            className={"w-6"}*/}
-                    {/*            src={asset("/images/instagram.png")}*/}
-                    {/*        />*/}
-                    {/*    </Link>*/}
-                    {/*    <Link href="/">*/}
-                    {/*        <img*/}
-                    {/*            className={"w-6"}*/}
-                    {/*            src={asset("/images/facebook.png")}*/}
-                    {/*        />*/}
-                    {/*    </Link>*/}
-                    {/*    <Link href="/">*/}
-                    {/*        <img*/}
-                    {/*            className={"w-6"}*/}
-                    {/*            src={asset("/images/twitter.png")}*/}
-                    {/*        />*/}
-                    {/*    </Link>*/}
-                    {/*    <Link href="/">*/}
-                    {/*        <img*/}
-                    {/*            className={"w-6"}*/}
-                    {/*            src={asset("/images/youtube.png")}*/}
-                    {/*        />*/}
-                    {/*    </Link>*/}
-                    {/*    <Link href="/">*/}
-                    {/*        <img*/}
-                    {/*            className={"w-6"}*/}
-                    {/*            src={asset("/images/vim.png")}*/}
-                    {/*        />*/}
-                    {/*    </Link>*/}
-                    {/*</div>*/}
-
+                <div className={"flex h-full items-end gap-18 md:py-28 px-5 md:px-0 md:ps-24"}>
                     <form onSubmit={onSubmit}>
                         <div className={"flex flex-col items-start"}>
                             <h1

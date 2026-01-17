@@ -3,22 +3,38 @@ import { Link } from "@inertiajs/react";
 
 function HomeHero() {
     return (
-        <div className={"h-[82vh] w-full bg-landing-background"}>
-            <div className={"relative flex w-full items-end justify-end py-10"}>
-                <div className={"flex w-[92%] items-center"}>
+        // Changed h-[82vh] to min-h-[82vh] so content doesn't overflow on small screens
+        <div
+            className={
+                "flex py-10 md:py-0 md:min-h-[82vh] w-full items-center bg-landing-background"
+            }
+        >
+            <div className={"flex w-full items-end justify-end md:py-10"}>
+                {/* Mobile: Stacked (flex-col-reverse so text stays above image)
+                   Desktop: Side-by-side (flex-row)
+                */}
+                <div
+                    className={
+                        "flex w-full md:w-[92%] flex-col-reverse items-center md:flex-row"
+                    }
+                >
+                    {/* Mobile: Full width (w-full)
+                       Desktop: 60% width (md:w-[60%])
+                    */}
                     <div
                         className={
-                            "relative flex w-[60%] flex-col items-start gap-8 px-5"
+                            "relative flex w-full flex-col items-start gap-6 px-5 md:mt-0 md:w-[60%] md:gap-8"
                         }
                     >
-                        <p className={"font-semibold"}>
+                        <p className={"text-xs font-semibold md:text-base"}>
                             SECURING EVERY MISSION. WORLDWIDE
                         </p>
-                        <h1 className={"text-5xl"}>
+                        {/* Adjusted text size for mobile (text-3xl) vs desktop (md:text-5xl) */}
+                        <h1 className={"text-3xl md:text-5xl"}>
                             Trivex Security International delivers specialist
                             protection worldwide.
                         </h1>
-                        <p className={"text-sm text-wrap"}>
+                        <p className={"max-w-xl text-sm text-wrap"}>
                             From static guarding and mobile patrols to high-risk
                             international protection, we provide unmatched
                             security solutions trusted by governments,
@@ -33,9 +49,12 @@ function HomeHero() {
                             </button>
                         </Link>
                     </div>
+
                     <img
                         src={asset("/images/hero-image.png")}
-                        className={"z-10 w-[40%]"}
+                        className={
+                            "h-auto w-full object-contain hidden md:block md:w-[40%]"
+                        }
                         alt={"hero image"}
                     />
                 </div>
