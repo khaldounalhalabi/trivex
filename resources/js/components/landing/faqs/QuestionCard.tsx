@@ -29,17 +29,22 @@ const QuestionCard = ({
             </div>
 
             <div
-                className={`grid transition-all duration-300 ease-in-out ${
+                className={`grid w-full transition-all duration-300 ease-in-out ${
                     open
                         ? "mt-4 grid-rows-[1fr] opacity-100"
                         : "mt-0 grid-rows-[0fr] opacity-0"
                 }`}
             >
-                <div className="overflow-hidden">
-                    <p className="leading-relaxed">
-                        <span dangerouslySetInnerHTML={{ __html: answer }} />
-                    </p>
-                </div>
+                <article className="order-1 w-full overflow-hidden lg:order-2">
+                    {/* Change this line: added max-w-none and removed w-full! (not valid syntax) */}
+                    <div className="prose-black prose prose-lg w-full max-w-none leading-relaxed prose-headings:font-bold prose-blockquote:border-landing-primary prose-blockquote:bg-landing-primary prose-blockquote:px-6 prose-blockquote:py-1">
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: answer,
+                            }}
+                        />
+                    </div>
+                </article>
             </div>
         </div>
     );

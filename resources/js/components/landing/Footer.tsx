@@ -72,7 +72,7 @@ function Footer() {
                         >
                             About
                         </Link>
-                        <Link className="cursor-pointer text-lg font-semibold text-white hover:underline">
+                        <Link href={route("landing.posts.index")} className="cursor-pointer text-lg font-semibold text-white hover:underline">
                             Blog
                         </Link>
                         <Link

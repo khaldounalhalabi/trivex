@@ -17,6 +17,7 @@ import {
     BuildingIcon,
     ContactIcon,
     GitCommitVerticalIcon,
+    NewspaperIcon,
     PersonStandingIcon,
     QuoteIcon,
     SettingsIcon,
@@ -75,6 +76,11 @@ export function Sidebar({
             title: "Team Members",
             href: route("v1.web.protected.teams.index"),
             icon: () => <PersonStandingIcon />,
+        },
+        {
+            title: "Post",
+            href: route("v1.web.protected.posts.index"),
+            icon: () => <NewspaperIcon />,
         },
     ];
 

@@ -44,3 +44,6 @@ Route::resource('/v1/partners', v1\PartnerController::class)
 
 Route::get('/v1/teams/data', [v1\TeamController::class, 'data'])->name('v1.web.protected.teams.data');
 Route::resource('/v1/teams', v1\TeamController::class)->names('v1.web.protected.teams');
+
+Route::get('/v1/posts/data', [v1\PostController::class, 'data'])->name('v1.web.protected.posts.data');
+Route::resource('/v1/posts', v1\PostController::class)->names('v1.web.protected.posts');

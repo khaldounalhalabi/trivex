@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             FAQSeeder::class,
             PartnerSeeder::class,
             TeamSeeder::class,
+            PostSeeder::class,
         ]);
     }
 }
