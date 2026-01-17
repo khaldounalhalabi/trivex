@@ -18,7 +18,7 @@ class PostController extends WebController
 
     public function index()
     {
-        $posts = $this->service->indexWithPagination();
+        $posts = $this->service->paginateNotFeatured(perPage: 12);
         $featured = $this->service->featured();
 
         return Inertia::render('landing/posts/index', [

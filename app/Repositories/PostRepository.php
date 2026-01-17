@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Post;
 use App\Repositories\Contracts\BaseRepository;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
  * @extends  BaseRepository<Post>
@@ -50,5 +51,17 @@ class PostRepository extends BaseRepository
             'prev' => $previous,
             'next' => $next,
         ];
+    }
+
+    /**
+     * @param  array                      $relations
+     * @param  int                        $perPage
+     * @return LengthAwarePaginator<Post>
+     */
+    public function paginateNotFeatured(array $relations = [], int $perPage = 10): LengthAwarePaginator
+    {
+        return $this->globalQuery($relations)
+            ->where('is_featured', false)
+            ->paginate($perPage);
     }
 }

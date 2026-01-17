@@ -19,14 +19,14 @@ function Index({
     const { data, links } = posts;
 
     return (
-        <div className="min-h-screen bg-[#FDF6E3] px-5 md:px-10 py-24 lg:px-20">
+        <div className="min-h-screen bg-[#FDF6E3] px-5 py-24 md:px-10 lg:px-20">
             {/* Header Area */}
-            <div className="mb-20 flex flex-col md:items-end justify-between gap-10 lg:flex-row">
+            <div className="mb-20 flex flex-col justify-between gap-10 md:items-end lg:flex-row">
                 <div className="max-w-2xl">
                     <p className="mb-4 text-sm font-bold tracking-[0.4em] text-black uppercase">
                         Insights & Intelligence
                     </p>
-                    <h1 className="text-3xl md:text-6xl leading-tight font-semibold text-black">
+                    <h1 className="text-3xl leading-tight font-semibold text-black md:text-6xl">
                         Trivex <span className="opacity-40">Briefings.</span>
                     </h1>
                 </div>
@@ -106,51 +106,49 @@ function Index({
             </div>
             {/* Posts Grid */}
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-                {data
-                    .filter((p) => !p.is_featured)
-                    .map((post) => (
-                        <Link
-                            href={route("landing.posts.show", post.slug)}
-                            key={post.id}
-                            className="group cursor-pointer"
-                        >
-                            <div className="flex h-full flex-col border border-black/5 bg-white transition-all duration-300 hover:border-[#FFD566]/60">
-                                <div className="aspect-16/10 overflow-hidden bg-black">
-                                    <img
-                                        src={post.image?.url}
-                                        className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100"
-                                    />
+                {data.map((post) => (
+                    <Link
+                        href={route("landing.posts.show", post.slug)}
+                        key={post.id}
+                        className="group cursor-pointer"
+                    >
+                        <div className="flex h-full flex-col border border-black/5 bg-white transition-all duration-300 hover:border-[#FFD566]/60">
+                            <div className="aspect-16/10 overflow-hidden bg-black">
+                                <img
+                                    src={post.image?.url}
+                                    className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100"
+                                />
+                            </div>
+                            <div className="flex grow flex-col gap-4 p-8">
+                                <div className="flex items-center justify-between">
+                                    <span className="bg-black px-2 py-0.5 text-[10px] font-bold tracking-[0.2em] text-[#FFD566] uppercase">
+                                        {post.category}
+                                    </span>
+                                    <span className="font-mono text-[10px] text-black/40">
+                                        {post.read_time}
+                                    </span>
                                 </div>
-                                <div className="flex grow flex-col gap-4 p-8">
-                                    <div className="flex items-center justify-between">
-                                        <span className="bg-black px-2 py-0.5 text-[10px] font-bold tracking-[0.2em] text-[#FFD566] uppercase">
-                                            {post.category}
+                                <h3 className="text-2xl leading-snug font-bold text-black transition-colors group-hover:text-black/70">
+                                    {post.title}
+                                </h3>
+                                <p className="line-clamp-3 text-sm leading-relaxed text-black/60">
+                                    {post.excerpt}
+                                </p>
+                                <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-6">
+                                    <span className="font-mono text-[10px] text-black/40 uppercase">
+                                        {post.created_at}
+                                    </span>
+                                    <span className="flex items-center gap-2 text-xs font-bold tracking-tighter uppercase transition-all group-hover:gap-4">
+                                        View Briefing{" "}
+                                        <span className="text-[#FFD566]">
+                                            →
                                         </span>
-                                        <span className="font-mono text-[10px] text-black/40">
-                                            {post.read_time}
-                                        </span>
-                                    </div>
-                                    <h3 className="text-2xl leading-snug font-bold text-black transition-colors group-hover:text-black/70">
-                                        {post.title}
-                                    </h3>
-                                    <p className="line-clamp-3 text-sm leading-relaxed text-black/60">
-                                        {post.excerpt}
-                                    </p>
-                                    <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-6">
-                                        <span className="font-mono text-[10px] text-black/40 uppercase">
-                                            {post.created_at}
-                                        </span>
-                                        <span className="flex items-center gap-2 text-xs font-bold tracking-tighter uppercase transition-all group-hover:gap-4">
-                                            View Briefing{" "}
-                                            <span className="text-[#FFD566]">
-                                                →
-                                            </span>
-                                        </span>
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
-                        </Link>
-                    ))}
+                        </div>
+                    </Link>
+                ))}
             </div>
 
             {/* Pagination Section */}

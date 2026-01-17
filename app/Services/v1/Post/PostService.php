@@ -7,6 +7,7 @@ use App\Repositories\PostRepository;
 use App\Services\Contracts\BaseService;
 use App\Traits\Makable;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
  * @extends BaseService<Post>
@@ -41,5 +42,15 @@ class PostService extends BaseService
     public function getPrevAndNextPosts(int $postId, array $relations = []): array
     {
         return $this->repository->getPrevAndNextPosts($postId, $relations);
+    }
+
+    /**
+     * @param  array                      $relations
+     * @param  int                        $perPage
+     * @return LengthAwarePaginator<Post>
+     */
+    public function paginateNotFeatured(array $relations = [], int $perPage = 10): LengthAwarePaginator
+    {
+        return $this->repository->paginateNotFeatured($relations, $perPage);
     }
 }
