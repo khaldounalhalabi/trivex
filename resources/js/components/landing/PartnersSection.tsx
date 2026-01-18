@@ -49,7 +49,7 @@ function PartnersSection() {
                         />
                         <h1
                             className={
-                                "text-center font-playfair! text-2xl font-semibold text-landing-gray uppercase md:text-3xl"
+                                "text-center font-playfair! text-2xl font-semibold text-white uppercase md:text-3xl"
                             }
                         >
                             {p.name}
