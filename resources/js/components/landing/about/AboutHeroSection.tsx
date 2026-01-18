@@ -14,22 +14,25 @@ const AboutHeroSection = () => {
                         "border-l-2 border-l-landing-primary ps-5 font-semibold"
                     }
                 >
-                    INTRODUCE TRIVEX
+                    ABOUT US ..
                 </h3>
-                <h1 className={"text-2xl md:text-5xl font-semibold"}>
-                    Perfect data protection for your business
+                <h1 className={"text-2xl font-semibold md:text-4xl"}>
+                    Specialist Security Solutions for Complex Environments
+                    Worldwide.
                 </h1>
                 <p>
-                    Safeguard sensitive information with advanced security
-                    solutions designed to prevent threats, ensure compliance,
-                    build trust, and keep your business operations resilient in
-                    a digital world.
+                    Trivex Security International is a specialist security and
+                    risk-management company delivering professional protection
+                    services to corporate, government, and
+                    critical-infrastructure clients worldwide.
                 </p>
             </div>
 
-            <div className={"grid grid-cols-1 md:grid-cols-2 gap-10"}>
+            <div className={"grid grid-cols-1 gap-10 md:grid-cols-2"}>
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-xl md:text-3xl font-semibold"}>Our Vision</h2>
+                    <h2 className={"text-xl font-semibold md:text-3xl"}>
+                        Our Vision
+                    </h2>
                     <p>
                         To be the world’s most trusted security partner,
                         empowering safer businesses, communities, and global
@@ -38,7 +41,9 @@ const AboutHeroSection = () => {
                 </div>
 
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-xl md:text-3xl font-semibold"}>Our Mission</h2>
+                    <h2 className={"text-xl font-semibold md:text-3xl"}>
+                        Our Mission
+                    </h2>
                     <p>
                         To deliver tailored security solutions with excellence,
                         innovation, and trust, ensuring protection across global
@@ -47,7 +52,9 @@ const AboutHeroSection = () => {
                 </div>
 
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-xl md:text-3xl font-semibold"}>Leadership</h2>
+                    <h2 className={"text-xl font-semibold md:text-3xl"}>
+                        Leadership
+                    </h2>
                     <p>
                         To be the world’s most influential leader, driving
                         innovation, inspiring teams, and shaping future
@@ -56,7 +63,9 @@ const AboutHeroSection = () => {
                 </div>
 
                 <div className={"flex flex-col items-start gap-5"}>
-                    <h2 className={"text-xl md:text-3xl font-semibold"}>Credentials</h2>
+                    <h2 className={"text-xl font-semibold md:text-3xl"}>
+                        Credentials
+                    </h2>
                     <p>
                         To be the world’s most recognized authority, setting the
                         standard for expertise, trustworthiness, and excellence
@@ -64,7 +73,9 @@ const AboutHeroSection = () => {
                     </p>
                 </div>
 
-                <div className={"md:col-span-2 flex items-center justify-center"}>
+                <div
+                    className={"flex items-center justify-center md:col-span-2"}
+                >
                     <Link href={route("landing.contact")}>
                         <LandingButton className={"w-42 py-3"}>
                             Contact Us

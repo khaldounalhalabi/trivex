@@ -12,6 +12,43 @@ const About = ({ team }: { team: Team[] }) => {
             <OurImpact />
             <AboutTeamSection team={team} />
             <AboutMissionSection />
+            <div className={"h-full w-full bg-landing-background"}>
+                <div
+                    className={
+                        "mt-24 flex items-center justify-between gap-32 px-5 md:px-24"
+                    }
+                >
+                    <div
+                        className={
+                            "flex flex-col items-center justify-between gap-8 md:items-start"
+                        }
+                    >
+                        <h2
+                            className={
+                                "border-l-4 border-l-landing-primary pl-1 font-semibold uppercase md:text-lg"
+                            }
+                        >
+                            Our Approach
+                        </h2>
+                        <h1
+                            className={
+                                "text-center text-4xl font-semibold text-wrap md:text-start md:text-5xl"
+                            }
+                        >
+                            Trivex Security International operates on a
+                            risk-driven and compliance-first model.
+                        </h1>
+                        <p className={"text-center md:text-start"}>
+                            We do not offer generic security solutions. Each
+                            deployment is designed around: Threat analysis
+                            Operational environment Legal and regulatory
+                            requirements Client-specific objectives This ensures
+                            that protection measures are effective,
+                            proportionate, and fully accountable.
+                        </p>
+                    </div>
+                </div>
+            </div>
             <NewsLetterFooter withFive={false} />
         </div>
     );
