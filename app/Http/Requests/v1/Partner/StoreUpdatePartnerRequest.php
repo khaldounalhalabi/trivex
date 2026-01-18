@@ -29,7 +29,7 @@ class StoreUpdatePartnerRequest extends FormRequest
                     SerializedMedia::validator(),
                 ]),
                 Rule::when($this->hasFile('logo'), [
-                    'image:allow_svg', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp',
+                    'image:allow_svg', 'max:25000', 'mimes:jpeg,png,jpg,gif,svg,webp',
                 ]),
             ],
         ];

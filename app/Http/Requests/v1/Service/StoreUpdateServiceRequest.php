@@ -34,7 +34,7 @@ class StoreUpdateServiceRequest extends FormRequest
                     SerializedMedia::validator(),
                 ]),
                 Rule::when($this->hasFile('cover'), [
-                    'image:allow_svg', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp',
+                    'image:allow_svg', 'max:25000', 'mimes:jpeg,png,jpg,gif,svg,webp',
                 ]),
             ],
             'image' => [
@@ -43,7 +43,7 @@ class StoreUpdateServiceRequest extends FormRequest
                     SerializedMedia::validator(),
                 ]),
                 Rule::when($this->hasFile('image'), [
-                    'image:allow_svg', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp',
+                    'image:allow_svg', 'max:25000', 'mimes:jpeg,png,jpg,gif,svg,webp',
                 ]),
             ],
 
@@ -56,7 +56,7 @@ class StoreUpdateServiceRequest extends FormRequest
                         SerializedMedia::validator(),
                     ]),
                     Rule::when($this->hasFile($attribute), [
-                        'image:allow_svg', 'max:10000', 'mimes:jpeg,png,jpg,gif,svg,webp',
+                        'image:allow_svg', 'max:25000', 'mimes:jpeg,png,jpg,gif,svg,webp',
                     ]),
                 ];
             }),
