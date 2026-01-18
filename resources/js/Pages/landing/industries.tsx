@@ -37,7 +37,7 @@ const Industries = () => {
                 </div>
                 <img
                     className={"hidden w-[50%] md:block"}
-                    src={asset("/images/guard.png")}
+                    src={asset("/images/industries.jpeg")}
                 />
             </div>
 
