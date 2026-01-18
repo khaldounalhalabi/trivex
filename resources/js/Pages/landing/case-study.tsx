@@ -36,7 +36,7 @@ const CaseStudy = () => {
                 </div>
                 <img
                     className={"md:w-[40%]"}
-                    src={asset("/images/guard-back.png")}
+                    src={asset("/images/steel-net.jpeg")}
                 />
             </div>
 
@@ -47,7 +47,7 @@ const CaseStudy = () => {
             >
                 <img
                     className={"md:w-[40%]"}
-                    src={asset("/images/laptop-guys.png")}
+                    src={asset("/images/trivex-car.jpeg")}
                 />
                 <div className={"md:w-[50%] space-y-10 md:pe-16"}>
                     <h1 className={"text-2xl md:text-5xl font-semibold"}>

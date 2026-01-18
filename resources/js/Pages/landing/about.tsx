@@ -38,14 +38,22 @@ const About = ({ team }: { team: Team[] }) => {
                             Trivex Security International operates on a
                             risk-driven and compliance-first model.
                         </h1>
-                        <p className={"text-center md:text-start"}>
-                            We do not offer generic security solutions. Each
-                            deployment is designed around: Threat analysis
-                            Operational environment Legal and regulatory
-                            requirements Client-specific objectives This ensures
-                            that protection measures are effective,
-                            proportionate, and fully accountable.
-                        </p>
+                        <div className={"text-center md:text-start"}>
+                            <p>
+                                We do not offer generic security solutions. Each
+                                deployment is designed around:
+                            </p>
+                            <ul className={"list-disc ps-10"}>
+                                <li>Threat analysis</li>
+                                <li>Operational environment</li>
+                                <li>Legal and regulatory requirements</li>
+                                <li>Client-specific objectives </li>
+                            </ul>
+                            <p>
+                                This ensures that protection measures are
+                                effective, proportionate, and fully accountable.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
