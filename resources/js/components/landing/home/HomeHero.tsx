@@ -51,7 +51,7 @@ function HomeHero() {
                     </div>
 
                     <img
-                        src={asset("/images/hero-image.png")}
+                        src={asset("/images/hero.jpeg")}
                         className={
                             "h-auto w-full object-contain hidden md:block md:w-[40%]"
                         }
