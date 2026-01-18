@@ -16,8 +16,8 @@
       "assets/admin-pages-D9Kd-DeC.css"
     ]
   },
-  "_client-pages-CvmN_J5R.js": {
-    "file": "assets/client-pages-CvmN_J5R.js",
+  "_client-pages-2D_ykySt.js": {
+    "file": "assets/client-pages-2D_ykySt.js",
     "name": "client-pages",
     "imports": [
       "_vendor-core-CFA-k7Cr.js",
@@ -190,13 +190,13 @@
     "src": "resources/fonts/raleway/Raleway-ThinItalic.ttf"
   },
   "resources/js/cubeta-starter.tsx": {
-    "file": "assets/cubeta-starter-CeFz5GbY.js",
+    "file": "assets/cubeta-starter-jF7m2MTA.js",
     "name": "cubeta-starter",
     "src": "resources/js/cubeta-starter.tsx",
     "isEntry": true,
     "imports": [
       "_admin-pages-DKn8YpPI.js",
-      "_client-pages-CvmN_J5R.js",
+      "_client-pages-2D_ykySt.js",
       "_vendor-core-CFA-k7Cr.js",
       "_vendor-icons-DPl7vkjn.js",
       "_vendor-ui-DOqHzjNk.js",

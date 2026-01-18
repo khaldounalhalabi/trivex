@@ -88,7 +88,7 @@ const Contact = ({
                     </div>
                 </div>
             </div>
-            <img src={asset("/images/contact-map.png")} className={"w-full"} />
+            <img src={asset("/images/contact-image-1.png")} className={"w-full"} />
             <NewsLetterFooter withFive={false} />
         </div>
     );
