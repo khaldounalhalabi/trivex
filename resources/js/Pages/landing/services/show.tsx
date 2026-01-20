@@ -34,7 +34,7 @@ const Show = ({ service }: { service: Service }) => {
                         return (
                             <div
                                 className={
-                                    "flex w-full flex-col items-center justify-between gap-5 md:flex-row md:gap-0"
+                                    "flex w-full flex-col-reverse items-center justify-between gap-5 md:flex-row md:gap-0"
                                 }
                             >
                                 <div
@@ -62,7 +62,7 @@ const Show = ({ service }: { service: Service }) => {
                     return (
                         <div
                             className={
-                                "flex w-full flex-col-reverse items-center justify-between gap-5 md:flex-row md:gap-0"
+                                "flex w-full flex-col items-center justify-between gap-5 md:flex-row md:gap-0"
                             }
                         >
                             <img
@@ -72,7 +72,7 @@ const Show = ({ service }: { service: Service }) => {
 
                             <div
                                 className={
-                                    "flex flex-col items-start gap-5 md:w-1/2 md:pe-32"
+                                    "flex flex-col items-start gap-5 md:w-1/2 md:pe-32 md:ps-16"
                                 }
                             >
                                 <h1

@@ -12,7 +12,7 @@ const Index = ({ services }: { services: Service[] }) => {
                 index % 2 == 0 ? (
                     <div
                         className={
-                            "flex w-full flex-col gap-5 items-center justify-between px-5 md:flex-row md:px-0"
+                            "flex w-full flex-col-reverse gap-5 items-center justify-between px-5 md:flex-row md:px-0"
                         }
                     >
                         <div
@@ -46,7 +46,7 @@ const Index = ({ services }: { services: Service[] }) => {
                 ) : (
                     <div
                         className={
-                            "flex w-full flex-col-reverse items-center justify-between gap-5 px-5 md:flex-row md:px-0"
+                            "flex w-full flex-col items-center justify-between gap-5 px-5 md:flex-row md:px-0"
                         }
                     >
                         <img src={s.image?.url} className={"md:w-1/2"} />

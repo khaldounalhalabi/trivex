@@ -6,7 +6,7 @@ const CaseStudy = () => {
         <div className={"h-full w-full"}>
             <div
                 className={
-                    "flex flex-col items-center justify-between px-5 md:py-16 md:flex-row md:px-0"
+                    "flex flex-col-reverse items-center justify-between px-5 md:flex-row md:px-0 md:py-16"
                 }
             >
                 <div className={"space-y-10 md:w-[50%] md:ps-16"}>
@@ -42,15 +42,15 @@ const CaseStudy = () => {
 
             <div
                 className={
-                    "flex flex-col-reverse items-center justify-between px-5 py-16 md:flex-row md:px-0"
+                    "flex flex-col items-center justify-between px-5 py-16 md:flex-row md:px-0"
                 }
             >
                 <img
                     className={"md:w-[40%]"}
                     src={asset("/images/trivex-car.jpeg")}
                 />
-                <div className={"md:w-[50%] space-y-10 md:pe-16"}>
-                    <h1 className={"text-2xl md:text-5xl font-semibold"}>
+                <div className={"space-y-10 md:w-[50%] md:pe-16"}>
+                    <h1 className={"text-2xl font-semibold md:text-5xl"}>
                         Integrated Security Deployment & Governance
                     </h1>
                     <p>
@@ -73,9 +73,13 @@ const CaseStudy = () => {
                 </div>
             </div>
 
-            <div className={"flex flex-col md:flex-row items-center justify-between py-16 px-5 md:px-0"}>
-                <div className={"md:w-[50%] space-y-10 md:ps-16"}>
-                    <h1 className={"text-2xl md:text-5xl font-semibold"}>
+            <div
+                className={
+                    "flex flex-col-reverse items-center justify-between px-5 py-16 md:flex-row md:px-0"
+                }
+            >
+                <div className={"space-y-10 md:w-[50%] md:ps-16"}>
+                    <h1 className={"text-2xl font-semibold md:text-5xl"}>
                         Measured Results and Next Steps
                     </h1>
                     <p>
@@ -98,7 +102,7 @@ const CaseStudy = () => {
                     </p>
                 </div>
                 <img
-                    className={"md:w-[40%] w-full"}
+                    className={"w-full md:w-[40%]"}
                     src={asset("/images/computer-guys.png")}
                 />
             </div>

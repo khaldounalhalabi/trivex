@@ -6,7 +6,7 @@ import MembersCarousel from "@/components/landing/MembersCarousel";
 function OurTeam({ team }: { team: Team[] }) {
     return (
         /* Reduced px-16 to px-6 on mobile, adjusted py-32 to py-20 for better mobile vertical flow */
-        <div className="flex w-full justify-center overflow-hidden bg-[#FDF6E3] px-6 py-20 md:px-16 md:py-32">
+        <div className="flex w-full justify-center overflow-hidden bg-[#FDF6E3] px-6 py-5 md:px-16">
             <div className="flex w-full flex-col gap-12 md:gap-16">
                 {/* Header Section */}
                 <div className="relative flex flex-col items-start justify-between gap-10 lg:flex-row">
