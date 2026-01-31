@@ -19,7 +19,7 @@ const Select = ({
     translated = false,
     name,
 }: {
-    data: any[];
+    data: { label: string; value: string }[];
     selected?: string;
     label?: string;
     onChange?: ((value: string) => void) | undefined;
@@ -38,15 +38,13 @@ const Select = ({
                 </SelectTrigger>
                 <SelectContent>
                     <SelectGroup>
-                        <SelectItem value={" "}>
-                            {"Select an item"}
-                        </SelectItem>
+                        <SelectItem value={" "}>{"Select an item"}</SelectItem>
                         {data.map((item, index) => (
                             <SelectItem
-                                value={item == "all" ? "" : item}
+                                value={item.value == "all" ? "" : item.value}
                                 key={index}
                             >
-                                {item}
+                                {item.label}
                             </SelectItem>
                         ))}
                     </SelectGroup>

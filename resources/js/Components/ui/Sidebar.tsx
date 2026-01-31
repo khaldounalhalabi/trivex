@@ -11,7 +11,7 @@ import {
 } from "@/Components/ui/shadcn/sidebar";
 import { MiddlewareProps } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
-import { type Icon } from "@tabler/icons-react";
+import { type Icon, IconCertificate } from "@tabler/icons-react";
 import { BadgePlus } from "lucide-react";
 import React from "react";
 
@@ -27,7 +27,13 @@ export function Sidebar({
             href?: string;
             icon?: Icon;
         }[];
-    }[] = [];
+    }[] = [
+        {
+            title: "Certificates",
+            href: route("v1.web.protected.certificates.index"),
+            icon: () => <IconCertificate />,
+        },
+    ];
 
     const { authUser } = usePage<MiddlewareProps>().props;
     return (

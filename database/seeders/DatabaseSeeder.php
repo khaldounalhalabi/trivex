@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
                 'email' => 'essam@swissapproval.store',
                 'password' => '123456789',
             ]);
+
+        $this->call([
+            CertificateSeeder::class,
+        ]);
     }
 }
